@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../utils/user.php");
+include_once("../classes/user.php");
 
 if(isset($_POST["username"]) && isset($_POST["password"])){
     $username = $_POST["username"];
@@ -8,16 +8,16 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     $user = new User();
     $result = $user->getUser($username);
     
-    if($result && password_verify($password, $result[0]["users_password"])){
+    if($result && password_verify($password, $result[0]["password"])){
         $_SESSION["username"] = $username;
-        $_SESSION["email"] = $result[0]["users_email"];
-        $_SESSION["id"] = $result[0]["users_id"];
-        header("Location: ../../index.php");
+        $_SESSION["email"] = $result[0]["email"];
+        $_SESSION["id"] = $result[0]["id"];
+        header("Location:http://localhost/ESIREM_Galactique/front/index.html");
     } 
     else {
-        header("Location: ../../login.php?error=wrongcredentials");
+        echo "Erreur de connexion 1";
     }
 } 
 else {
-    header("Location: ../../login.php?error=wrongcredentials");
+    echo "Erreur de connexion";
 }

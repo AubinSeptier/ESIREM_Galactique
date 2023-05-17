@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../utils/user.php");
+include_once("../classes/user.php");
 
 if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["password-repeat"])){
     $email = $_POST["email"];
@@ -9,7 +9,7 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     $passwordRepeat = $_POST["password-repeat"];
     
     if($password !== $passwordRepeat){
-        header("Location: ../../register.php?error=passwordsdontmatch");
+        echo "Erreur mdp différents";
         exit();
     }
     
@@ -17,14 +17,14 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     $result = $user->getUser($username);
     
     if($result){
-        header("Location: ../../register.php?error=usernametaken");
+        echo "Utilisateur déjà existant";
         exit();
     }
     
-    $user->setUser($email, $username, password_hash($password, PASSWORD_BRCYPT));
-    header("Location: ../../login.php");
+    $user->setUser($email, $username, $password);
+    header("Location:http://localhost/ESIREM_Galactique/front/login.html");
 } 
 else {
-    header("Location: ../../register.php?error=wrongcredentials");
+    echo "Erreur de champs";
     exit();
 }

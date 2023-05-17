@@ -1,18 +1,19 @@
 <?php
-include_once("../database.php");
+include_once("database.php");
 
 class User extends Database {
     
-    protected getUser($username){
+    public function getUser($username){
         $sql = "SELECT * FROM users WHERE username = ?";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$username])
+        $query->execute([$username]);
         $result = $query->fetchAll();
         return $result;
     }
 
-    protected setUser($email, $username, $password){
-        $sql = "INSERT into users(users_email, users_username, users_password) VALUES (?, ?, ?)";
+    public function setUser($email, $username, $password){
+        $password = password_hash($password, PASSWORD_BCRYPT);
+        $sql = "INSERT into users(email, username, password) VALUES (?, ?, ?)";
         $query = $this->connect()->prepare($sql);
         $query->execute([$email, $username, $password]);
     }
