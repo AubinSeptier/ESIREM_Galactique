@@ -12,6 +12,11 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
         echo "Erreur mdp différents";
         exit();
     }
+
+    if(!preg_match("/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/", $email)){
+        echo "Email incorrect";
+        exit();
+    }
     
     $user = new User();
     $result = $user->getUser($username);
