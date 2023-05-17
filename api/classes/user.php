@@ -11,9 +11,9 @@ class User extends Database {
         return $result;
     }
 
-    protected setUser($username, $email, $password){
-        $sql = "INSERT into users(users_username, users_email, users_password) VALUES (?, ?, ?)";
+    protected setUser($email, $username, $password){
+        $sql = "INSERT into users(users_email, users_username, users_password) VALUES (?, ?, ?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$username, $email, $password]);
+        $query->execute([$email, $username, $password]);
     }
 }
