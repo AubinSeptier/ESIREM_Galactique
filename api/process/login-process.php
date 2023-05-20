@@ -15,7 +15,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
         header("Location:http://localhost/ESIREM_Galactique/front/index.html");
     } 
     else {
-        echo "Erreur de connexion 1";
+        echo "Nom d\'utilisateur ou mot de passe incorrect";
     }
 } 
 else {

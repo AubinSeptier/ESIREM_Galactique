@@ -9,12 +9,7 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     $passwordRepeat = $_POST["password-repeat"];
     
     if($password !== $passwordRepeat){
-        echo "Erreur mdp différents";
-        exit();
-    }
-
-    if(!preg_match("/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/", $email)){
-        echo "Email incorrect";
+        echo "Les mots de passe ne correspondent pas";
         exit();
     }
     
@@ -22,7 +17,7 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     $result = $user->getUser($username);
     
     if($result){
-        echo "Utilisateur déjà existant";
+        echo "Ce nom d\'utilisateur existe déjà";
         exit();
     }
     
@@ -30,6 +25,6 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     header("Location:http://localhost/ESIREM_Galactique/front/login.html");
 } 
 else {
-    echo "Erreur de champs";
+    echo "Erreur de connexion"
     exit();
 }
