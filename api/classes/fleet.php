@@ -11,9 +11,9 @@ class Fleet extends Database {
             return $result;
         }
     
-        public function setFleet($id, $name, $ships_number, $attack, $defense, $id_empire, $id_planet){
-            $sql = "INSERT into fleets(id, name, ships_number, attack, defense, id_empire, id_planet) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        public function setFleet($name, $ships_number, $attack, $defense, $id_empire, $id_planet){
+            $sql = "INSERT into fleets(name, ships_number, attack, defense, id_empire, id_planet) VALUES (?, ?, ?, ?, ?, ?)";
             $query = $this->connect()->prepare($sql);
-            $query->execute([$id, $name, $ships_number, $attack, $defense, $id_empire, $id_planet]);
+            $query->execute([$name, $ships_number, $attack, $defense, $id_empire, $id_planet]);
         }
 }

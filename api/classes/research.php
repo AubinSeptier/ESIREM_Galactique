@@ -13,9 +13,9 @@ class Research extends Database {
         return $result;
     }
 
-    public function setResearch($id, $name, $empire){
-        $sql = "INSERT into researches(id, name, empire) VALUES (?, ?, ?)";
+    public function setResearch($name, $empire){
+        $sql = "INSERT into researches(name, empire) VALUES (?, ?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id, $name, $empire]);
+        $query->execute([$name, $empire]);
     }
 }

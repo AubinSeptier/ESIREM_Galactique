@@ -11,9 +11,9 @@ class Empire extends Database {
         return $result;
     }
 
-    public function setEmpire($id, $name, $race, $adjective, $deuterium_stock, $energy_stock, $metal_stock, $id_universe, $id_user){
-        $sql = "INSERT into empires(id, name, race, adjective, deuterium_stock, energy_stock, metal_stock, id_universe, id_user) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public function setEmpire($name, $race, $adjective, $deuterium_stock, $energy_stock, $metal_stock, $id_universe, $id_user){
+        $sql = "INSERT into empires(name, race, adjective, deuterium_stock, energy_stock, metal_stock, id_universe, id_user) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id, $name, $race, $adjective, $deuterium_stock, $energy_stock, $metal_stock, $id_universe, $id_user]);
+        $query->execute([$name, $race, $adjective, $deuterium_stock, $energy_stock, $metal_stock, $id_universe, $id_user]);
     }
 }

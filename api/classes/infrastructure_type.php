@@ -13,9 +13,9 @@ class Infrastructure_Type extends Database {
             return $result;
         }
     
-        public function setInfrastructure_Type($id, $name, $deuterium_number, $metal_number, $building_time, $attack, $defense){
-            $sql = "INSERT into infrastructure_types(id, name, deuterium_number, metal_number, building_time, attack, defense) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        public function setInfrastructure_Type($name, $deuterium_number, $metal_number, $building_time, $attack, $defense){
+            $sql = "INSERT into infrastructure_types(name, deuterium_number, metal_number, building_time, attack, defense) VALUES (?, ?, ?, ?, ?, ?)";
             $query = $this->connect()->prepare($sql);
-            $query->execute([$id, $name, $deuterium_number, $metal_number, $building_time, $attack, $defense]);
+            $query->execute([$name, $deuterium_number, $metal_number, $building_time, $attack, $defense]);
         }
 }

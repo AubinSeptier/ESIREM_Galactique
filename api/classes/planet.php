@@ -11,9 +11,9 @@ class Planet extends Database {
             return $result;
         }
     
-        public function setPlanet($id, $name, $id_solar_system, $id_empire){
-            $sql = "INSERT into planets(id, name, id_solar_system, id_empire) VALUES (?, ?, ?, ?)";
+        public function setPlanet($name, $id_solar_system, $id_empire){
+            $sql = "INSERT into planets(name, id_solar_system, id_empire) VALUES (?, ?, ?)";
             $query = $this->connect()->prepare($sql);
-            $query->execute([$id, $name, $id_solar_system, $id_empire]);
+            $query->execute([$name, $id_solar_system, $id_empire]);
         }
 }

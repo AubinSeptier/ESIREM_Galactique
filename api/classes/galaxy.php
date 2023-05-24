@@ -11,9 +11,9 @@ class Galaxy extends Database {
             return $result;
         }
     
-        public function setGalaxy($id, $name, $id_universe){
-            $sql = "INSERT into galaxies(id, name, id_universe) VALUES (?, ?, ?)";
+        public function setGalaxy($name, $id_universe){
+            $sql = "INSERT into galaxies(name, id_universe) VALUES (?, ?)";
             $query = $this->connect()->prepare($sql);
-            $query->execute([$id, $name, $id_universe]);
+            $query->execute([$name, $id_universe]);
         }
 }

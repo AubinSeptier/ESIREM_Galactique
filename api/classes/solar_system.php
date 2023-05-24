@@ -11,9 +11,9 @@ class Solar_System extends Database {
         return $result;
     }
 
-    public function setSolar_System($id, $name, $planets_number $id_galaxy){
-        $sql = "INSERT into solar_systems(id, name, planets_number, id_galaxy) VALUES (?, ?, ?, ?)";
+    public function setSolar_System($name, $planets_number $id_galaxy){
+        $sql = "INSERT into solar_systems(name, planets_number, id_galaxy) VALUES (?, ?, ?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id, $name, $planets_number, $id_galaxy]);
+        $query->execute([$name, $planets_number, $id_galaxy]);
     }
 }

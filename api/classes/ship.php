@@ -11,9 +11,9 @@ class Ship extends Database {
                 return $result;
             }
         
-            public function setShip($id, $name, $attack, $defense, $id_fleet, $id_ship_type){
-                $sql = "INSERT into ships(id, name, attack, defense, id_fleet, id_ship_type) VALUES (?, ?, ?, ?, ?, ?)";
+            public function setShip($name, $attack, $defense, $id_fleet, $id_ship_type){
+                $sql = "INSERT into ships(name, attack, defense, id_fleet, id_ship_type) VALUES (?, ?, ?, ?, ?)";
                 $query = $this->connect()->prepare($sql);
-                $query->execute([$id, $name, $attack, $defense, $id_fleet, $id_ship_type]);
+                $query->execute([$name, $attack, $defense, $id_fleet, $id_ship_type]);
             }
 }

@@ -11,8 +11,8 @@ class Universe extends Database {
         return $result;
     }
 
-    public function setUniverse($id, $name){
-        $sql = "INSERT into universes(id, name) VALUES (?, ?)";
+    public function setUniverse($name){
+        $sql = "INSERT into universes(name) VALUES (?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id, $name]);
+        $query->execute([$name]);
     }

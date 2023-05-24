@@ -13,9 +13,9 @@ class Infrastructure extends Database {
             return $result;
         }
     
-        public function setInfrastructure($id, $name, $id_planet, $id_infrastructure_type){
-            $sql = "INSERT into infrastructures(id, name, id_planet, id_infrastructure_type) VALUES (?, ?, ?, ?)";
+        public function setInfrastructure($name, $id_planet, $id_infrastructure_type){
+            $sql = "INSERT into infrastructures(name, id_planet, id_infrastructure_type) VALUES (?, ?, ?)";
             $query = $this->connect()->prepare($sql);
-            $query->execute([$id, $name, $id_planet, $id_infrastructure_type]);
+            $query->execute([$name, $id_planet, $id_infrastructure_type]);
         }   
 }

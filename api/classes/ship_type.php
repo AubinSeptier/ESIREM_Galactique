@@ -11,9 +11,9 @@ class Ship_Type extends Database {
         return $result;
     }
 
-    public function setShip_Type($id, $name, $deuterium_number, $metal_number, $building_time, $attack, $defense){
-        $sql = "INSERT into ship_types(id, name, deuterium_number, metal_number, building_time, attack, defense) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    public function setShip_Type($name, $deuterium_number, $metal_number, $building_time, $attack, $defense){
+        $sql = "INSERT into ship_types(name, deuterium_number, metal_number, building_time, attack, defense) VALUES (?, ?, ?, ?, ?, ?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id, $name, $deuterium_number, $metal_number, $building_time, $attack, $defense]);
+        $query->execute([$name, $deuterium_number, $metal_number, $building_time, $attack, $defense]);
     }
 }
