@@ -19,28 +19,19 @@ if(isset($_POST["universeName"])){
     $galaxy = new Galaxy();
     $solarSystem = new Solar_System();
     $planet = new Planet();
-    $old_position = 0;
 
     for(int i = 0; i<5; i++){
         $galaxy->setGalaxy($finalGalaxyNames[i], $universe->getUniverse($universeName)[0]["id"]);
         for(int j = 0; j<10; j++){
             $planets_number = rand(4, 10);
             $solarSystem->setSolar_System($solarSystemNames[i*5+j], $planets_number, $galaxy->getGalaxy($finalGalaxyNames[i])[0]["id"]);
+            $positions = range(1, 10);
+            $positions = shuffle($positions);
             for(int k = 0; k<$planets_number; k++){
-                $position = rand(1, 10);
-                if($position == $position_old){
-                    $position = rand(1, 10);
-                }
-                else {
-                    $planet->setPlanet($solarSystemNames[i*5+j]." ".$position, $position, $solarSystem->getSolar_System($solarSystemNames[i*5+j])[0]["id"], $universe->getUniverse($universeName)[0]["id"]);
-                    $position_old = $position;
-                }
-                
+                $position = array_shift($positions);
+                $planet->setPlanet($solarSystemNames[i*5+j]." ".$position, $position, $solarSystem->getSolar_System($solarSystemNames[i*5+j])[0]["id"], null);
             }
         }
     }
-
-
-
 }
 
