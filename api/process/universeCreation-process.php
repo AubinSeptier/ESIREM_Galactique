@@ -22,7 +22,6 @@ if(isset($_POST["universeName"])){
 
     for(int i = 0; i<5; i++){
         $galaxy->setGalaxy($finalGalaxyNames[i], $universe->getUniverse($universeName)[0]["id"]);
-        $randomGalaxyNameSelector += rand(1, 7);
         for(int j = 0; j<5; j++){
             $planets_number = rand(4, 10);
             $solarSystem->setSolar_System($solarSystemNames[i*5+j], $planets_number, $galaxy->getGalaxy($finalGalaxyNames[i])[0]["id"]);

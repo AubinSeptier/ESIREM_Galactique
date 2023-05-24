@@ -22,9 +22,9 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     }
     
     $user->setUser($email, $username, $password);
-    header("Location:http://localhost/ESIREM_Galactique/front/login.html");
+    header("Location:http://localhost/ESIREM_Galactique/front/login.php");
 } 
 else {
-    echo "Erreur de connexion"
+    echo "Erreur de connexion";
     exit();
 }
