@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+	header('Location: ./login.php');
+	exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +18,12 @@
 	</header>
 	<nav>
 		<ul>
-			<li><a href="./index.html">Accueil</a></li>
-			<li><a href="./Galaxie.html">Galaxie</a></li>
-			<li><a href="./flotte.html">Flotte</a></li>
-			<li><a href="./Infrastructures.html">Infrastructures</a></li>
-			<li class="active"><a href="./Recherche.html">Recherche</a></li>
-			<li><a href="./ChantierSpatial.html">Chantier Spatial</a></li>
-
+			<li><a href="./index.php">Accueil</a></li>
+			<li><a href="./galaxie.php">Galaxie</a></li>
+			<li><a href="./flotte.php">Flotte</a></li>
+			<li><a href="./infrastructures.php">Infrastructures</a></li>
+			<li class="active"><a href="./recherche.php">Recherche</a></li>
+			<li><a href="./chantierSpatial.php">Chantier Spatial</a></li>
 		</ul>
 		<form action="#" method="get">
 			<input type="text" name="search" placeholder="Recherche...">
