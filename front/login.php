@@ -7,7 +7,7 @@
 </head>
 <body>
     <video autoplay muted loop>
-        <source src="./ressources/fond2.mp4">
+        <source src="./ressources/login-register_background.mp4">
     </video>
     <div class="login-box">
         <h2>Connexion</h2>
