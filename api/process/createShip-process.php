@@ -16,7 +16,6 @@ if(isset($_POST["fighter"]) && isset($_POST["id_fleet"])){
     $defense = $fighter->getShipType("fighter")[0]["defense"];
 
     $fighter->setShip("Chasseur #".$shipNumber, $attack, $defense, $id_fleet, "fighter");
-
 }
 else if(isset($_POST["cruiser"]) && isset($_POST["id_fleet"])){
     $cruiser = new Ship();
