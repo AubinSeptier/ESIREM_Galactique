@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 <html>
 <head>
 	<title>Recherche - ESI Galactique</title>
-    <link rel="stylesheet" href="./css/Recherche.css">
+    <link rel="stylesheet" href="./css/recherche.css">
 </head>
 <body>
 	<header>

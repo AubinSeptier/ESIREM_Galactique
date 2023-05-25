@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 <html>
 <head>
 	<title>Chantier Spatial - ESI Galactique</title>
-    <link rel="stylesheet" href="./css/ChantierSpatial.css">
+    <link rel="stylesheet" href="./css/chantierSpatial.css">
 </head>
 <body>
 	<header>
