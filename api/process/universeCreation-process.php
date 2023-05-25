@@ -27,12 +27,12 @@ if(isset($_POST["universeName"])){
     $planet = new Planet();
 
     for($i = 0; $i<5; $i++){
-        $galaxy->setGalaxy($finalGalaxyNames[$i], $universe->getUniverse($universeName)[0]["id"]);
+        $galaxy->setGalaxy($galaxyNames[$i], $universe->getUniverse($universeName)[0]["id"]);
         for($j = 0; $j<10; $j++){
             $planets_number = rand(4, 10);
             $solarSystem->setSolar_System($solarSystemNames[$j], $planets_number, $galaxy->getGalaxy($finalGalaxyNames[$i])[0]["id"]);
             $positions = range(1, 10);
-            $positions = shuffle($positions);
+            shuffle($positions);
             for($k = 0; $k<$planets_number; $k++){
                 $position = array_shift($positions);
                 $planet->setPlanet($solarSystemNames[$j]." ".$position, $position, $solarSystem->getSolar_System($solarSystemNames[$j])[0]["id"], null);
