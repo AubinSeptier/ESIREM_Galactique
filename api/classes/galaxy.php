@@ -16,4 +16,12 @@ class Galaxy extends Database {
             $query = $this->connect()->prepare($sql);
             $query->execute([$name, $id_universe]);
         }
+
+        public function getRandomGalaxy($id_universe){
+            $sql = "SELECT * FROM galaxies WHERE id_universe = ? ORDER BY RAND() LIMIT 1";
+            $query = $this->connect()->prepare($sql);
+            $query->execute([$id_universe]);
+            $result = $query->fetchAll();
+            return $result;
+        }
 }
