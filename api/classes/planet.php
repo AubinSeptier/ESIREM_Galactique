@@ -16,4 +16,26 @@ class Planet extends Database {
             $query = $this->connect()->prepare($sql);
             $query->execute([$name, $position, $id_solar_system, $id_empire]);
         }
+
+        public function setPlanetOwner($id_empire, $id_planet){
+            $sql = "UPDATE planets SET id_empire = ? WHERE id = ?";
+            $query = $this->connect()->prepare($sql);
+            $query->execute([$id_empire, $id_planet]);
+        }
+
+        public function getPlanetOwner($id_empire){
+            $sql = "SELECT * FROM planets WHERE id_empire = ?";
+            $query = $this->connect()->prepare($sql);
+            $query->execute([$id_empire]);
+            $result = $query->fetchAll();
+            return $result;
+        }
+
+        public function getRandomPlanet($id_solar_system){
+            $sql = "SELECT * FROM planets WHERE id_solar_system = ? ORDER BY RAND() LIMIT 1";
+            $query = $this->connect()->prepare($sql);
+            $query->execute([$id_solar_system]);
+            $result = $query->fetchAll();
+            return $result;
+        }
 }

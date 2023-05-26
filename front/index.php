@@ -18,12 +18,14 @@ if (!isset($_SESSION['username'])) {
 	</header>
 	<nav>
 		<ul>
-			<li><a href="./index.php">Accueil</a></li>
+			<li class="active"><a href="./index.php">Accueil</a></li>
 			<li><a href="./galaxie.php">Galaxie</a></li>
 			<li><a href="./flotte.php">Flotte</a></li>
 			<li><a href="./infrastructures.php">Infrastructures</a></li>
-			<li class="active"><a href="./recherche.php">Recherche</a></li>
+			<li><a href="./recherche.php">Recherche</a></li>
 			<li><a href="./chantierSpatial.php">Chantier Spatial</a></li>
+			<li><a href="./player.php">player</a></li>
+
 		</ul>
 		<form action="#" method="get">
 			<input type="text" name="search" placeholder="Recherche...">

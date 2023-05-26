@@ -21,8 +21,8 @@ if (!isset($_SESSION['username'])) {
 			<li><a href="./index.php">Accueil</a></li>
 			<li><a href="./galaxie.php">Galaxie</a></li>
 			<li><a href="./flotte.php">Flotte</a></li>
-			<li><a href="./infrastructures.php">Infrastructures</a></li>
-			<li class="active"><a href="./recherche.php">Recherche</a></li>
+			<li class="active"><a href="./infrastructures.php">Infrastructures</a></li>
+			<li><a href="./recherche.php">Recherche</a></li>
 			<li><a href="./chantierSpatial.php">Chantier Spatial</a></li>
 		</ul>
 		<form action="#" method="get">
