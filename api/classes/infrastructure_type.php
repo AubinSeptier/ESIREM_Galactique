@@ -1,8 +1,6 @@
 <?php
 include_once("database.php");
 
-// To complete
-
 class Infrastructure_Type extends Database {
         
         public function getInfrastructure_Type($name){
@@ -13,9 +11,9 @@ class Infrastructure_Type extends Database {
             return $result;
         }
     
-        public function setInfrastructure_Type($name, $deuterium_number, $metal_number, $building_time, $attack, $defense){
-            $sql = "INSERT into infrastructure_types(name, deuterium_number, metal_number, building_time, attack, defense) VALUES (?, ?, ?, ?, ?, ?)";
+        public function setInfrastructure_Type($name, $building_time, $deuterium_cost, $energy_cost, $metal_cost, $deuterium_production, $energy_production, $metal_production, $attack, $defense){
+            $sql = "INSERT into infrastructure_types(name, building_time, deuterium_cost, energy_cost, metal_cost, deuterium_production, energy_production, metal_production, attack, defense) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $query = $this->connect()->prepare($sql);
-            $query->execute([$name, $deuterium_number, $metal_number, $building_time, $attack, $defense]);
+            $query->execute([$name, $building_time, $deuterium_cost, $energy_cost, $metal_cost, $deuterium_production, $energy_production, $metal_production, $attack, $defense]);
         }
 }

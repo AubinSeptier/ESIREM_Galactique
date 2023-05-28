@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../classes/fleet.php");
 include_once("../classes/ship.php");
 include_once("../classes/ship_type.php");
