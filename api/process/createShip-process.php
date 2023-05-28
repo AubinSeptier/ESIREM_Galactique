@@ -56,3 +56,6 @@ else if(isset($_POST["settler"]) && isset($_POST["id_fleet"])){
 
     $settler->setShip("Colon #".$shipNumber, $attack, $defense, $id_fleet, $id_ship_type, "settler");
 }
+else{
+    echo "Erreur lors de la création du vaisseau";
+}

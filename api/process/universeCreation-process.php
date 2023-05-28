@@ -42,4 +42,7 @@ if(isset($_POST["universeName"])){
         }
     }
 }
+else {
+    echo "Erreur lors de la création de l'univers";
+}
 

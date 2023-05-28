@@ -38,4 +38,10 @@ class Planet extends Database {
             $result = $query->fetchAll();
             return $result;
         }
+
+        public function setPlanetName($name, $id_planet){
+            $sql = "UPDATE planets SET name = ? WHERE id = ?";
+            $query = $this->connect()->prepare($sql);
+            $query->execute([$name, $id_planet]);
+        }
 }

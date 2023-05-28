@@ -26,3 +26,6 @@ if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["e
 
     $empirePlanet = $planet->setPlanetOwner($empire->getEmpire($empireName)[0]["id"], $randomPlanet);
 }
+else {
+    echo "Erreur lors de la création de l'empire";
+}
