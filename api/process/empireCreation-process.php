@@ -15,6 +15,7 @@ if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["e
     $empireUniverseId = $_SESSION["universeId"];
 
     $empire->setEmpire($empireName, $empireRace, $empireAdjective, $empireDeuterium, 0, $empireMetal, $empireUserId, $empireUniverseId);
+    $_SESSION["empireId"] = $empire->getEmpire($empireName)[0]["id"];
 
     $galaxy = new Galaxy();
     $randomGalaxy = $galaxy->getRandomGalaxy($empireUniverseId)[0]["id"];

@@ -1,7 +1,7 @@
 <?php
 include_once("database.php");
 
-class Rersource extends Database {
+class Resource extends Database {
             
     public function getResource($id_planet){
         $sql = "SELECT * FROM resources WHERE id_planet = ?";
