@@ -20,6 +20,8 @@ $energyStock = $empire->getEmpire($_SESSION["empireId"])[0]["energy_stock"];
 $energyStockUsed = $empire->getEmpire($_SESSION["empireId"])[0]["energy_stock_used"];
 $metalStock = $empire->getEmpire($_SESSION["empireId"])[0]["metal_stock"];
 
+// To complete with planet size verification
+
 if(isset($_POST["research_lab"]) && isset($_POST["id_planet"])){
     $id_planet = $_POST["id_planet"];
     $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("research_lab")[0]["id"];
@@ -292,6 +294,8 @@ if(isset($_POST["shield"]) && isset($_POST["id_planet"])){
     $metalProduction = $infrastructure_type->getInfrastructure_Type("shield")[0]["metal_production"];
     $attack = $infrastructure_type->getInfrastructure_Type("shield")[0]["attack"];
     $defense = $infrastructure_type->getInfrastructure_Type("shield")[0]["defense"];
+
+    // To Complete with Shield Research level verification
 
     if(($deuteriumCost > $deuteriumStock) || ($energyCost + $energyStockUsed > $energyStock) || ($metalCost > $metalStock)){
         echo "Vous n'avez pas assez de ressources";
