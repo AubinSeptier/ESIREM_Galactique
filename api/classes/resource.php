@@ -16,4 +16,10 @@ class Rersource extends Database {
         $query = $this->connect()->prepare($sql);
         $query->execute([$deuterium, $energy, $metal, $id_planet]);
     }
+
+    public function updateResource($deuterium, $energy, $metal, $id_planet){
+        $sql = "UPDATE resources SET deuterium = ?, energy = ?, metal = ? WHERE id_planet = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$deuterium, $energy, $metal, $id_planet]);
+    }
 }

@@ -17,6 +17,12 @@ class Ship extends Database {
         $query->execute([$name, $attack, $defense, $id_fleet, $id_ship_type]);
     }
 
+    public function updateShip($name, $attack, $defense, $id_fleet, $id_ship_type){
+        $sql = "UPDATE ships SET name = ?, attack = ?, defense = ?, id_fleet = ?, id_ship_type = ? WHERE id = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$name, $attack, $defense, $id_fleet, $id_ship_type]);
+    }
+
     public function getShipCountByType($shipType){
         $sql = "SELECT COUNT(*) as count FROM ships WHERE id_ship_type = ?";
         $query = $this->connect()->prepare($sql);

@@ -16,4 +16,10 @@ class Fleet extends Database {
             $query = $this->connect()->prepare($sql);
             $query->execute([$name, $ships_number, $attack, $defense, $id_empire, $id_planet]);
         }
+
+        public function updateFleet($name, $ships_number, $attack, $defense, $id_empire, $id_planet){
+            $sql = "UPDATE fleets SET name = ?, ships_number = ?, attack = ?, defense = ?, id_empire = ?, id_planet = ? WHERE id = ?";
+            $query = $this->connect()->prepare($sql);
+            $query->execute([$name, $ships_number, $attack, $defense, $id_empire, $id_planet]);
+        }
 }
