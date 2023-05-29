@@ -11,7 +11,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     if($userData && password_verify($password, $userData[0]["password"])){
         $_SESSION["username"] = $username;
         $_SESSION["id"] = $userData[0]["id"];
-        header("Location:http://localhost/ESIREM_Galactique/front/player.php");
+        header("Location: ../../front/player.php");
     } 
     else {
         echo "Nom d\'utilisateur ou mot de passe incorrect";

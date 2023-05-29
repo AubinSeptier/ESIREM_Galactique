@@ -74,6 +74,7 @@ if(isset($_POST["universeName"])){
             }
         }
     }
+    header("Location: ../../front/createEmpire.php");
 }
 else {
     echo "Erreur lors de la création de l'univers";

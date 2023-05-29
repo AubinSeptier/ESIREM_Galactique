@@ -30,6 +30,8 @@ if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["e
 
 
         $empirePlanet = $planet->setPlanetOwner($empire->getEmpire($empireName)[0]["id"], $randomPlanet);
+        header("Location: ../../front/index.php");
+        exit();
     }
 }
 else {
