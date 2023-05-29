@@ -37,7 +37,39 @@ if(isset($_POST["universeName"])){
             shuffle($positions);
             for($k = 0; $k<$planets_number; $k++){
                 $position = array_shift($positions);
-                $planet->setPlanet($solarSystemNames[$j]." ".$position, $position, $solarSystem->getSolar_System($solarSystemNames[$j])[0]["id"], null);
+                switch($position){
+                    case 1:
+                        $size = 90;
+                        break;
+                    case 2:
+                        $size = 100;
+                        break;
+                    case 3:
+                        $size = 110;
+                        break;
+                    case 4:
+                        $size = 120;
+                        break;
+                    case 5:
+                        $size = 130;
+                        break;
+                    case 6:
+                        $size = 130;
+                        break;
+                    case 7:
+                        $size = 120;
+                        break;
+                    case 8:
+                        $size = 110;
+                        break;
+                    case 9:
+                        $size = 100;
+                        break;
+                    case 10:
+                        $size = 90;
+                        break;
+                }
+                $planet->setPlanet($solarSystemNames[$j]." ".$position, $position, $size, $solarSystem->getSolar_System($solarSystemNames[$j])[0]["id"], null);
             }
         }
     }

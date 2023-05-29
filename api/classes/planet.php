@@ -11,10 +11,10 @@ class Planet extends Database {
             return $result;
         }
     
-        public function setPlanet($name, $position, $id_solar_system, $id_empire){
-            $sql = "INSERT into planets(name, position, id_solar_system, id_empire) VALUES (?, ?, ?, ?)";
+        public function setPlanet($name, $position, $size, $id_solar_system, $id_empire){
+            $sql = "INSERT into planets(name, position, size, id_solar_system, id_empire) VALUES (?, ?, ?, ?, ?)";
             $query = $this->connect()->prepare($sql);
-            $query->execute([$name, $position, $id_solar_system, $id_empire]);
+            $query->execute([$name, $position, $size, $id_solar_system, $id_empire]);
         }
 
         public function setPlanetOwner($id_empire, $id_planet){
@@ -43,5 +43,13 @@ class Planet extends Database {
             $sql = "UPDATE planets SET name = ? WHERE id = ?";
             $query = $this->connect()->prepare($sql);
             $query->execute([$name, $id_planet]);
+        }
+
+        public function getPlanetSize($id_planet){
+            $sql = "SELECT size FROM planets WHERE id = ?";
+            $query = $this->connect()->prepare($sql);
+            $query->execute([$id_planet]);
+            $result = $query->fetchAll();
+            return $result;
         }
 }

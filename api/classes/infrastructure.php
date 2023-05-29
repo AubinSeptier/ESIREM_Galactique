@@ -46,4 +46,12 @@ class Infrastructure extends Database {
             $result = $query->fetchColumn();
             return $result;
         }
+
+        public function getTotalInfrastructureLevels($id_planet){
+            $sql = "SELECT SUM(level) as totalInfrastructureLevels FROM infrastructures WHERE id_planet = ? AND defense > 0";
+            $query = $this->connect()->prepare($sql);
+            $query->execute([$id_planet]);
+            $result = $query->fetchColumn();
+            return $result;
+        }
 }
