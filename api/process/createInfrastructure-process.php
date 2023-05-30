@@ -16,10 +16,10 @@ $planet = new Planet();
 $ship = new Ship();
 $ship_type = new Ship_Type();
 
-$deuteriumStock = $empire->getEmpire($_SESSION["empireId"])[0]["deuterium_stock"];
-$energyStock = $empire->getEmpire($_SESSION["empireId"])[0]["energy_stock"];
-$energyStockUsed = $empire->getEmpire($_SESSION["empireId"])[0]["energy_stock_used"];
-$metalStock = $empire->getEmpire($_SESSION["empireId"])[0]["metal_stock"];
+$deuteriumStock = $empire->getEmpireById($_SESSION["empireId"])[0]["deuterium_stock"];
+$energyStock = $empire->getEmpireById($_SESSION["empireId"])[0]["energy_stock"];
+$energyStockUsed = $empire->getEmpireById($_SESSION["empireId"])[0]["energy_stock_used"];
+$metalStock = $empire->getEmpireById($_SESSION["empireId"])[0]["metal_stock"];
 
 if(isset($_POST["research_lab"]) && isset($_POST["id_planet"])){
     $id_planet = $_POST["id_planet"];

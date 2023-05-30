@@ -14,12 +14,12 @@ if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["e
     $empireUserId = $_SESSION["id"];
     $empireUniverseId = $_SESSION["universeId"];
 
-    if($empire->getEmpire($empireName)){
+    if($empire->getEmpireByName($empireName)){
         echo "Ce nom d\'empire existe déjà";
     }
     else{
         $empire->setEmpire($empireName, $empireRace, $empireAdjective, $empireDeuterium, 0, $empireMetal, $empireUserId, $empireUniverseId);
-        $_SESSION["empireId"] = $empire->getEmpire($empireName)[0]["id"];
+        $_SESSION["empireId"] = $empire->getEmpireByName($empireName)[0]["id"];
 
         $galaxy = new Galaxy();
         $randomGalaxy = $galaxy->getRandomGalaxy($empireUniverseId)[0]["id"];
@@ -29,7 +29,7 @@ if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["e
         $randomPlanet = $planet->getRandomPlanet($randomSolarSystem)[0]["id"];
 
 
-        $empirePlanet = $planet->setPlanetOwner($empire->getEmpire($empireName)[0]["id"], $randomPlanet);
+        $empirePlanet = $planet->setPlanetOwner($empire->getEmpireByName($empireName)[0]["id"], $randomPlanet);
         header("Location: ../../front/index.php");
         exit();
     }

@@ -4,10 +4,19 @@ include_once("database.php");
 class Empire extends Database {
     
     // Récupérer un empire par son id
-    public function getEmpire($id){
+    public function getEmpireById($id){
         $sql = "SELECT * FROM empires WHERE id = ?";
         $query = $this->connect()->prepare($sql);
         $query->execute([$id]);
+        $result = $query->fetchAll();
+        return $result;
+    }
+
+    // Récupérer un empire par son nom
+    public function getEmpireByName($name){
+        $sql = "SELECT * FROM empires WHERE name = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$name]);
         $result = $query->fetchAll();
         return $result;
     }

@@ -10,7 +10,7 @@ if(isset($_POST["universe"]) && isset($_POST["empire"])){
     $empire = new Empire();
 
     $universeData = $universe->getUniverse($universeName);
-    $empireData = $empire->getEmpire($empireName);
+    $empireData = $empire->getEmpireByName($empireName);
 
     if(!$universeData){
         echo "Cet univers n'existe pas";
