@@ -6,7 +6,7 @@ if(isset($_POST["planetName"]) && isset($_POST["planetId"])){
     $planetName = $_POST["planetName"];
     $planetId = $_POST["planetId"];
 
-    $planet->setPlanetName($planetName, $planetId);
+    $planet->updatePlanetName($planetName, $planetId);
 }
 else {
     echo "Erreur lors du renommage de la planète";

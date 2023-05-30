@@ -20,7 +20,7 @@ class Planet extends Database {
     }
 
     // Modifier le propriétaire d'une planète
-    public function setPlanetOwner($id_empire, $id_planet){
+    public function updatePlanetOwner($id_empire, $id_planet){
         $sql = "UPDATE planets SET id_empire = ? WHERE id = ?";
         $query = $this->connect()->prepare($sql);
         $query->execute([$id_empire, $id_planet]);
@@ -45,7 +45,7 @@ class Planet extends Database {
     }
 
     // Modifier le nom d'une planète à partir de son id
-    public function setPlanetName($name, $id_planet){
+    public function updatePlanetName($name, $id_planet){
         $sql = "UPDATE planets SET name = ? WHERE id = ?";
         $query = $this->connect()->prepare($sql);
         $query->execute([$name, $id_planet]);

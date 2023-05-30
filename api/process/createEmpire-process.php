@@ -29,7 +29,7 @@ if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["e
         $randomPlanet = $planet->getRandomPlanet($randomSolarSystem)[0]["id"];
 
 
-        $empirePlanet = $planet->setPlanetOwner($empire->getEmpireByName($empireName)[0]["id"], $randomPlanet);
+        $empirePlanet = $planet->updatePlanetOwner($empire->getEmpireByName($empireName)[0]["id"], $randomPlanet);
         header("Location: ../../front/index.php");
         exit();
     }

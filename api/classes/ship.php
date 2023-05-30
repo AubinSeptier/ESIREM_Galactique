@@ -20,10 +20,10 @@ class Ship extends Database {
     }
 
     // Modifier les caractéristiques d'un vaisseau
-    public function updateShip($name, $attack, $defense, $id_ship_type){
+    public function updateShip($attack, $defense, $id_ship_type){
         $sql = "UPDATE ships SET attack = ?, defense = ? WHERE id_ship_type = ? ";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$name, $attack, $defense, $id_fleet, $id_ship_type]);
+        $query->execute([$attack, $defense, $id_ship_type]);
     }
 
     // Compter le nombre de vaisseaux par type
