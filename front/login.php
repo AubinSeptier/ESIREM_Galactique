@@ -26,9 +26,10 @@
                 <span></span>
                 <span></span>
                 Se connecter
-            </a>
+</button>
         </form>
-    </div>
+        <a href="./register.php" class="create-account-link">Vous n'avez pas de compte ? Créer un compte</a>
+    </div>        
 
 </body>
 </html>
