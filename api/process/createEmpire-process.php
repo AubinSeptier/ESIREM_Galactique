@@ -6,7 +6,7 @@ include_once("../classes/user.php");
 // Processus de création d'un empire
 
 if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["empireAdjective"])){
-    // Initialisation et récupérations des données utiles
+    // Initialisation et récupération des données utiles
     $empire = new Empire();
     $empireName = $_POST["empireName"];
     $empireRace = $_POST["empireRace"];
