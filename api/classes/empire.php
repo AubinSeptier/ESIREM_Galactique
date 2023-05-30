@@ -91,4 +91,12 @@ class Empire extends Database {
         $query = $this->connect()->prepare($sql);
         $query->execute([$metal_stock, $id]);
     }
+
+    public function getEmpireForeignKeys($id_universe, $id_user){
+        $sql = "SELECT id FROM empires WHERE id_universe = ? AND id_user = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id_universe, $id_user]);
+        $result = $query->fetchAll();
+        return $result;
+    }
 }

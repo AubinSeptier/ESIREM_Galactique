@@ -4,7 +4,7 @@ include_once("database.php");
 class Universe extends Database {
     
     // Récupérer un univers par son nom
-    public function getUniverse($name){
+    public function getUniverseByName($name){
         $sql = "SELECT * FROM universes WHERE name = ?";
         $query = $this->connect()->prepare($sql);
         $query->execute([$name]);

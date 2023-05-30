@@ -9,7 +9,7 @@ if(isset($_POST["universe"]) && isset($_POST["empire"])){
     $universe = new Universe();
     $empire = new Empire();
 
-    $universeData = $universe->getUniverse($universeName);
+    $universeData = $universe->getUniverseByName($universeName);
     $empireData = $empire->getEmpireByName($empireName);
 
     if(!$universeData){

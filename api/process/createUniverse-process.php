@@ -8,7 +8,7 @@ include_once("../classes/planet.php");
 if(isset($_POST["universeName"])){
     $universeName = $_POST["universeName"];
     $universe = new Universe();
-    $universeData = $universe->getUniverse($universeName);
+    $universeData = $universe->getUniverseByName($universeName);
         
     if($universeData){
         echo "Ce nom d\'univers existe déjà";
@@ -16,7 +16,7 @@ if(isset($_POST["universeName"])){
     }
     
     $universe->setUniverse($universeName);
-    $universeData = $universe->getUniverse($universeName);
+    $universeData = $universe->getUniverseByName($universeName);
     $_SESSION["universeId"] = $universeData[0]["id"];
 
     $galaxyNames = ["Andromeda", "Triangulum", "Sombrero", "Tourbillon", "Cigar", "Eagle", "Antennae", "Sunflower", "Black Eye", "Cartwheel", "Medusa", "Fireworks", "Bode", "Magellan", "Sculptor", "Leo", "Fornax", "Draco", "Pegasus", "Orion", "Centaurus", "Phoenix", "Hercules", "Ursa Major", "Ursa Minor", "Lyra", "Perseus", "Hydra", "Aquarius", "Gemini", "Sagittarius", "Taurus", "Cassiopeia", "Crater", "Carina", "Columbia", "Dorado", "Octans", "Pisces", "Corona Borealis", "Virgo", "Libra", "Meunier"];
@@ -30,7 +30,7 @@ if(isset($_POST["universeName"])){
     $planet = new Planet();
 
     for($i = 0; $i<5; $i++){
-        $galaxy->setGalaxy($galaxyNames[$i], $universe->getUniverse($universeName)[0]["id"]);
+        $galaxy->setGalaxy($galaxyNames[$i], $universe->getUniverseByName($universeName)[0]["id"]);
         for($j = 0; $j<10; $j++){
             $planets_number = rand(4, 10);
             $solarSystem->setSolar_System($solarSystemNames[$j], $planets_number, $galaxy->getGalaxy($finalGalaxyNames[$i])[0]["id"]);
