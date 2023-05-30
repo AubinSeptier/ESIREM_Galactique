@@ -12,7 +12,6 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 	<title>ESI Galactique</title>
 	
     <link rel="stylesheet" href=".\css\style.css">
-	<script src="./logout.js"></script>
 
 </head>
 <body>
@@ -77,5 +76,6 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
         <footer>
             <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
         </footer>
+		<script src="./js/logout.js"></script>
     </body>
     </html>
