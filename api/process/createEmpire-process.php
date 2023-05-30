@@ -3,8 +3,10 @@ session_start();
 include_once("../classes/empire.php");
 include_once("../classes/planet.php");
 include_once("../classes/user.php");
+// Processus de création d'un empire
 
 if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["empireAdjective"])){
+    // Initialisation et récupérations des données utiles
     $empire = new Empire();
     $empireName = $_POST["empireName"];
     $empireRace = $_POST["empireRace"];
@@ -14,10 +16,12 @@ if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["e
     $empireUserId = $_SESSION["id"];
     $empireUniverseId = $_SESSION["universeId"];
 
+    // Vérification de l'existence de l'empire
     if($empire->getEmpireByName($empireName)){
         echo "Ce nom d\'empire existe déjà";
     }
     else{
+        // Création de l'empire
         $empire->setEmpire($empireName, $empireRace, $empireAdjective, $empireDeuterium, 0, $empireMetal, $empireUserId, $empireUniverseId);
         $_SESSION["empireId"] = $empire->getEmpireByName($empireName)[0]["id"];
 

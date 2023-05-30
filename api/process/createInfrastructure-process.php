@@ -7,7 +7,10 @@ include_once("../classes/resource.php");
 include_once("../classes/empires.php");
 include_once("../classes/ship.php");
 include_once("../classes/ship_type.php");
+// Processus de création d'une infrastructure
 
+
+// Création d'objet pour manipuler les différentes données et les relier à la base de données
 $infrastructure = new Infrastructure();
 $resource = new Resource();
 $infrastructure_type = new Infrastructure_Type();
@@ -16,17 +19,20 @@ $planet = new Planet();
 $ship = new Ship();
 $ship_type = new Ship_Type();
 
+// Répupération des données utiles
 $deuteriumStock = $empire->getEmpireById($_SESSION["empireId"])[0]["deuterium_stock"];
 $energyStock = $empire->getEmpireById($_SESSION["empireId"])[0]["energy_stock"];
 $energyStockUsed = $empire->getEmpireById($_SESSION["empireId"])[0]["energy_stock_used"];
 $metalStock = $empire->getEmpireById($_SESSION["empireId"])[0]["metal_stock"];
 
 if(isset($_POST["research_lab"]) && isset($_POST["id_planet"])){
+    // Initialisation et récupérations des données utiles (2)
     $id_planet = $_POST["id_planet"];
     $planetSize = $planet->getPlanetSize($id_planet)[0]["size"];
     $totalInfrastructureLevels = $infrastructure->getTotalInfrastructureLevels($id_planet) + 1;
 
     if($planetSize > $totalInfrastructureLevels){
+        // Récupération des données de l'infrastructure si place disponible
         $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("research_lab")[0]["id"];
 
         $buildingTime = $infrastructure_type->getInfrastructure_Type("research_lab")[0]["building_time"];
@@ -43,6 +49,7 @@ if(isset($_POST["research_lab"]) && isset($_POST["id_planet"])){
             echo "Vous n'avez pas assez de ressources";
         }
         else{
+            // Création de l'infrastructure
             // To complete with research bonus
             $upgradeTime = $buildingTime * 2;
             $deuteriumCost = $deuteriumCost * 1.6;
