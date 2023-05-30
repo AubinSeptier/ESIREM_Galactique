@@ -6,13 +6,12 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     $username = $_POST["username"];
     $password = $_POST["password"];
     $user = new User();
-    $result = $user->getUser($username);
+    $userData = $user->getUser($username);
     
-    if($result && password_verify($password, $result[0]["password"])){
+    if($userData && password_verify($password, $userData[0]["password"])){
         $_SESSION["username"] = $username;
-        $_SESSION["email"] = $result[0]["email"];
-        $_SESSION["id"] = $result[0]["id"];
-        header("Location:http://localhost/ESIREM_Galactique/front/player.php");
+        $_SESSION["id"] = $userData[0]["id"];
+        header("Location: ../../front/player.php");
     } 
     else {
         echo "Nom d\'utilisateur ou mot de passe incorrect";

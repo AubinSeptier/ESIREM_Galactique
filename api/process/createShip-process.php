@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../classes/fleet.php");
 include_once("../classes/ship.php");
 include_once("../classes/ship_type.php");
@@ -16,7 +17,6 @@ if(isset($_POST["fighter"]) && isset($_POST["id_fleet"])){
     $defense = $fighter->getShipType("fighter")[0]["defense"];
 
     $fighter->setShip("Chasseur #".$shipNumber, $attack, $defense, $id_fleet, "fighter");
-
 }
 else if(isset($_POST["cruiser"]) && isset($_POST["id_fleet"])){
     $cruiser = new Ship();
@@ -56,4 +56,7 @@ else if(isset($_POST["settler"]) && isset($_POST["id_fleet"])){
     $defense = $settler->getShipType("settler")[0]["defense"];
 
     $settler->setShip("Colon #".$shipNumber, $attack, $defense, $id_fleet, $id_ship_type, "settler");
+}
+else{
+    echo "Erreur lors de la création du vaisseau";
 }
