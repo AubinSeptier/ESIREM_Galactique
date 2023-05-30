@@ -26,7 +26,7 @@
             </div>
             <div class="user-box">
                 <input type="password" name="password-repeat" required="">
-                <label>Mot de passe</label>
+                <label>Saisissez à nouveau votre mot de passe</label>
             </div>
             <button href="#">
                 <span></span>
@@ -34,7 +34,9 @@
                 <span></span>
                 <span></span>
                 Se connecter
-            </a>
+                </button>
+            <a href="./login.php" class="create-account-link">J'ai déjà un compte</a>
+
         </form>
     </div>
 

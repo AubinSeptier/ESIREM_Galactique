@@ -10,11 +10,15 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 <html>
 <head>
 	<title>ESI Galactique</title>
-    <link rel="stylesheet" href="./css/style.css">
+	
+    <link rel="stylesheet" href=".\css\style.css">
+	<script src="./logout.js"></script>
+
 </head>
 <body>
 	<header>
 		<h1>ESI Galactique</h1>
+		<a class="logout-button" href="./logout.php">Déconnexion</a>
 	</header>
 	<nav>
 		<ul>
@@ -39,12 +43,12 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 			<p>Planète principale : XYZ
             <p>Température : 25°C</p>
             <p>Productions : Métal 10/h - Cristal 5/h - Deutérium 2/h</p>
-            <p><a class="lien" href="./Galaxie.html">Voir les galaxies</a></p>
+            <p><a class="lien" href="./Galaxie.php">Voir les galaxies</a></p>
         </div>
             <div>
                 <h2>Flotte</h2>
                 <p>Vous possédez 10 Chasseurs légers, 5 Croiseurs, 2 Bombardiers et 1 Vaisseau de colonisation.</p>
-                <p><a class="lien" href="./flotte.html">Voir la flotte</a></p>
+                <p><a class="lien" href="./flotte.php">Voir la flotte</a></p>
             </div>
             <div>
                 <h2>Infrastructures</h2>
@@ -59,7 +63,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 				<p>Planète principale : XYZ
 				<p>Température : 25°C</p>
 				<p>Productions : Métal 10/h - Cristal 5/h - Deutérium 2/h</p>
-				<p><a class="lien" href="./Galaxie.html">Voir les galaxies</a></p>
+				<p><a class="lien" href="./Galaxie.php">Voir les galaxies</a></p>
 			</div>
 			<div>
 				<h2>Chantier Spatial</h2>
@@ -67,7 +71,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 				<p>Planète principale : XYZ
 				<p>Température : 25°C</p>
 				<p>Productions : Métal 10/h - Cristal 5/h - Deutérium 2/h</p>
-				<p><a class="lien" href="./Galaxie.html">Voir les galaxies</a></p>
+				<p><a class="lien" href="./Galaxie.php">Voir les galaxies</a></p>
 			</div>
         </section>
         <footer>
