@@ -15,8 +15,9 @@ if(isset($_POST["fighter"]) && isset($_POST["id_fleet"])){
     $building_time = $fighter->getShipType("fighter")[0]["building_time"];
     $attack = $fighter->getShipType("fighter")[0]["attack"];
     $defense = $fighter->getShipType("fighter")[0]["defense"];
+    $capacity = $fighter->getShipType("fighter")[0]["capacity"];
 
-    $fighter->setShip("Chasseur #".$shipNumber, $attack, $defense, $id_fleet, "fighter");
+    $fighter->setShip("Chasseur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, "fighter");
 }
 else if(isset($_POST["cruiser"]) && isset($_POST["id_fleet"])){
     $cruiser = new Ship();
@@ -28,8 +29,9 @@ else if(isset($_POST["cruiser"]) && isset($_POST["id_fleet"])){
     $building_time = $cruiser->getShipType("cruiser")[0]["building_time"];
     $attack = $cruiser->getShipType("cruiser")[0]["attack"];
     $defense = $cruiser->getShipType("cruiser")[0]["defense"];
+    $capacity = $cruiser->getShipType("cruiser")[0]["capacity"];
     
-    $cruiser->setShip("Croiseur #".$shipNumber, $attack, $defense, $id_fleet, "cruiser");
+    $cruiser->setShip("Croiseur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, "cruiser");
 }
 else if(isset($_POST["transporter"]) && isset($_POST["id_fleet"])){
     $transporter = new Ship();
@@ -41,8 +43,9 @@ else if(isset($_POST["transporter"]) && isset($_POST["id_fleet"])){
     $building_time = $transporter->getShipType("transporter")[0]["building_time"];
     $attack = $transporter->getShipType("transporter")[0]["attack"];
     $defense = $transporter->getShipType("transporter")[0]["defense"];
+    $capacity = $transporter->getShipType("transporter")[0]["capacity"];
 
-    $transporter->setShip("Transporteur #".$shipNumber, $attack, $defense, $id_fleet, "transporter");
+    $transporter->setShip("Transporteur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, "transporter");
 }
 else if(isset($_POST["settler"]) && isset($_POST["id_fleet"])){
     $settler = new Ship();
@@ -54,8 +57,9 @@ else if(isset($_POST["settler"]) && isset($_POST["id_fleet"])){
     $building_time = $settler->getShipType("settler")[0]["building_time"];
     $attack = $settler->getShipType("settler")[0]["attack"];
     $defense = $settler->getShipType("settler")[0]["defense"];
+    $capacity = $settler->getShipType("settler")[0]["capacity"];
 
-    $settler->setShip("Colon #".$shipNumber, $attack, $defense, $id_fleet, $id_ship_type, "settler");
+    $settler->setShip("Colon #".$shipNumber, $attack, $defense, $capacity, $id_fleet, "settler");
 }
 else{
     echo "Erreur lors de la création du vaisseau";

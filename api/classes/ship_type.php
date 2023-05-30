@@ -13,9 +13,9 @@ class Ship_Type extends Database {
     }
 
     // Modifier les caractéristiques d'un type de vaisseau
-    public function setShip_Type($name, $deuterium_number, $metal_number, $building_time, $attack, $defense){
-        $sql = "INSERT into ship_types(name, deuterium_number, metal_number, building_time, attack, defense) VALUES (?, ?, ?, ?, ?, ?)";
+    public function setShip_Type($name, $deuterium_number, $metal_number, $building_time, $attack, $defense, $capacity){
+        $sql = "INSERT into ship_types(name, deuterium_number, metal_number, building_time, attack, defense, capacity) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$name, $deuterium_number, $metal_number, $building_time, $attack, $defense]);
+        $query->execute([$name, $deuterium_number, $metal_number, $building_time, $attack, $defense, $capacity]);
     }
 }

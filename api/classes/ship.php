@@ -13,10 +13,10 @@ class Ship extends Database {
     }
       
     // Ajouter un nouveau vaisseau et ses caractéristiques
-    public function setShip($name, $attack, $defense, $id_fleet, $id_ship_type){
-        $sql = "INSERT into ships(name, attack, defense, id_fleet, id_ship_type) VALUES (?, ?, ?, ?, ?)";
+    public function setShip($name, $attack, $defense, $capacity, $id_fleet, $id_ship_type){
+        $sql = "INSERT into ships(name, attack, defense, capacity, id_fleet, id_ship_type) VALUES (?, ?, ?, ?, ?, ?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$name, $attack, $defense, $id_fleet, $id_ship_type]);
+        $query->execute([$name, $attack, $defense, $capacity, $id_fleet, $id_ship_type]);
     }
 
     // Modifier les caractéristiques d'un vaisseau
