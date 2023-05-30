@@ -3,6 +3,7 @@ include_once("database.php");
 
 class Ship_Type extends Database {
     
+    // Récupérer un type de vaisseau par son nom
     public function getShip_Type($name){
         $sql = "SELECT * FROM ship_types WHERE name = ?";
         $query = $this->connect()->prepare($sql);
@@ -11,6 +12,7 @@ class Ship_Type extends Database {
         return $result;
     }
 
+    // Modifier les caractéristiques d'un type de vaisseau
     public function setShip_Type($name, $deuterium_number, $metal_number, $building_time, $attack, $defense){
         $sql = "INSERT into ship_types(name, deuterium_number, metal_number, building_time, attack, defense) VALUES (?, ?, ?, ?, ?, ?)";
         $query = $this->connect()->prepare($sql);
