@@ -1,28 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var createButton = document.querySelector('.univers:first-child .button');
-    var inputNomUnivers = document.querySelector('.univers:first-child input[name="nom"]');
+    let createButton = document.querySelector('.univers .button');
+    let inputNomUnivers = document.querySelector('.univers input[name="universeName"]');
 
-    createButton.addEventListener('click', function(event) {
+    createButton.addEventListener('click', async function(event) {
         event.preventDefault();
 
-        var nomUnivers = inputNomUnivers.value;
+        let nomUnivers = inputNomUnivers.value;
 
         if (nomUnivers.trim() !== '') {
-            fetch('../../api/process/createUniverse-process.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: 'nom=' + encodeURIComponent(nomUnivers)
-            })
-            .then(function(response) {
-                // Gérer la réponse de la requête ici
-                console.log(response);
-            })
-            .catch(function(error) {
-                // Gérer les erreurs ici
-                console.error(error);
+            let response = await fetch('http://localhost/ESIREM_Galactique/api/process/createUniverse-process.php' + "?universeName=" + nomUnivers, {
             });
+            let data = await response.json();
+            console.log(data);
+
+            if(data.status === "success"){
+                window.location.href = "http://localhost/ESIREM_Galactique/front/createEmpire.php";
+            }
+            else{
+                alert(data.status);
+            }
         }
     });
 });

@@ -37,10 +37,10 @@ class Planet extends Database {
 
     // Récupérer une planète aléatoire par l'id de son système solaire
     public function getRandomPlanet($id_solar_system){
-            $sql = "SELECT * FROM planets WHERE id_solar_system = ? ORDER BY RAND() LIMIT 1";
+        $sql = "SELECT id FROM planets WHERE id_solar_system = ? ORDER BY RAND() LIMIT 1";
         $query = $this->connect()->prepare($sql);
         $query->execute([$id_solar_system]);
-        $result = $query->fetchAll();
+        $result = $query->fetchColumn();
         return $result;
     }
 

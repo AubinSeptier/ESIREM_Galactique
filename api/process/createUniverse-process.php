@@ -5,13 +5,13 @@ include_once("../classes/galaxy.php");
 include_once("../classes/solar_system.php");
 include_once("../classes/planet.php");
 
-if(isset($_POST["universeName"])){
-    $universeName = $_POST["universeName"];
+if(isset($_GET["universeName"])){
+    $universeName = $_GET["universeName"];
     $universe = new Universe();
     $universeData = $universe->getUniverseByName($universeName);
         
     if($universeData){
-        echo "Ce nom d\'univers existe déjà";
+        echo json_encode(array("status" => "L'univers existe déjà"));
         exit();
     }
     
@@ -33,7 +33,7 @@ if(isset($_POST["universeName"])){
         $galaxy->setGalaxy($galaxyNames[$i], $universe->getUniverseByName($universeName)[0]["id"]);
         for($j = 0; $j<10; $j++){
             $planets_number = rand(4, 10);
-            $solarSystem->setSolar_System($solarSystemNames[$j], $planets_number, $galaxy->getGalaxy($finalGalaxyNames[$i])[0]["id"]);
+            $solarSystem->setSolar_System($solarSystemNames[$j], $planets_number, $galaxy->getGalaxy($galaxyNames[$i])[0]["id"]);
             $positions = range(1, 10);
             shuffle($positions);
             for($k = 0; $k<$planets_number; $k++){
@@ -74,9 +74,9 @@ if(isset($_POST["universeName"])){
             }
         }
     }
-    header("Location: ../../front/createEmpire.php");
+    echo json_encode(array("status" => "success"));
 }
 else {
-    echo "Erreur lors de la création de l'univers";
+    echo json_encode(array("status" => "Erreur lors de la création de l'univers"));
 }
 

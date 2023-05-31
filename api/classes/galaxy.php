@@ -21,10 +21,10 @@ class Galaxy extends Database {
 
     // Récupérer une galaxie aléatoire par l'id de son univers
     public function getRandomGalaxy($id_universe){
-        $sql = "SELECT * FROM galaxies WHERE id_universe = ? ORDER BY RAND() LIMIT 1";
+        $sql = "SELECT id FROM galaxies WHERE id_universe = ? ORDER BY RAND() LIMIT 1";
         $query = $this->connect()->prepare($sql);
         $query->execute([$id_universe]);
-        $result = $query->fetchAll();
+        $result = $query->fetchColumn();
         return $result;
     }
 }

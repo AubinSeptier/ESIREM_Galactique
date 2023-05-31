@@ -14,9 +14,9 @@ class Universe extends Database {
 
     // Modifier les caractéristiques d'un univers
     public function setUniverse($name){
-        $sql = "INSERT into universes(name) VALUES (?, ?)";
+        $sql = "INSERT into universes(name) VALUES (?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id, $name]);
+        $query->execute([$name]);
     }
 
     // Récupérer un univers par son id

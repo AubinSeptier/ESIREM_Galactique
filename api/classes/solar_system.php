@@ -21,10 +21,10 @@ class Solar_System extends Database {
 
     // Récupérer un système solaire aléatoire à partir de l'id de sa galaxie
     public function getRandomSolar_System($id_galaxy){
-        $sql = "SELECT * FROM solar_systems WHERE id_galaxy = ? ORDER BY RAND() LIMIT 1";
+        $sql = "SELECT id FROM solar_systems WHERE id_galaxy = ? ORDER BY RAND() LIMIT 1";
         $query = $this->connect()->prepare($sql);
         $query->execute([$id_galaxy]);
-        $result = $query->fetchAll();
+        $result = $query->fetchColumn();
         return $result;
     }
 }

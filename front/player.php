@@ -30,7 +30,7 @@ if (!isset($_SESSION['username'])) {
         <div class="univers">
             <h3>Créer un nouvel univers</h3>
             <form>
-                <input type="text" name="nom" placeholder="Nom de l'univers" required>
+                <input type="text" name="universeName" placeholder="Nom de l'univers" required>
                 <a href="./" class="button">Créer</a>
             </form>
         </div>
