@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let response = await fetch('http://localhost/ESIREM_Galactique/api/process/createEmpire-process.php' + '?empireName=' + name + '&empireRace=' + race + '&empireAdjective=' + adjective, {
         });
         let data = await response.json();
-            console.log(data);
+            console.log(data.status);
 
             if(data.status === "success"){
                 window.location.href = "http://localhost/ESIREM_Galactique/front/index.php";
