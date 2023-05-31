@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file user.php
+ * @details Ce fichier contient la classe User qui est utilisée pour gérer les utilisateurs.
+ */
 include_once("database.php");
 
 class User extends Database {

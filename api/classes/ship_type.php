@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file ship_type.php
+ * @details Ce fichier contient la classe Ship_Type qui permet de gérer les types de vaisseaux.
+ */
 include_once("database.php");
 
 class Ship_Type extends Database {

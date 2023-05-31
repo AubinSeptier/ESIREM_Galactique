@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file resource.php
+ * @details Ce fichier contient la classe Resource qui permet de gérer les ressources.
+ */
 include_once("database.php");
 
 class Resource extends Database {

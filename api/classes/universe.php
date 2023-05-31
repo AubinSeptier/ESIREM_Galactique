@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file universe.php
+ * @details Ce fichier contient la classe Universe qui permet de gérer les univers.
+ */
 include_once("database.php");
 
 class Universe extends Database {

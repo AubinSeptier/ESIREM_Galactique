@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file research.php
+ * @details Ce fichier contient la classe Research qui est utilisée pour gérer les recherches.
+ */
 include_once 'database.php';
 
 // To complete

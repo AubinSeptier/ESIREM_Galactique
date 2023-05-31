@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file galaxy.php
+ * @details Ce fichier contient la classe Galaxy qui est utilisée pour gérer les galaxies.
+ */
 include_once("database.php");
 
 class Galaxy extends Database {

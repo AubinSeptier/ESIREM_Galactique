@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file solar_system.php
+ * @details Ce fichier contient la classe Solar_System qui est utilisée pour gérer les systèmes solaires.
+ */
 include_once("database.php");
 
 class Solar_System extends Database {

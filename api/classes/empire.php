@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file empire.php
+ * @details Ce fichier contient la classe Empire qui est utilisée pour gérer les empires.
+ */
 include_once("database.php");
 
 class Empire extends Database {

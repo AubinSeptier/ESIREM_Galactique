@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file infrastructure.php
+ * @details Ce fichier contient la classe Infrastructure qui est utilisée pour gérer les infrastructures.
+ */
 include_once("database.php");
 
 class Infrastructure extends Database {

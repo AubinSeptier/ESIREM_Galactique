@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file planet.php
+ * @details Ce fichier contient la classe Planet qui est utilisée pour gérer les planètes.
+ */
 include_once("database.php");
 
 class Planet extends Database {
