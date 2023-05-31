@@ -5,6 +5,10 @@
  */
 include_once("database.php");
 
+/**
+ * @class Infrastructure
+ * @brief Classe permettant de gérer les infrastructures.
+ */
 class Infrastructure extends Database {
         
     // Récupérer une infrastructure par son nom

@@ -5,9 +5,18 @@
  */
 include_once("database.php");
 
+/**
+ * @class Galaxy
+ * @brief Classe permettant de gérer les galaxies.
+ */
 class Galaxy extends Database {
         
-    // Récupérer une galaxie par son nom
+    /**
+    * @fn getGalaxy($name)
+    * @brief Obtenir des informations sur une galaxie à partir de son nom.
+    * @param $name Le nom de la galaxie à récupérer.
+    * @return $result Un tableau de données sur la galaxie ou false si aucune donnée n'a été trouvée.
+    */
     public function getGalaxy($name){
         $sql = "SELECT * FROM galaxies WHERE name = ?";
         $query = $this->connect()->prepare($sql);
@@ -16,14 +25,24 @@ class Galaxy extends Database {
         return $result;
     }
     
-    // Ajouter une galaxie et ses caractéristiques
+    /**
+    * @fn setGalaxy($name, $id_universe)
+    * @brief Ajouter une galaxie à la base de données.
+    * @param $name Le nom de la galaxie.
+    * @param $id_universe L'identifiant de l'univers auquel la galaxie appartient.
+    */
     public function setGalaxy($name, $id_universe){
         $sql = "INSERT into galaxies(name, id_universe) VALUES (?, ?)";
         $query = $this->connect()->prepare($sql);
         $query->execute([$name, $id_universe]);
     }
 
-    // Récupérer une galaxie aléatoire par l'id de son univers
+    /**
+    * @fn getRandomGalaxy($id_universe)
+    * @brief Obtenir une galaxie aléatoire pour un univers donné. 
+    * @param $id_universe L'identifiant de l'univers.
+    * @return $result L'identifiant de la galaxie aléatoire ou false si aucune galaxie n'a été trouvée.
+    */
     public function getRandomGalaxy($id_universe){
         $sql = "SELECT id FROM galaxies WHERE id_universe = ? ORDER BY RAND() LIMIT 1";
         $query = $this->connect()->prepare($sql);

@@ -74,23 +74,28 @@ $(function() {
   <div class="headertitle"><div class="title">Référence de la classe Universe</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe permettant de gérer les univers.  
+ <a href="class_universe.html#details">Plus de détails...</a></p>
 <div class="dynheader">
 Graphe d'héritage de Universe:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_universe.png" usemap="#Universe_map" alt=""/>
   <map id="Universe_map" name="Universe_map">
-<area href="class_database.html" alt="Database" shape="rect" coords="0,0,65,24"/>
+<area href="class_database.html" title="Classe permettant de gérer l&#39;accès et la connexion à la base de données." alt="Database" shape="rect" coords="0,0,65,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ad4457d093cc6800148780875cc9b6d4f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_universe.html#ad4457d093cc6800148780875cc9b6d4f">getUniverseByName</a> ($name)</td></tr>
+<tr class="memdesc:ad4457d093cc6800148780875cc9b6d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir l'univers par le nom donné.  <br /></td></tr>
 <tr class="separator:ad4457d093cc6800148780875cc9b6d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2aa22afb64c26a026cf381587f40f35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_universe.html#ac2aa22afb64c26a026cf381587f40f35">setUniverse</a> ($name)</td></tr>
 <tr class="separator:ac2aa22afb64c26a026cf381587f40f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7352e96c5f7df17d6b8c4aad870993f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_universe.html#a7352e96c5f7df17d6b8c4aad870993f1">getUniverseById</a> ($id)</td></tr>
+<tr class="memdesc:a7352e96c5f7df17d6b8c4aad870993f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir l'univers par son identifiant.  <br /></td></tr>
 <tr class="separator:a7352e96c5f7df17d6b8c4aad870993f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_database"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_database')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_database.html">Database</a></td></tr>
 <tr class="memitem:a50f33583458a5bc097add8fa91674845 inherit pub_methods_class_database"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_database.html#a50f33583458a5bc097add8fa91674845">disconnect</a> ()</td></tr>
@@ -104,7 +109,9 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memdesc:a7ce76d78528a1d1ff626433e9ff2a410 inherit pro_methods_class_database"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se connecte à la base de données.  <br /></td></tr>
 <tr class="separator:a7ce76d78528a1d1ff626433e9ff2a410 inherit pro_methods_class_database"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Classe permettant de gérer les univers. </p>
+</div><h2 class="groupheader">Documentation des fonctions membres</h2>
 <a id="a7352e96c5f7df17d6b8c4aad870993f1" name="a7352e96c5f7df17d6b8c4aad870993f1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7352e96c5f7df17d6b8c4aad870993f1">&#9670;&#160;</a></span>getUniverseById()</h2>
 
@@ -120,6 +127,14 @@ Membres hérités additionnels</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Obtenir l'univers par son identifiant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$id</td><td>L'identifiant de l'univers à récupérer. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -138,6 +153,15 @@ Membres hérités additionnels</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Obtenir l'univers par le nom donné. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$name</td><td>Le nom de l'univers à récupérer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>$result Un tableau d'objets univers ou false s'il n'y a pas d'univers avec le nom donné. </dd></dl>
 
 </div>
 </div>

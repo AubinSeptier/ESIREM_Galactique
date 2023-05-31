@@ -5,6 +5,10 @@
  */
 include_once("database.php");
 
+/**
+ * @class Empire
+ * @brief Classe permettant de gérer les empires.
+ */
 class Empire extends Database {
     
     

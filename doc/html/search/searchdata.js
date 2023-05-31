@@ -1,10 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "$cdefgijlprsu",
+  0: "$cdefgijlmprsu",
   1: "defgiprsu",
-  2: "cdefgijlprsu",
+  2: "cdefgijlmprsu",
   3: "cdgsu",
-  4: "$e"
+  4: "$e",
+  5: "d"
 };
 
 var indexSectionNames =
@@ -13,7 +14,8 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "variables"
+  4: "variables",
+  5: "pages"
 };
 
 var indexSectionLabels =
@@ -22,6 +24,7 @@ var indexSectionLabels =
   1: "Structures de données",
   2: "Fichiers",
   3: "Fonctions",
-  4: "Variables"
+  4: "Variables",
+  5: "Pages"
 };
 

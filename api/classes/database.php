@@ -4,6 +4,10 @@
  * @details Ce fichier contient la classe Database qui est utilisée pour se connecter à la base de données.
  */
 
+/**
+ * @class Database
+ * @brief Classe permettant de gérer l'accès et la connexion à la base de données.
+ */
 class Database {
     private $dbHost = "localhost";
     private $dbName = "esirem_galactique";

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['universe_2ephp_0',['universe.php',['../universe_8php.html',1,'']]],
-  ['upgradeinfrastructure_2dprocess_2ephp_1',['upgradeInfrastructure-process.php',['../upgrade_infrastructure-process_8php.html',1,'']]],
-  ['user_2ephp_2',['user.php',['../user_8php.html',1,'']]]
+  ['ship_2ephp_0',['ship.php',['../ship_8php.html',1,'']]],
+  ['ship_5ftype_2ephp_1',['ship_type.php',['../ship__type_8php.html',1,'']]],
+  ['solar_5fsystem_2ephp_2',['solar_system.php',['../solar__system_8php.html',1,'']]]
 ];

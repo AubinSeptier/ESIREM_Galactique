@@ -7,6 +7,10 @@ include_once 'database.php';
 
 // To complete
 
+/**
+ * @class Research
+ * @brief Classe permettant de gérer les recherches.
+ */
 class Research extends Database {
 
     public function getResearch($name){

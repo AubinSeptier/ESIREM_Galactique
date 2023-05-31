@@ -5,6 +5,10 @@
  */
 include_once("database.php");
 
+/**
+ * @class User
+ * @brief Classe permettant de gérer les utilisateurs.
+ */
 class User extends Database {
     
     /**

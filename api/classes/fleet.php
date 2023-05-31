@@ -5,6 +5,10 @@
  */
 include_once("database.php");
 
+/**
+ * @class Fleet
+ * @brief Classe permettant de gérer les flottes.
+ */
 class Fleet extends Database {
         
     // Récupérer une flotte par son id

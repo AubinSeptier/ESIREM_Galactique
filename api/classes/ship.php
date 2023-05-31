@@ -5,6 +5,10 @@
  */
 include_once("database.php");
 
+/**
+ * @class Ship
+ * @brief Classe permettant de gérer les vaisseaux.
+ */
 class Ship extends Database {
         
     // Récupérer un vaisseau par son nom
