@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Création de compte - Jeu de l'espace</title>
-    <link rel="stylesheet" href="./css/style_connexion.css">
+    <link rel="stylesheet" href="./css/style_creation.css">
 </head>
 <body>
     <video autoplay muted loop>
@@ -38,7 +38,7 @@
                 <span></span>
                 <span></span>
                 Se connecter
-                </button>
+            </button>
             <a href="./login.php" class="create-account-link">J'ai déjà un compte</a>
 
         </form>
