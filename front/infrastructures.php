@@ -54,77 +54,78 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 1000</p>
                 <p>Coût en énergie: 500</p>
                 <p>Coût en deuterium: 0</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createLab">Créer</a>
             </div>
 			<div class="infrastructure">
                 <h3>chantier spatial </h3>
                 <p>Coût en métal: 500</p>
                 <p>Coût en énergie: 500</p>
                 <p>Coût en deuterium: 0</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createChantier">Créer</a>
             </div>
 			<div class="infrastructure">
                 <h3>usine de nanites</h3>
                 <p>Coût en métal: 10000</p>
                 <p>Coût en énergie: 5000</p>
                 <p>Coût en deuterium: 0</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createUsine">Créer</a>
             </div>
 			<div class="infrastructure">
                 <h3>mine de métal</h3>
                 <p>Coût en métal: 100</p>
                 <p>Coût en énergie: 10</p>
                 <p>Coût en deuterium: 0</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createMine">Créer</a>
             </div>
 			<div class="infrastructure">
                 <h3>centrale solaire</h3>
                 <p>Coût en métal: 150</p>
                 <p>Coût en énergie: 0</p>
                 <p>Coût en deuterium: 20</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createCentraleS">Créer</a>
             </div>
 			<div class="infrastructure">
                 <h3>centrale à fusion</h3>
                 <p>Coût en métal: 5000</p>
                 <p>Coût en énergie: 0</p>
                 <p>Coût en deuterium: 2000</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createCentraleF">Créer</a>
             </div>
 			<div class="infrastructure">
                 <h3>artillerie laser</h3>
                 <p>Coût en métal: 1500</p>
                 <p>Coût en énergie: 0</p>
                 <p>Coût en deuterium: 300</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createLaser">Créer</a>
             </div>
 			<div class="infrastructure">
                 <h3>canon à ions</h3>
                 <p>Coût en métal: 5000</p>
                 <p>Coût en énergie: 0</p>
                 <p>Coût en deuterium: 1000</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createCanon">Créer</a>
             </div>
 			<div class="infrastructure">
                 <h3>bouclier</h3>
                 <p>Coût en métal: 10000</p>
                 <p>Coût en énergie: 1000</p>
                 <p>Coût en deuterium: 5000</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createBouclier">Créer</a>
             </div>
 			<div class="infrastructure">
                 <h3>synthétiseur de deutérium</h3>
                 <p>Coût en métal: 200</p>
                 <p>Coût en énergie: 50</p>
                 <p>Coût en deuterium: 0</p>
-                <a href="#" class="create-button">Créer</a>
+                <a href="#" class="createSynthe">Créer</a>
             </div>
         </div>
     </section>
     <footer>
         <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
     </footer>
-	<script src="./js/logout.js"></script>
+	<script src="./js/logoutUniverse.js"></script>
+    <script src="./js/create_infrastructures"></script>
 </body>
 </html>
 
