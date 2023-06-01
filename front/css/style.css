@@ -9,19 +9,8 @@ header {
     background-color: #111;
     padding: 10px;
     text-align: center;
-
 }
 
-logout-button {
-    color: #fff;
-	background-color: #f00;
-	padding: 5px 10px;
-	border-radius: 5px;
-	text-decoration: none;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
 h1 {
     margin: 0;
     font-size: 30px;
@@ -89,5 +78,21 @@ footer {
 
 .lien {
     color:aqua;
+}
+
+.logoutUser-button {
+	color: #fff;
+	background-color: #f00;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+    transition: transform 0.2s ease; /* Ajoutez une transition pour une animation fluide */
+    cursor: pointer;
+}
+.logoutUser-button:hover {
+    transform: scale(1.1); /* Applique une échelle de 1.1 (10% plus grand) au survol */
 }
 

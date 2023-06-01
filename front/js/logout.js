@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // Ajouter un gestionnaire d'événement au clic sur le bouton de déconnexion
-  logoutUniverseButton.addEventListener('click', async function(event) {
+  logoutUniverseButton.addEventListener('click', async function() {
 
     // Effectuer une requête GET vers logout-process.php
     let response = await fetch('http://localhost/ESIREM_Galactique/api/process/disconnectUniverse-process.php', {
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(data.status);
     }
   });
-  logoutUserButton.addEventListener('click', async function(event) {
 
+  logoutUserButton.addEventListener('click', async function() {
     // Effectuer une requête GET vers logout-process.php
     let response = await fetch('http://localhost/ESIREM_Galactique/api/process/disconnectUser-process.php', {
     });
