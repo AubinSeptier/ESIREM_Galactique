@@ -27,7 +27,10 @@
         </form>
     </div>
     <footer class="footer">
-        <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
+        <a href="https://www.twitch.tv/lesmoulinsdudev">
+            <img src="./ressources/Image1.png" alt="Logo" />
+        </a>    
+    <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
     </footer>
     <script src="./js/empire.js"></script>
 </body>
