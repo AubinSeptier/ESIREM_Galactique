@@ -53,12 +53,12 @@ class Planet extends Database {
     }
 
     /**
-    * @fn getPlanetOwner($id_empire)
+    * @fn getPlanetsOwned($id_empire)
     * @brief Obtenir les planètes possédées par un empire.
     * @param $id_empire L'identifiant de l'empire.
     * @return $result Tableau des planètes possédées par l'empire ou false si aucune planète n'est possédée.
     */
-    public function getPlanetOwner($id_empire){
+    public function getPlanetsOwned($id_empire){
         $sql = "SELECT * FROM planets WHERE id_empire = ?";
         $query = $this->connect()->prepare($sql);
         $query->execute([$id_empire]);
@@ -97,11 +97,19 @@ class Planet extends Database {
     * @param $id_planet
     * @return $result Taille de la planète ou false si non trouvée.
     */
-    public function getPlanetSize($id_planet){
+    public function getPlanetSize($id){
         $sql = "SELECT size FROM planets WHERE id = ?";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id_planet]);
+        $query->execute([$id]);
         $result = $query->fetchAll();
+        return $result;
+    }
+
+    public function getPlanetOwner($id){
+        $sql = "SELECT id_empire FROM planets WHERE id = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id]);
+        $result = $query->fetchColumn();
         return $result;
     }
 }
