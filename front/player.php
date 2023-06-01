@@ -52,6 +52,6 @@ if (!isset($_SESSION['username'])) {
         <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
     </footer>
     <script src="./js/create_universe.js"></script>
-    <script src="./js/logout.js"></script>
+    <script src="./js/logoutUser.js"></script>
 </body>
 </html>
