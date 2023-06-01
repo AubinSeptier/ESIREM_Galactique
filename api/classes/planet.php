@@ -105,6 +105,12 @@ class Planet extends Database {
         return $result;
     }
 
+    /**
+     * @fn getPlanetOwner($id)
+     * @brief Obtenir le propriétaire de la planète.
+     * @param $id L'identifiant de la planète.
+     * @return $result L'identifiant de l'empire propriétaire de la planète ou false si non trouvé.
+     */
     public function getPlanetOwner($id){
         $sql = "SELECT id_empire FROM planets WHERE id = ?";
         $query = $this->connect()->prepare($sql);
