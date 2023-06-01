@@ -28,7 +28,7 @@
                 <input type="password" name="password-repeat" required="">
                 <label>Saisissez à nouveau votre mot de passe</label>
             </div>
-            <div class="user-box">
+            <div>
                 <input type="checkbox" name="checkbox" required="">
                 <label>J'ai pris connaissances des conditions générales d'utilisation.</label>
             </div>    
