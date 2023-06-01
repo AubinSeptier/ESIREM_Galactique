@@ -1,6 +1,14 @@
 <?php
+/**
+ * @file infrastructure.php
+ * @details Ce fichier contient la classe Infrastructure qui est utilisée pour gérer les infrastructures.
+ */
 include_once("database.php");
 
+/**
+ * @class Infrastructure
+ * @brief Classe permettant de gérer les infrastructures.
+ */
 class Infrastructure extends Database {
         
     // Récupérer une infrastructure par son nom
@@ -11,6 +19,14 @@ class Infrastructure extends Database {
         $result = $query->fetchAll();
         return $result;
     }
+
+    // Récupérer une infrastructure par son nom et l'id de sa planète
+    public function getInfrastructureByPlanetId($name, $id_planet){
+        $sql = "SELECT * FROM infrastructures WHERE name = ? AND id_planet = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$name, $id_planet]);
+        $result = $query->fetchAll();
+    }
     
     // Ajouter une infrastructure et ses caractéristiques
     public function setInfrastructure($name, $level, $upgrade_time, $deuterium_cost, $energy_cost, $metal_cost, $deuterium_production, $energy_production, $metal_production, $attack, $defense, $id_planet, $id_infrastructure_type){
@@ -20,10 +36,10 @@ class Infrastructure extends Database {
     }
     
     // Modifier les caractéristiques d'une infrastructure
-    public function updateInfrastructure($name, $level, $upgrade_time, $deuterium_cost, $energy_cost, $metal_cost, $deuterium_production, $energy_production, $metal_production, $attack, $defense, $id_planet, $id_infrastructure_type){
-        $sql = "UPDATE infrastructures SET name = ?, level = ?, upgrade_time = ?, deuterium_cost = ?, energy_cost = ?, metal_cost = ?, deuterium_production = ?, energy_production = ?, metal_production = ?, attack = ?, defense = ?, id_planet = ?, id_infrastructure_type = ? WHERE id = ?";
+    public function updateInfrastructure($id, $level, $upgrade_time, $deuterium_cost, $energy_cost, $metal_cost, $deuterium_production, $energy_production, $metal_production, $attack, $defense){
+        $sql = "UPDATE infrastructures SET level = ?, upgrade_time = ?, deuterium_cost = ?, energy_cost = ?, metal_cost = ?, deuterium_production = ?, energy_production = ?, metal_production = ?, attack = ?, defense = ? WHERE id = ?";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$name, $level, $upgrade_time, $deuterium_cost, $energy_cost, $metal_cost, $deuterium_production, $energy_production, $metal_production, $attack, $defense, $id_planet, $id_infrastructure_type]);
+        $query->execute([$id, $level, $upgrade_time, $deuterium_cost, $energy_cost, $metal_cost, $deuterium_production, $energy_production, $metal_production, $attack, $defense]);
     }
 
     // Récupérer la production totale de Deuterium par planète

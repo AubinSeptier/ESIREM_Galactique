@@ -2,15 +2,17 @@
 session_start();
 include_once("../classes/empire.php");
 include_once("../classes/planet.php");
+include_once("../classes/solar_system.php");
+include_once("../classes/galaxy.php");
 include_once("../classes/user.php");
 // Processus de création d'un empire
 
-if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["empireAdjective"])){
+if(isset($_GET["empireName"]) && isset($_GET["empireRace"]) && isset($_GET["empireAdjective"])){
     // Initialisation et récupération des données utiles
     $empire = new Empire();
-    $empireName = $_POST["empireName"];
-    $empireRace = $_POST["empireRace"];
-    $empireAdjective = $_POST["empireAdjective"];
+    $empireName = $_GET["empireName"];
+    $empireRace = $_GET["empireRace"];
+    $empireAdjective = $_GET["empireAdjective"];
     $empireDeuterium = 1000;
     $empireMetal = 1000;
     $empireUserId = $_SESSION["id"];
@@ -18,26 +20,24 @@ if(isset($_POST["empireName"]) && isset($_POST["empireRace"]) && isset($_POST["e
 
     // Vérification de l'existence de l'empire
     if($empire->getEmpireByName($empireName)){
-        echo "Ce nom d\'empire existe déjà";
+        echo json_encode(array("status" => "Ce nom d'Empire existe déjà"));
     }
     else{
         // Création de l'empire
-        $empire->setEmpire($empireName, $empireRace, $empireAdjective, $empireDeuterium, 0, $empireMetal, $empireUserId, $empireUniverseId);
+        $empire->setEmpire($empireName, $empireRace, $empireAdjective, $empireDeuterium, 0, 0,$empireMetal, $empireUniverseId, $empireUserId);
         $_SESSION["empireId"] = $empire->getEmpireByName($empireName)[0]["id"];
 
         $galaxy = new Galaxy();
-        $randomGalaxy = $galaxy->getRandomGalaxy($empireUniverseId)[0]["id"];
-        $solarSystem = new SolarSystem();
-        $randomSolarSystem = $solarSystem->getRandomSolarSystem($randomGalaxy)[0]["id"];
+        $randomGalaxy = $galaxy->getRandomGalaxy($empireUniverseId);
+        $solarSystem = new Solar_System();
+        $randomSolarSystem = $solarSystem->getRandomSolar_System($randomGalaxy);
         $planet = new Planet();
-        $randomPlanet = $planet->getRandomPlanet($randomSolarSystem)[0]["id"];
+        $randomPlanet = $planet->getRandomPlanet($randomSolarSystem);
 
-
-        $empirePlanet = $planet->updatePlanetOwner($empire->getEmpireByName($empireName)[0]["id"], $randomPlanet);
-        header("Location: ../../front/index.php");
-        exit();
+        $empirePlanet = $planet->updatePlanetOwner($_SESSION["empireId"], $randomPlanet);
+        echo json_encode(array("status" => "success"));
     }
 }
 else {
-    echo "Erreur lors de la création de l'empire";
+    echo json_encode(array("status" => "Erreur lors de la création de l'empire"));
 }

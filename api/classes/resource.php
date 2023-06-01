@@ -1,6 +1,14 @@
 <?php
+/**
+ * @file resource.php
+ * @details Ce fichier contient la classe Resource qui permet de gérer les ressources.
+ */
 include_once("database.php");
 
+/**
+ * @class Resource
+ * @brief Classe permettant de gérer les ressources.
+ */
 class Resource extends Database {
     
     // Récupérer les ressources d'une planète par l'id de celle-ci

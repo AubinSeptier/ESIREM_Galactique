@@ -20,8 +20,8 @@
                 <input type="text" id="race" name="race" required>
             </div>
             <div class="form-group">
-                <label for="adjective">Adjectif :</label>
-                <input type="text" id="adjective" name="adjective" required>
+                <label for="adjectif">Adjectif :</label>
+                <input type="text" id="adjectif" name="adjectif" required>
             </div>
             <button type="submit">Créer un empire</button>
         </form>

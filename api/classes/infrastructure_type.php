@@ -1,6 +1,14 @@
 <?php
+/**
+ * @file infrastructure_type.php
+ * @details Ce fichier contient la classe Infrastructure_Type qui permet de gérer les types d'infrastructures.
+ */
 include_once("database.php");
 
+/**
+ * @class Infrastructure_Type
+ * @brief Classe permettant de gérer les types d'infrastructures.
+ */
 class Infrastructure_Type extends Database {
         
     // Récupérer un type d'infrastructure par son nom

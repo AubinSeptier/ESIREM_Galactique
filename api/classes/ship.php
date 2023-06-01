@@ -1,6 +1,14 @@
 <?php
+/**
+ * @file ship.php
+ * @details Ce fichier contient la classe Ship qui permet de gérer les vaisseaux.
+ */
 include_once("database.php");
 
+/**
+ * @class Ship
+ * @brief Classe permettant de gérer les vaisseaux.
+ */
 class Ship extends Database {
         
     // Récupérer un vaisseau par son nom

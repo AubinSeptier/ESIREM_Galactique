@@ -1,6 +1,14 @@
 <?php
+/**
+ * @file fleet.php
+ * @details Ce fichier contient la classe Fleet qui est utilisée pour gérer les flottes.
+ */
 include_once("database.php");
 
+/**
+ * @class Fleet
+ * @brief Classe permettant de gérer les flottes.
+ */
 class Fleet extends Database {
         
     // Récupérer une flotte par son id
