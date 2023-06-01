@@ -17,7 +17,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 <body>
 	<header>
 		<h1>ESI Galactique</h1>
-		<a class="logout-button" href="./logout.php">Déconnexion</a>
+		<a class="logoutUniverse-button" href="./logout.php">Déconnexion</a>
 	</header>
 	<nav>
 		<ul>

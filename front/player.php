@@ -15,6 +15,7 @@ if (!isset($_SESSION['username'])) {
 <body>
     <header>
         <h1>ESIGalactique</h1>
+        <a class="logoutUser-button">Déconnexion</a>
     </header>
     <nav>
         <ul>

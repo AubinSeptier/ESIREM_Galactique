@@ -9,6 +9,18 @@ header {
     background-color: #111;
     padding: 10px;
     text-align: center;
+
+}
+
+logout-button {
+    color: #fff;
+	background-color: #f00;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 h1 {
     margin: 0;
@@ -79,14 +91,3 @@ footer {
     color:aqua;
 }
 
-
-.logout-button {
-	color: #fff;
-	background-color: #f00;
-	padding: 5px 10px;
-	border-radius: 5px;
-	text-decoration: none;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
