@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let url = "http://localhost/ESIREM_Galactique/api/process/createInfrastructure-process.php";
 
     createLabButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=research_lab&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=research_lab&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     createChantierButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=space_sit&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=space_sit&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     createUsineButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=nanites_factory&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=nanites_factory&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     createMineButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=metal_mine&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=metal_mine&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     createCentraleSButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=solar_plant&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=solar_plant&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     createCentraleFButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=fusion_plant&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=fusion_plant&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     createLaserButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=laser_artillery&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=laser_artillery&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     createCanonButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=ion_gun&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=ion_gun&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     createBouclierButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=shield&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=shield&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     createSyntheButton.addEventListener('click', async function(event) {
-        let response = await fetch(url + "?infrastructure=deuterium_synthesizer&id_planet" + id_planet, {
+        let response = await fetch(url + "?infrastructure=deuterium_synthesizer&id_planet=" + id_planet, {
             });
         let data = await response.json();
         console.log(data.status);

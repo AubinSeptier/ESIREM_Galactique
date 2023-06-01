@@ -125,7 +125,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
         <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
     </footer>
 	<script src="./js/logoutUniverse.js"></script>
-    <script src="./js/create_infrastructures"></script>
+    <script src="./js/create_infrastructures.js"></script>
 </body>
 </html>
 
