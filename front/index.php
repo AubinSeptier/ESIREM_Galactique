@@ -11,13 +11,13 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 <head>
 	<title>ESI Galactique</title>
 	
-    <link rel="stylesheet" href=".\css\style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 <body>
 	<header>
 		<h1>ESI Galactique</h1>
-		<a class="logout-button" href="./logout.php">Déconnexion</a>
+        <a class="logoutUniverse-button">Déconnexion</a>
 	</header>
 	<nav>
 		<ul>
@@ -27,7 +27,6 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 			<li><a href="./infrastructures.php">Infrastructures</a></li>
 			<li><a href="./recherche.php">Recherche</a></li>
 			<li><a href="./chantierSpatial.php">Chantier Spatial</a></li>
-			<li><a href="./player.php">player</a></li>
 
 		</ul>
 		<form action="#" method="get">
@@ -76,6 +75,6 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
         <footer>
             <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
         </footer>
-		<script src="./js/logout.js"></script>
+		<script src="./js/logoutUniverse.js"></script>
     </body>
     </html>

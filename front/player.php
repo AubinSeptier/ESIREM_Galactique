@@ -15,6 +15,7 @@ if (!isset($_SESSION['username'])) {
 <body>
     <header>
         <h1>ESIGalactique</h1>
+        <a class="logoutUser-button">Déconnexion</a>
     </header>
     <nav>
         <ul>
@@ -51,5 +52,6 @@ if (!isset($_SESSION['username'])) {
         <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
     </footer>
     <script src="./js/create_universe.js"></script>
+    <script src="./js/logoutUser.js"></script>
 </body>
 </html>
