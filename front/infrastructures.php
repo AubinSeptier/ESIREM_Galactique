@@ -1,9 +1,9 @@
 <?php
-session_start();
+/*session_start();
 if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 	header('Location: ./player.php');
 	exit();
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -146,33 +146,10 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
     <footer>
         <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const empireNameElement = document.querySelector('#empireName');
-        const empireRaceElement = document.querySelector('#empireRace');
-        const empireAdjectiveElement = document.querySelector('#empireAdjective');
-        const empireDeuteriumElement = document.querySelector('#empireDeuterium');
-        const empireEnergyElement = document.querySelector('#empireEnergy');
-        const empireEnergyUsedElement = document.querySelector('#empireEnergyUsed');
-        const empireMetalElement = document.querySelector('#empireMetal');
-
-        const empireData = <?php echo json_encode($data); ?>;
-        console.log(empireData); // Vérifiez les données dans la console du navigateur
-
-        // Remplir les éléments HTML avec les données correspondantes
-        empireNameElement.textContent = empireData.empireName;
-        empireRaceElement.textContent = empireData.empireRace;
-        empireAdjectiveElement.textContent = empireData.empireAdjective;
-        empireDeuteriumElement.textContent = empireData.empireDeuterium;
-        empireEnergyElement.textContent = empireData.empireEnergy;
-        empireEnergyUsedElement.textContent = empireData.empireEnergyUsed;
-        empireMetalElement.textContent = empireData.empireMetal;
-});
-
-    </script>
 	<script src="./js/logoutUniverse.js"></script>
     <script src="./js/create_infrastructures.js"></script>
     <script src="./js/goToUpgrades.js"></script>
+    <script src="./js/getRessources.js"></script>
 </body>
 </html>
 
