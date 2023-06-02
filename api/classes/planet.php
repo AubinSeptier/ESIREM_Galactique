@@ -46,10 +46,10 @@ class Planet extends Database {
     * @param $id_empire L'identifiant de l'empire.
     * @param $id_planet L'identifiant de la planète.
     */
-    public function updatePlanetOwner($id_empire, $id_planet){
+    public function updatePlanetOwner($id_empire, $id){
         $sql = "UPDATE planets SET id_empire = ? WHERE id = ?";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id_empire, $id_planet]);
+        $query->execute([$id_empire, $id]);
     }
 
     /**
@@ -119,6 +119,12 @@ class Planet extends Database {
         return $result;
     }
 
+    /**
+     * @fn getPlanetsCount($id_solar_system)
+     * @brief Obtenir le nombre de planètes dans un système solaire.
+     * @param $id L'identifiant du système solaire.
+     * @return $result Le nombre de planètes dans le système solaire ou false si non trouvé.
+     */
     public function getPlanetsCount($id_solar_system){
         $sql = "SELECT COUNT(*) FROM planets WHERE id_solar_system = ?";
         $query = $this->connect()->prepare($sql);
@@ -127,6 +133,12 @@ class Planet extends Database {
         return $result;
     }
 
+    /**
+     * @fn getAllPlanets($id_solar_system)
+     * @brief Obtenir toutes les planètes d'un système solaire.
+     * @param $id_solar_system L'identifiant du système solaire.
+     * @return $result Un tableau d'objets planète ou false si non trouvé.
+     */
     public function getAllPlanets($id_solar_system){
         $sql = "SELECT * FROM planets WHERE id_solar_system = ? ORDER BY position ASC";
         $query = $this->connect()->prepare($sql);

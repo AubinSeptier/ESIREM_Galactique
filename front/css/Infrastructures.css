@@ -163,9 +163,3 @@ footer {
 .upgrade-button:hover {
     background-color: #0288d1;
 }
-
-
-.empire-data p span {
-    display: inline-block;
-    margin-right: 10px;
-  }

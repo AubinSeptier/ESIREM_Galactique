@@ -16,15 +16,11 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
     <header>
         <h1>ESIGalactique</h1>
         <div class="empire-data">
-            <p>
-                <span></span><span id="empireName"></span>
-            </p>
-            <p>
-                <span>Deutérium: </span><span id="empireDeuterium" style="display: inline;"></span>
-                <span>Énergie: </span><span id="empireEnergy" style="display: inline;"></span>
-                <span>Énergie utilisée: </span><span id="empireEnergyUsed" style="display: inline;"></span>
-                <span>Métal: </span><span id="empireMetal" style="display: inline;"></span>
-            </p>
+            <p>Empire : <span id="empireName"></span></p>
+            <p>Deutérium : <span id="empireDeuterium"></span></p>
+            <p>Énergie : <span id="empireEnergy"></span></p>
+            <p>Énergie utilisée : <span id="empireEnergyUsed"></span></p>
+            <p>Métal : <span id="empireMetal"></span></p>
         </div>
 		<a class="logoutUniverse-button">Déconnexion</a>
     </header>

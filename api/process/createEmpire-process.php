@@ -31,15 +31,12 @@ if(isset($_GET["empireName"]) && isset($_GET["empireRace"]) && isset($_GET["empi
         $solarSystem = new Solar_System();
         $planet = new Planet();
 
-        do{
-            $randomGalaxy = $galaxy->getRandomGalaxy($empireUniverseId);
-            $randomSolarSystem = $solarSystem->getRandomSolar_System($randomGalaxy);
-            $randomPlanet = $planet->getRandomPlanet($randomSolarSystem);
-            $hasPlanetOwner = $planet->getPlanetOwner($randomPlanet);
-        }while ($hasPlanetOwner != null);
+        $randomGalaxy = $galaxy->getRandomGalaxy($empireUniverseId);
+        $randomSolarSystem = $solarSystem->getRandomSolar_System($randomGalaxy);
+        $randomPlanet = $planet->getRandomPlanet($randomSolarSystem);
         
-        $empirePlanet = $planet->updatePlanetOwner($_SESSION["empireId"], $randomPlanet);
-        echo json_encode(array("status" => "success"));
+        $planet->updatePlanetOwner($_SESSION["empireId"], $randomPlanet);
+        echo json_encode(array("status" => "success", "planet ID" => $randomPlanet, "Solar ID" => $randomSolarSystem, "Galaxy ID" => $randomGalaxy));
     }
 }
 else {
