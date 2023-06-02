@@ -15,14 +15,29 @@ class Research extends Database {
 
     /**
      * @fn getResearch($name)
-     * @brief Récupérer les informations d'une recherche spécifique. 
+     * @brief Récupérer les informations d'une recherche spécifique à partir de son nom. 
      * @param $name Le nom de la recherche à récupérer.
      * @return $result Un tableau d'objets Research ou false si aucun n'a été trouvé.
      */
-    public function getResearch($name){
+    public function getResearchByName($name){
         $sql = "SELECT * FROM researches WHERE name = ?";
         $query = $this->connect()->prepare($sql);
         $query->execute([$name]);
+        $result = $query->fetchAll();
+        return $result;
+    }
+
+    /**
+     * @fn getResearchById($id_research_type, $id_empire)
+     * @brief Récupérer les informations d'une recherche spécifique à partir de ses clés étrangères.
+     * @param $id_research_type L'id du type de recherche à récupérer.
+     * @param $id_empire L'id de l'empire auquel la recherche appartient.
+     * @return $result Un tableau de données de la recherche ou false si aucun n'a été trouvé.
+     */
+    public function getResearchById($id_research_type, $id_empire){
+        $sql = "SELECT * FROM researches WHERE id_research_type = ? AND id_empire = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id_research_type, $id_empire]);
         $result = $query->fetchAll();
         return $result;
     }
@@ -43,18 +58,9 @@ class Research extends Database {
         $query->execute([$name, $level, $research_time, $deuterium_cost, $metal_cost, $id_empire]);
     }
 
-    /**
-     * @fn getResearchLevel($id_research_type, $id_empire)
-     * @brief Récupérer le niveau d'une recherche.
-     * @param $id_research_type L'identifiant du type de recherche.
-     * @param $id_empire L'identifiant de l'empire.
-     * @return $result Le niveau de la recherche.
-     */
-    public function getResearchLevel($id_research_type, $id_empire){
-        $sql = "SELECT level FROM researches WHERE id_research_type = ? AND id_empire = ?";
+    public function updateResearch($level, $research_time, $deuterium_cost, $metal_cost, $id_research_type, $id_empire){
+        $sql = "UPDATE researches SET level = ?, research_time = ?, deuterium_cost = ?, metal_cost = ? WHERE id_research_type = ? AND id_empire = ?";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id_research_type, $id_empire]);
-        $result = $research_type->fetchColumn();
-        return $result;
+        $query->execute([$level, $research_time, $deuterium_cost, $metal_cost, $id_research_type, $id_empire]);
     }
 }

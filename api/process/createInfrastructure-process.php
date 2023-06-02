@@ -116,6 +116,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
             $researchLevel = $research->getResearchLevel($aiTechId, $_SESSION["empireId"]);
             if($researchLevel < 5){
                 echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 5 de la technologie IA"));
+                exit();
             }
 
             $buildingTime = $infrastructure_type->getInfrastructure_Type("nanites_factory")[0]["building_time"];
@@ -259,6 +260,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
             $researchLevel = $research->getResearchLevel($energyTechId, $_SESSION["empireId"]);
             if($researchLevel < 10){
                 echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 10 de la technologie Energie"));
+                exit();
             }
 
             $buildingTime = $infrastructure_type->getInfrastructure_Type("fusion_plant")[0]["building_time"];
@@ -299,6 +301,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
         $researchLevel = $research->getResearchLevel($laserTechId, $_SESSION["empireId"]);
         if($researchLevel < 1){
             echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 1 de la technologie Laser"));
+            exit();
         }
 
         $buildingTime = $infrastructure_type->getInfrastructure_Type("laser_artillery")[0]["building_time"];
@@ -330,6 +333,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
         $researchLevel = $research->getResearchLevel($ionsTechId, $_SESSION["empireId"]);
         if($researchLevel < 1){
             echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 1 de la technologie Ions"));
+            exit();
         }
 
         $buildingTime = $infrastructure_type->getInfrastructure_Type("ion_gun")[0]["building_time"];
@@ -361,6 +365,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
         $researchLevel = $research->getResearchLevel($shieldTechId, $_SESSION["empireId"]);
         if($researchLevel < 1){
             echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 1 de la technologie Bouclier"));
+            exit();
         }
 
         $buildingTime = $infrastructure_type->getInfrastructure_Type("shield")[0]["building_time"];
