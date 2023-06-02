@@ -95,9 +95,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a30a8ad824c30346c9ed0667315ec0634"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_planet.html#a30a8ad824c30346c9ed0667315ec0634">setPlanet</a> ($name, $position, $size, $id_solar_system, $id_empire)</td></tr>
 <tr class="memdesc:a30a8ad824c30346c9ed0667315ec0634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajouter une planète dans la base de données.  <br /></td></tr>
 <tr class="separator:a30a8ad824c30346c9ed0667315ec0634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08c30be0b2ed2b81368a2d8a7a28f94a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_planet.html#a08c30be0b2ed2b81368a2d8a7a28f94a">updatePlanetOwner</a> ($id_empire, $id_planet)</td></tr>
-<tr class="memdesc:a08c30be0b2ed2b81368a2d8a7a28f94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mettre a jour le propriétaire de la planète.  <br /></td></tr>
-<tr class="separator:a08c30be0b2ed2b81368a2d8a7a28f94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa92a36afa06ce620609bf736794df9a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_planet.html#aa92a36afa06ce620609bf736794df9a9">updatePlanetOwner</a> ($id_empire, $id)</td></tr>
+<tr class="memdesc:aa92a36afa06ce620609bf736794df9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mettre a jour le propriétaire de la planète.  <br /></td></tr>
+<tr class="separator:aa92a36afa06ce620609bf736794df9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a938e76c40d4317ffbaf68d2dfb77104b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_planet.html#a938e76c40d4317ffbaf68d2dfb77104b">getPlanetsOwned</a> ($id_empire)</td></tr>
 <tr class="memdesc:a938e76c40d4317ffbaf68d2dfb77104b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir les planètes possédées par un empire.  <br /></td></tr>
 <tr class="separator:a938e76c40d4317ffbaf68d2dfb77104b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,6 +113,12 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ae565ee1022f103aca693a36171147f23"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_planet.html#ae565ee1022f103aca693a36171147f23">getPlanetOwner</a> ($id)</td></tr>
 <tr class="memdesc:ae565ee1022f103aca693a36171147f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir le propriétaire de la planète.  <br /></td></tr>
 <tr class="separator:ae565ee1022f103aca693a36171147f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab7c0d6ad4ec98cafca93c7084d3ce0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_planet.html#aab7c0d6ad4ec98cafca93c7084d3ce0e">getPlanetsCount</a> ($id_solar_system)</td></tr>
+<tr class="memdesc:aab7c0d6ad4ec98cafca93c7084d3ce0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir le nombre de planètes dans un système solaire.  <br /></td></tr>
+<tr class="separator:aab7c0d6ad4ec98cafca93c7084d3ce0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3486ca10e0485c88da100a3ed58774a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_planet.html#a3486ca10e0485c88da100a3ed58774a6">getAllPlanets</a> ($id_solar_system)</td></tr>
+<tr class="memdesc:a3486ca10e0485c88da100a3ed58774a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir toutes les planètes d'un système solaire.  <br /></td></tr>
+<tr class="separator:a3486ca10e0485c88da100a3ed58774a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_database"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_database')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_database.html">Database</a></td></tr>
 <tr class="memitem:a50f33583458a5bc097add8fa91674845 inherit pub_methods_class_database"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_database.html#a50f33583458a5bc097add8fa91674845">disconnect</a> ()</td></tr>
 <tr class="memdesc:a50f33583458a5bc097add8fa91674845 inherit pub_methods_class_database"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se déconnecte de la base de données.  <br /></td></tr>
@@ -128,6 +134,33 @@ Membres hérités additionnels</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe permettant de gérer les planètes. </p>
 </div><h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a3486ca10e0485c88da100a3ed58774a6" name="a3486ca10e0485c88da100a3ed58774a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3486ca10e0485c88da100a3ed58774a6">&#9670;&#160;</a></span>getAllPlanets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getAllPlanets </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_solar_system</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtenir toutes les planètes d'un système solaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$id_solar_system</td><td>L'identifiant du système solaire. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>$result Un tableau d'objets planète ou false si non trouvé. </dd></dl>
+
+</div>
+</div>
 <a id="a4fe2c1d9e7652ee9c19168c17a9444c4" name="a4fe2c1d9e7652ee9c19168c17a9444c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4fe2c1d9e7652ee9c19168c17a9444c4">&#9670;&#160;</a></span>getPlanet()</h2>
 
@@ -179,6 +212,33 @@ Membres hérités additionnels</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>$result L'identifiant de l'empire propriétaire de la planète ou false si non trouvé. </dd></dl>
+
+</div>
+</div>
+<a id="aab7c0d6ad4ec98cafca93c7084d3ce0e" name="aab7c0d6ad4ec98cafca93c7084d3ce0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab7c0d6ad4ec98cafca93c7084d3ce0e">&#9670;&#160;</a></span>getPlanetsCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getPlanetsCount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_solar_system</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtenir le nombre de planètes dans un système solaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$id</td><td>L'identifiant du système solaire. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>$result Le nombre de planètes dans le système solaire ou false si non trouvé. </dd></dl>
 
 </div>
 </div>
@@ -358,8 +418,8 @@ Membres hérités additionnels</h2></td></tr>
 
 </div>
 </div>
-<a id="a08c30be0b2ed2b81368a2d8a7a28f94a" name="a08c30be0b2ed2b81368a2d8a7a28f94a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08c30be0b2ed2b81368a2d8a7a28f94a">&#9670;&#160;</a></span>updatePlanetOwner()</h2>
+<a id="aa92a36afa06ce620609bf736794df9a9" name="aa92a36afa06ce620609bf736794df9a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa92a36afa06ce620609bf736794df9a9">&#9670;&#160;</a></span>updatePlanetOwner()</h2>
 
 <div class="memitem">
 <div class="memproto">

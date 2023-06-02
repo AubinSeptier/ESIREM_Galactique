@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ESIREM Galactique API: Référence du fichier D:/Xampp/htdocs/ESIREM_Galactique/api/process/renamePlanet-process.php</title>
+<title>ESIREM Galactique API: Référence du fichier D:/Xampp/htdocs/ESIREM_Galactique/api/process/sendPlanet-process.php</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,29 +75,77 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">Référence du fichier renamePlanet-process.php</div></div>
+  <div class="headertitle"><div class="title">Référence du fichier sendPlanet-process.php</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a73fd1c37ef2b0a0d962389b071f5e8d9"><td class="memItemLeft" align="right" valign="top">if(isset($_POST[&quot;planetName&quot;]) &amp;&amp;isset($_POST[&quot;planetId&quot;]))&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rename_planet-process_8php.html#a73fd1c37ef2b0a0d962389b071f5e8d9">else</a></td></tr>
-<tr class="separator:a73fd1c37ef2b0a0d962389b071f5e8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e194a264126382612d97aa7323d03f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_planet-process_8php.html#a1e194a264126382612d97aa7323d03f1">$solarSystem</a> = new <a class="el" href="class_solar___system.html">Solar_System</a>()</td></tr>
+<tr class="separator:a1e194a264126382612d97aa7323d03f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f2c073d2e8805c4602e88fc81881470"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_planet-process_8php.html#a0f2c073d2e8805c4602e88fc81881470">$planet</a> = new <a class="el" href="class_planet.html">Planet</a>()</td></tr>
+<tr class="separator:a0f2c073d2e8805c4602e88fc81881470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5b1cd73068ed7bcf4fc5583695098a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_planet-process_8php.html#af5b1cd73068ed7bcf4fc5583695098a1">$empireId</a> = $_SESSION['empireId']</td></tr>
+<tr class="separator:af5b1cd73068ed7bcf4fc5583695098a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003d52164dc288e6df3fd9800eb3b274"><td class="memItemLeft" align="right" valign="top">if(isset($_GET[&quot;solarSystemName&quot;]))&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_planet-process_8php.html#a003d52164dc288e6df3fd9800eb3b274">else</a></td></tr>
+<tr class="separator:a003d52164dc288e6df3fd9800eb3b274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des variables</h2>
-<a id="a73fd1c37ef2b0a0d962389b071f5e8d9" name="a73fd1c37ef2b0a0d962389b071f5e8d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73fd1c37ef2b0a0d962389b071f5e8d9">&#9670;&#160;</a></span>else</h2>
+<a id="af5b1cd73068ed7bcf4fc5583695098a1" name="af5b1cd73068ed7bcf4fc5583695098a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b1cd73068ed7bcf4fc5583695098a1">&#9670;&#160;</a></span>$empireId</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">if (isset( $_POST[&quot;planetName&quot;]) &amp;&amp;isset( $_POST[&quot;planetId&quot;])) else</td>
+          <td class="memname">$empireId = $_SESSION['empireId']</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f2c073d2e8805c4602e88fc81881470" name="a0f2c073d2e8805c4602e88fc81881470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f2c073d2e8805c4602e88fc81881470">&#9670;&#160;</a></span>$planet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$planet = new <a class="el" href="class_planet.html">Planet</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e194a264126382612d97aa7323d03f1" name="a1e194a264126382612d97aa7323d03f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e194a264126382612d97aa7323d03f1">&#9670;&#160;</a></span>$solarSystem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$solarSystem = new <a class="el" href="class_solar___system.html">Solar_System</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a003d52164dc288e6df3fd9800eb3b274" name="a003d52164dc288e6df3fd9800eb3b274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003d52164dc288e6df3fd9800eb3b274">&#9670;&#160;</a></span>else</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">if (isset( $_GET[&quot;solarSystemName&quot;])) else</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Valeur initiale :</b><div class="fragment"><div class="line">{</div>
-<div class="line">    echo json_encode(array(<span class="stringliteral">&quot;status&quot;</span> =&gt; <span class="stringliteral">&quot;Erreur lors du changement de nom de la planète&quot;</span>))</div>
+<div class="line">    echo json_encode(array(<span class="stringliteral">&quot;status&quot;</span> =&gt; <span class="stringliteral">&quot;Erreur lors de la récupération des planètes.&quot;</span>))</div>
 </div><!-- fragment -->
 </div>
 </div>
