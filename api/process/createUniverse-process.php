@@ -29,12 +29,15 @@ if(isset($_GET["universeName"])){
     $solarSystem = new Solar_System();
     $planet = new Planet();
 
+
     for($i = 0; $i<5; $i++){
         $galaxy->setGalaxy($galaxyNames[$i], $universe->getUniverseByName($universeName)[0]["id"]);
         for($j = 0; $j<10; $j++){
-            $planets_number = rand(4, 10);
-            $solarSystem->setSolar_System($solarSystemNames[$j], $planets_number, $galaxy->getGalaxy($galaxyNames[$i])[0]["id"]);
+            $positions = NULL;
             $positions = range(1, 10);
+            $planets_number = rand(4, 10);
+            $solarSystemName = array_shift($solarSystemNames);
+            $solarSystem->setSolar_System($solarSystemName, $planets_number, $galaxy->getGalaxy($galaxyNames[$i])[0]["id"]);
             shuffle($positions);
             for($k = 0; $k<$planets_number; $k++){
                 $position = array_shift($positions);
@@ -70,7 +73,7 @@ if(isset($_GET["universeName"])){
                         $size = 90;
                         break;
                 }
-                $planet->setPlanet($solarSystemNames[$j]." ".$position, $position, $size, $solarSystem->getSolar_System($solarSystemNames[$j])[0]["id"], null);
+                $planet->setPlanet($solarSystemName." ".$position, $position, $size, $solarSystem->getSolar_System($solarSystemName)[0]["id"], null);
             }
         }
     }

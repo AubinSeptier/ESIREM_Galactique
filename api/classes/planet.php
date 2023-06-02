@@ -76,7 +76,7 @@ class Planet extends Database {
         $sql = "SELECT id FROM planets WHERE id_solar_system = ? ORDER BY RAND() LIMIT 1";
         $query = $this->connect()->prepare($sql);
         $query->execute([$id_solar_system]);
-        $result = $query->fetchColumn();
+        $result = $query->fetchAll();
         return $result;
     }
 

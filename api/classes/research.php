@@ -53,9 +53,9 @@ class Research extends Database {
      * @param $id_empire L'empire auquel la recherche appartient.
      */
     public function setResearch($name, $level, $research_time, $deuterium_cost, $metal_cost, $id_research_type, $id_empire){
-        $sql = "INSERT into researches(name, level, research_time, deuterium_cost, metal_cost, id_empire) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT into researches(name, level, research_time, deuterium_cost, metal_cost, id_research_type, id_empire) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$name, $level, $research_time, $deuterium_cost, $metal_cost, $id_empire]);
+        $query->execute([$name, $level, $research_time, $deuterium_cost, $metal_cost, $id_research_type, $id_empire]);
     }
 
     public function updateResearch($level, $research_time, $deuterium_cost, $metal_cost, $id_research_type, $id_empire){

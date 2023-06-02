@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (nomUnivers.trim() !== '') {
             let response = await fetch('http://localhost/ESIREM_Galactique/api/process/createUniverse-process.php' + "?universeName=" + nomUnivers, {
             });
-            alert("Le chargement est en cours, veuillez patienter...");
             let data = await response.json();
             console.log(data);
 
