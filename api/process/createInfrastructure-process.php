@@ -7,6 +7,8 @@ include_once("../classes/resource.php");
 include_once("../classes/empire.php");
 include_once("../classes/ship.php");
 include_once("../classes/ship_type.php");
+include_once("../classes/research.php");
+include_once("../classes/research_type.php");
 // Processus de création d'une infrastructure
 
 
@@ -18,12 +20,20 @@ $empire = new Empire();
 $planet = new Planet();
 $ship = new Ship();
 $ship_type = new Ship_Type();
+$research = new Research();
+$research_type = new Research_Type();
 
 // Répupération des données utiles
 $deuteriumStock = $empire->getDeuteriumStock($_SESSION["empireId"]);
 $energyStock = $empire->getEnergyStock($_SESSION["empireId"]);
 $energyStockUsed = $empire->getEnergyStockUsed($_SESSION["empireId"]);  
 $metalStock = $empire->getMetalStock($_SESSION["empireId"]);
+
+$aiTechId = $research_type->getResearchType("ai")[0]["id"];
+$energyTechId = $research_type->getResearchType("energy")[0]["id"];
+$laserTechId = $research_type->getResearchType("laser")[0]["id"];
+$ionsTechId = $research_type->getResearchType("ions")[0]["id"];
+$shieldTechId = $research_type->getResearchType("shield")[0]["id"];
 
 if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
     $id_planet = $_GET["id_planet"];
@@ -102,6 +112,11 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
     if($_GET["infrastructure"] == "nanites_factory"){
         if($planetSize > $totalInfrastructureLevels){
             $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("nanites_factory")[0]["id"];
+
+            $researchLevel = $research->getResearchLevel($aiTechId, $_SESSION["empireId"]);
+            if($researchLevel < 5){
+                echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 5 de la technologie IA"));
+            }
 
             $buildingTime = $infrastructure_type->getInfrastructure_Type("nanites_factory")[0]["building_time"];
             $deuteriumCost = $infrastructure_type->getInfrastructure_Type("nanites_factory")[0]["deuterium_cost"];
@@ -241,6 +256,11 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
         if($planetSize > $totalInfrastructureLevels){
             $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("fusion_plant")[0]["id"];
 
+            $researchLevel = $research->getResearchLevel($energyTechId, $_SESSION["empireId"]);
+            if($researchLevel < 10){
+                echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 10 de la technologie Energie"));
+            }
+
             $buildingTime = $infrastructure_type->getInfrastructure_Type("fusion_plant")[0]["building_time"];
             $deuteriumCost = $infrastructure_type->getInfrastructure_Type("fusion_plant")[0]["deuterium_cost"];
             $energyCost = $infrastructure_type->getInfrastructure_Type("fusion_plant")[0]["energy_cost"];
@@ -276,6 +296,11 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
     if($_GET["infrastructure"] == "laser_artillery"){
         $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("laser_artillery")[0]["id"];
 
+        $researchLevel = $research->getResearchLevel($laserTechId, $_SESSION["empireId"]);
+        if($researchLevel < 1){
+            echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 1 de la technologie Laser"));
+        }
+
         $buildingTime = $infrastructure_type->getInfrastructure_Type("laser_artillery")[0]["building_time"];
         $deuteriumCost = $infrastructure_type->getInfrastructure_Type("laser_artillery")[0]["deuterium_cost"];
         $energyCost = $infrastructure_type->getInfrastructure_Type("laser_artillery")[0]["energy_cost"];
@@ -302,6 +327,11 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
     if($_GET["infrastructure"] == "ion_gun"){
         $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("ion_gun")[0]["id"];
 
+        $researchLevel = $research->getResearchLevel($ionsTechId, $_SESSION["empireId"]);
+        if($researchLevel < 1){
+            echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 1 de la technologie Ions"));
+        }
+
         $buildingTime = $infrastructure_type->getInfrastructure_Type("ion_gun")[0]["building_time"];
         $deuteriumCost = $infrastructure_type->getInfrastructure_Type("ion_gun")[0]["deuterium_cost"];
         $energyCost = $infrastructure_type->getInfrastructure_Type("ion_gun")[0]["energy_cost"];
@@ -327,6 +357,11 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
     }
     if($_GET["infrastructure"] == "shield"){
         $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("shield")[0]["id"];
+
+        $researchLevel = $research->getResearchLevel($shieldTechId, $_SESSION["empireId"]);
+        if($researchLevel < 1){
+            echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 1 de la technologie Bouclier"));
+        }
 
         $buildingTime = $infrastructure_type->getInfrastructure_Type("shield")[0]["building_time"];
         $deuteriumCost = $infrastructure_type->getInfrastructure_Type("shield")[0]["deuterium_cost"];

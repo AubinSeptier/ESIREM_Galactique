@@ -42,4 +42,19 @@ class Research extends Database {
         $query = $this->connect()->prepare($sql);
         $query->execute([$name, $level, $research_time, $deuterium_cost, $metal_cost, $id_empire]);
     }
+
+    /**
+     * @fn getResearchLevel($id_research_type, $id_empire)
+     * @brief Récupérer le niveau d'une recherche.
+     * @param $id_research_type L'identifiant du type de recherche.
+     * @param $id_empire L'identifiant de l'empire.
+     * @return $result Le niveau de la recherche.
+     */
+    public function getResearchLevel($id_research_type, $id_empire){
+        $sql = "SELECT level FROM researches WHERE id_research_type = ? AND id_empire = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id_research_type, $id_empire]);
+        $result = $research_type->fetchColumn();
+        return $result;
+    }
 }
