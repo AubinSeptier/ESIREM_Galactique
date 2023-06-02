@@ -13,6 +13,12 @@ include_once 'database.php';
  */
 class Research extends Database {
 
+    /**
+     * @fn getResearch($name)
+     * @brief Récupérer les informations d'une recherche spécifique. 
+     * @param $name Le nom de la recherche à récupérer.
+     * @return $result Un tableau d'objets Research ou false si aucun n'a été trouvé.
+     */
     public function getResearch($name){
         $sql = "SELECT * FROM researches WHERE name = ?";
         $query = $this->connect()->prepare($sql);
@@ -21,9 +27,19 @@ class Research extends Database {
         return $result;
     }
 
-    public function setResearch($name, $empire){
-        $sql = "INSERT into researches(name, empire) VALUES (?, ?)";
+    /**
+     * @fn setResearch($name, $level, $research_time, $deuterium_cost, $metal_cost, $empire)
+     * @brief Définir une recherche pour un utilisateur.
+     * @param $name Le nom de la recherche.
+     * @param $level Le niveau de la recherche.
+     * @param $research_time Le temps de recherche.
+     * @param $deuterium_cost Le coût en deutérium de la recherche.
+     * @param $metal_cost Le coût en métal de la recherche.
+     * @param $id_empire L'empire auquel la recherche appartient.
+     */
+    public function setResearch($name, $level, $research_time, $deuterium_cost, $metal_cost, $id_research_type, $id_empire){
+        $sql = "INSERT into researches(name, level, research_time, deuterium_cost, metal_cost, id_empire) VALUES (?, ?, ?, ?, ?, ?)";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$name, $empire]);
+        $query->execute([$name, $level, $research_time, $deuterium_cost, $metal_cost, $id_empire]);
     }
 }
