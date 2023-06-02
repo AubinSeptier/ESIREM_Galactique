@@ -13,6 +13,7 @@ if(isset($_GET["solarSystemName"])){
     $planetData = $planet->getAllPlanets($solarSystemId);
 
     for($i = 0; $i < $planetsCount; $i++){
+
     }
     
 
