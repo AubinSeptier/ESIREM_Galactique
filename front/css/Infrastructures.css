@@ -165,3 +165,7 @@ footer {
 }
 
 
+.empire-data p span {
+    display: inline-block;
+    margin-right: 10px;
+  }
