@@ -22,6 +22,7 @@ h1 {
 nav {
     background-color: #222;
     padding: 10px;
+    margin-bottom: 40px;
 }
 
 nav ul {
@@ -134,7 +135,7 @@ footer {
 
 .logoutUniverse-button {
 	color: #fff;
-	background-color: #f00;
+	background-color: red;
 	padding: 5px 10px;
 	border-radius: 5px;
 	text-decoration: none;
@@ -146,4 +147,19 @@ footer {
 }
 .logoutUser-button:hover {
     transform: scale(1.1); /* Applique une échelle de 1.1 (10% plus grand) au survol */
+}
+
+.upgrade-button {
+    background-color: #03a9f4;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    outline: none;
+    marker: none;
+}
+
+.upgrade-button:hover {
+    background-color: #0288d1;
 }
