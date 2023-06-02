@@ -1,9 +1,9 @@
 <?php
-/*session_start();
+session_start();
 if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 	header('Location: ./player.php');
 	exit();
-}*/
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +15,15 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 <body>
     <header>
         <h1>ESIGalactique</h1>
+        <div class="empire-data">
+            <p>Empire : <span id="empireName"></span></p>
+            <p>Race : <span id="empireRace"></span></p>
+            <p>Adjectif : <span id="empireAdjective"></span></p>
+            <p>Deutérium : <span id="empireDeuterium"></span></p>
+            <p>Énergie : <span id="empireEnergy"></span></p>
+            <p>Énergie utilisée : <span id="empireEnergyUsed"></span></p>
+            <p>Métal : <span id="empireMetal"></span></p>
+        </div>
 		<a class="logoutUniverse-button">Déconnexion</a>
     </header>
     <nav>
@@ -47,6 +56,9 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                     <!-- Options pour la sélection des planètes -->
                 </select>
             </div>
+            <li>
+                <button class="upgrade-button" onclick="redirectToUpgrade()">Aller aux améliorations</button>
+            </li>
         </div>
         <div class="right-section">
             <div class="infrastructure">
@@ -54,6 +66,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 1000</p>
                 <p>Coût en énergie: 500</p>
                 <p>Coût en deuterium: 0</p>
+                <p>Temps de construction: 50s</p>
                 <a href="#" class="createLab">Créer</a>
             </div>
 			<div class="infrastructure">
@@ -61,6 +74,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 500</p>
                 <p>Coût en énergie: 500</p>
                 <p>Coût en deuterium: 0</p>
+                <p>Temps de construction: 50s</p>
                 <a href="#" class="createChantier">Créer</a>
             </div>
 			<div class="infrastructure">
@@ -68,6 +82,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 10000</p>
                 <p>Coût en énergie: 5000</p>
                 <p>Coût en deuterium: 0</p>
+                <p>Temps de construction: 10m</p>
                 <a href="#" class="createUsine">Créer</a>
             </div>
 			<div class="infrastructure">
@@ -75,6 +90,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 100</p>
                 <p>Coût en énergie: 10</p>
                 <p>Coût en deuterium: 0</p>
+                <p>Temps de construction: 10s</p>
                 <a href="#" class="createMine">Créer</a>
             </div>
 			<div class="infrastructure">
@@ -82,6 +98,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 150</p>
                 <p>Coût en énergie: 0</p>
                 <p>Coût en deuterium: 20</p>
+                <p>Temps de construction: 10s</p>
                 <a href="#" class="createCentraleS">Créer</a>
             </div>
 			<div class="infrastructure">
@@ -89,6 +106,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 5000</p>
                 <p>Coût en énergie: 0</p>
                 <p>Coût en deuterium: 2000</p>
+                <p>Temps de construction: 2m</p>
                 <a href="#" class="createCentraleF">Créer</a>
             </div>
 			<div class="infrastructure">
@@ -96,6 +114,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 1500</p>
                 <p>Coût en énergie: 0</p>
                 <p>Coût en deuterium: 300</p>
+                <p>Temps de construction: 10s</p>
                 <a href="#" class="createLaser">Créer</a>
             </div>
 			<div class="infrastructure">
@@ -103,6 +122,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 5000</p>
                 <p>Coût en énergie: 0</p>
                 <p>Coût en deuterium: 1000</p>
+                <p>Temps de construction: 40s</p>
                 <a href="#" class="createCanon">Créer</a>
             </div>
 			<div class="infrastructure">
@@ -110,6 +130,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 10000</p>
                 <p>Coût en énergie: 1000</p>
                 <p>Coût en deuterium: 5000</p>
+                <p>Temps de construction: 60s</p>
                 <a href="#" class="createBouclier">Créer</a>
             </div>
 			<div class="infrastructure">
@@ -117,6 +138,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
                 <p>Coût en métal: 200</p>
                 <p>Coût en énergie: 50</p>
                 <p>Coût en deuterium: 0</p>
+                <p>Temps de construction: 25s</p>
                 <a href="#" class="createSynthe">Créer</a>
             </div>
         </div>
@@ -124,8 +146,33 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
     <footer>
         <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const empireNameElement = document.querySelector('#empireName');
+        const empireRaceElement = document.querySelector('#empireRace');
+        const empireAdjectiveElement = document.querySelector('#empireAdjective');
+        const empireDeuteriumElement = document.querySelector('#empireDeuterium');
+        const empireEnergyElement = document.querySelector('#empireEnergy');
+        const empireEnergyUsedElement = document.querySelector('#empireEnergyUsed');
+        const empireMetalElement = document.querySelector('#empireMetal');
+
+        const empireData = <?php echo json_encode($data); ?>;
+        console.log(empireData); // Vérifiez les données dans la console du navigateur
+
+        // Remplir les éléments HTML avec les données correspondantes
+        empireNameElement.textContent = empireData.empireName;
+        empireRaceElement.textContent = empireData.empireRace;
+        empireAdjectiveElement.textContent = empireData.empireAdjective;
+        empireDeuteriumElement.textContent = empireData.empireDeuterium;
+        empireEnergyElement.textContent = empireData.empireEnergy;
+        empireEnergyUsedElement.textContent = empireData.empireEnergyUsed;
+        empireMetalElement.textContent = empireData.empireMetal;
+});
+
+    </script>
 	<script src="./js/logoutUniverse.js"></script>
     <script src="./js/create_infrastructures.js"></script>
+    <script src="./js/goToUpgrades.js"></script>
 </body>
 </html>
 
