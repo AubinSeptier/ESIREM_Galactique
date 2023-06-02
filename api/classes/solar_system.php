@@ -50,4 +50,12 @@ class Solar_System extends Database {
         $result = $query->fetchColumn();
         return $result;
     }
+
+    public function getAllSolar_Systems($id_galaxy){
+        $sql = "SELECT * FROM solar_systems WHERE id_galaxy = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id_galaxy]);
+        $result = $query->fetchAll();
+        return $result;
+    }
 }

@@ -50,4 +50,18 @@ class Galaxy extends Database {
         $result = $query->fetchColumn();
         return $result;
     }
+
+    /**
+    * @fn getAllGalaxies($id_universe)
+    * @brief Obtenir toutes les galaxies d'un univers.
+    * @param $id_universe L'identifiant de l'univers.
+    * @return $result Un tableau de données sur les galaxies ou false si aucune galaxie n'a été trouvée.
+    */
+    public function getAllGalaxies($id_universe){
+        $sql = "SELECT * FROM galaxies WHERE id_universe = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id_universe]);
+        $result = $query->fetchAll();
+        return $result;
+    }
 }

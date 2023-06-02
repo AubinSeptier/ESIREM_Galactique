@@ -118,4 +118,20 @@ class Planet extends Database {
         $result = $query->fetchColumn();
         return $result;
     }
+
+    public function getPlanetsCount($id_solar_system){
+        $sql = "SELECT COUNT(*) FROM planets WHERE id_solar_system = ?";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id_solar_system]);
+        $result = $query->fetchColumn();
+        return $result;
+    }
+
+    public function getAllPlanets($id_solar_system){
+        $sql = "SELECT * FROM planets WHERE id_solar_system = ? ORDER BY position ASC";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id_solar_system]);
+        $result = $query->fetchAll();
+        return $result;
+    }
 }
