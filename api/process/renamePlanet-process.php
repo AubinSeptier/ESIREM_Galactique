@@ -7,7 +7,8 @@ if(isset($_POST["planetName"]) && isset($_POST["planetId"])){
     $planetId = $_POST["planetId"];
 
     $planet->updatePlanetName($planetName, $planetId);
+    echo json_encode(array("status" => "success"));
 }
 else {
-    echo "Erreur lors du renommage de la planète";
+    echo json_encode(array("status" => "Erreur lors du changement de nom de la planète"));
 }
