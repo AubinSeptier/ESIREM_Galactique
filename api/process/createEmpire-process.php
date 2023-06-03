@@ -7,6 +7,8 @@ include_once("../classes/planet.php");
 include_once("../classes/solar_system.php");
 include_once("../classes/galaxy.php");
 include_once("../classes/user.php");
+include_once("../classes/resource.php");
+include_once("../classes/fleet.php");
 // Processus de création d'un empire
 
 if(isset($_GET["empireName"]) && isset($_GET["empireRace"]) && isset($_GET["empireAdjective"])){
@@ -46,6 +48,11 @@ if(isset($_GET["empireName"]) && isset($_GET["empireRace"]) && isset($_GET["empi
         $randomSolarSystem = $solarSystem->getRandomSolar_System($randomGalaxy);
         $randomPlanet = $planet->getRandomPlanet($randomSolarSystem)[0]["id"];
         $planet->updatePlanetOwner($_SESSION["empireId"], $randomPlanet);
+
+        $resource = new Resource();
+        $resource->setResource(0, 0, 0, $randomPlanet);
+        $fleet = new Fleet();
+        $fleet->setFleet("Flotte de ".$empireName, 0, 0, 0, $_SESSION["empireId"], $randomPlanet);          
         
         $research = new Research();
         $research->setResearch("Energie", 0, $energyTech[0]["research_time"], $energyTech[0]["deuterium_cost"], $energyTech[0]["metal_cost"], $energyTech[0]["id"], $_SESSION["empireId"]);
