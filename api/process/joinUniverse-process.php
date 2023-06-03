@@ -3,8 +3,8 @@ session_start();
 include_once("../classes/universe.php");
 include_once("../classes/empire.php");
 
-if(isset($_POST["universe"])){
-    $universeName = $_POST["universe"];
+if(isset($_GET["universe"])){
+    $universeName = $_GET["universe"];
     $universe = new Universe();
     $empire = new Empire();
 
