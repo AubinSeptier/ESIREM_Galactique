@@ -49,6 +49,10 @@ if(isset($_GET["empireName"]) && isset($_GET["empireRace"]) && isset($_GET["empi
         $randomPlanet = $planet->getRandomPlanet($randomSolarSystem)[0]["id"];
         $planet->updatePlanetOwner($_SESSION["empireId"], $randomPlanet);
 
+        echo var_dump($randomGalaxy);
+        echo var_dump($randomSolarSystem);
+        echo var_dump($randomPlanet);
+
         $resource = new Resource();
         $resource->setResource(0, 0, 0, $randomPlanet);
         $fleet = new Fleet();

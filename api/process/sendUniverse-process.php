@@ -4,7 +4,7 @@ include_once("../classes/universe.php");
 
 $universe = new Universe();
 
-$allUniverses = $universe->getAllUniverses()["name"];    
+$allUniverses = $universe->getAllUniverses();
 $data = array(
     "allUniverses" => $allUniverses
 );

@@ -11,9 +11,7 @@ if(isset($_GET["solarSystemName"])){
     $solarSystemName = $_GET["solarSystemName"];
     $solarSystemId = $solarSystem->getSolar_System($solarSystemName)[0]["id"];
     
-    $allPlanetsData = $planet->getAllPlanets($solarSystemId);
-    
-        
+    $allPlanetsData = $planet->getAllPlanets($solarSystemId, $empireId);    
 
     $data = array(
         "allPlanetsData" => $allPlanetsData

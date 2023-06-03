@@ -44,7 +44,7 @@ if (!isset($_SESSION['username'])) {
                     <option value="univers2">Univers 2</option>
                     <option value="univers3">Univers 3</option>
                 </select>
-                <a href="#" class="button">Se connecter</a>
+                <a href="#" class="buttonJoin">Se connecter</a>
             </form>
         </div>
     </section>
@@ -53,5 +53,7 @@ if (!isset($_SESSION['username'])) {
     </footer>
     <script src="./js/create_universe.js"></script>
     <script src="./js/logoutUser.js"></script>
+    <script src="./js/getUniverse.js"></script>
+    <script src="./js/joinExistingUniverse.js"></script>
 </body>
 </html>

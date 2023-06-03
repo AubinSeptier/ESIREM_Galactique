@@ -51,7 +51,7 @@ if(isset($_GET["ship"]) && isset($_GET["id_planet"])){
         $fleetSize += 1;
 
         $fighter->setShip("Chasseur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, $fighterId);
-        $fleet->updateFleet($id_planet, $fleetSize, $fleetAttack, $fleetDefense);
+        $fleet->updateFleet($fleetSize, $fleetAttack, $fleetDefense, $id_planet);
         echo json_encode(array("status" => "success", "planet" => $id_planet, "Taille" => $fleetSize + 1, "Attack" => $fleetAttack + $attack, "Defense" => $fleetDefense + $defense));
     }
     if($_GET["ship"] == "cruiser"){
@@ -75,6 +75,7 @@ if(isset($_GET["ship"]) && isset($_GET["id_planet"])){
         $shipNumber = $shipCount + 1;
         
         $cruiser->setShip("Croiseur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, $cruiserId);
+        $fleet->updateFleet($fleetSize, $fleetAttack, $fleetDefense, $id_planet);
         echo json_encode(array("status" => "success"));
     }
     if($_GET["ship"] == "transporter"){
@@ -98,6 +99,7 @@ if(isset($_GET["ship"]) && isset($_GET["id_planet"])){
         $shipNumber = $shipCount + 1;
 
         $transporter->setShip("Transporteur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, $transporterId);
+        $fleet->updateFleet($fleetSize, $fleetAttack, $fleetDefense, $id_planet);
         echo json_encode(array("status" => "success"));
     }
     if($_GET["ship"] == "settler"){
@@ -121,6 +123,7 @@ if(isset($_GET["ship"]) && isset($_GET["id_planet"])){
         $shipNumber = $shipCount + 1;
 
         $settler->setShip("Colon #".$shipNumber, $attack, $defense, $capacity, $id_fleet, $settlerId);
+        $fleet->updateFleet($fleetSize, $fleetAttack, $fleetDefense, $id_planet);
         echo json_encode(array("status" => "success"));
     }
 }

@@ -59,9 +59,9 @@ class Fleet extends Database {
     * @param $defense La défense totale de la flotte.
     * @param $id_planet L'id de la planète où se trouve la flotte.
     */
-    public function updateFleet($id_planet, $ships_number, $attack, $defense){
+    public function updateFleet($ships_number, $attack, $defense, $id_planet){
         $sql = "UPDATE fleets SET ships_number = ?, attack = ?, defense = ? WHERE id_planet = ?";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id_planet, $ships_number, $attack, $defense]);
+        $query->execute([$ships_number, $attack, $defense, $id_planet]);
     }
 }

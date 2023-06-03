@@ -12,7 +12,7 @@ if(isset($_GET["universe"])){
 
 
     if(!$universeData){
-        echo "Cet univers n'existe pas";
+        echo json_encode(array("status" => "L'univers n'existe pas"));
         exit();
     }
     if($universeData) {
@@ -20,14 +20,12 @@ if(isset($_GET["universe"])){
         $empireData = $empire->getEmpireForeignKeys($_SESSION["universeId"], $_SESSION["id"]);
 
         if(!$empireData){
-            header("Location: ../../front/createEmpire.php");
+            echo json_encode(array("status" => "Empire does not exist"));
             exit();
         }
         else{
-            header("Location: ../../front/index.php");
-            exit();
+            echo json_encode(array("status" => "Empire already exists"));
         }
 
-        exit();
     }
 }
