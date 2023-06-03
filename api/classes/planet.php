@@ -80,6 +80,14 @@ class Planet extends Database {
         return $result;
     }
 
+    public function getPlanetForced($id_solar_system){
+        $sql = "SELECT id FROM planets WHERE id_solar_system = ? ORDER BY position ASC LIMIT 1";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id_solar_system]);
+        $result = $query->fetchAll();
+        return $result;
+    }
+
     /**
     * @brief Mettre à jour le nom de la planète.
     * @param $name Le nouveau nom de la planète.

@@ -5,7 +5,7 @@ var searchData=
   ['updatedeuteriumstock_2',['updateDeuteriumStock',['../class_empire.html#ad66a33afda9ef2b718dbbadcc6f41f9c',1,'Empire']]],
   ['updateenergystock_3',['updateEnergyStock',['../class_empire.html#a34112a437430a6803c97de034ba1576a',1,'Empire']]],
   ['updateenergystockused_4',['updateEnergyStockUsed',['../class_empire.html#a33763533c139425cea17d7567ff76c9e',1,'Empire']]],
-  ['updatefleet_5',['updateFleet',['../class_fleet.html#a1f864678f93845c7f9b20c9a119d6a78',1,'Fleet']]],
+  ['updatefleet_5',['updateFleet',['../class_fleet.html#a451e0a1541fe656c3a4f6de5e5a72585',1,'Fleet']]],
   ['updateinfrastructure_6',['updateInfrastructure',['../class_infrastructure.html#aa578e9bd021ae8b73a8256a3c133c993',1,'Infrastructure']]],
   ['updatemetalstock_7',['updateMetalStock',['../class_empire.html#a87ac4a4509379b11102d514816c69c32',1,'Empire']]],
   ['updateplanetname_8',['updatePlanetName',['../class_planet.html#a38b16951971f73b8a6874e5e1b846fec',1,'Planet']]],

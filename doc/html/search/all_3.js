@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['else_0',['else',['../create_empire-process_8php.html#a723e75f29ab238909e7debd7716a148a',1,'else:&#160;createEmpire-process.php'],['../create_infrastructure-process_8php.html#a9029c65f165903e4008eb47755cb2d88',1,'else:&#160;createInfrastructure-process.php'],['../create_ship-process_8php.html#ab4f47042dd253c0a36c19fb72556e887',1,'else:&#160;createShip-process.php'],['../create_universe-process_8php.html#a38ee68ba6d79c2f70c1c70ecfb1ab2b3',1,'else:&#160;createUniverse-process.php'],['../login-process_8php.html#af7c1acdb213923c83d88d72a861bc432',1,'else:&#160;login-process.php'],['../make_research-process_8php.html#a9f8e343205b57d2020cb86929ed13022',1,'else:&#160;makeResearch-process.php'],['../register-process_8php.html#a5b0063b093e30d261e7dc939954ea44e',1,'else:&#160;register-process.php'],['../rename_planet-process_8php.html#a270bf0cc9712a271688adf3a747c4faf',1,'else:&#160;renamePlanet-process.php'],['../resources_production-process_8php.html#a9d194cd0b9b0402f71ea0c3b8139961f',1,'else:&#160;resourcesProduction-process.php'],['../send_planet-process_8php.html#a003d52164dc288e6df3fd9800eb3b274',1,'else:&#160;sendPlanet-process.php'],['../send_solar_system-process_8php.html#a54ff9589f85174c761c866fa7e32b2d3',1,'else:&#160;sendSolarSystem-process.php']]],
-  ['empire_1',['Empire',['../class_empire.html',1,'']]],
-  ['empire_2ephp_2',['empire.php',['../empire_8php.html',1,'']]]
+  ['fleet_0',['Fleet',['../class_fleet.html',1,'']]]
 ];

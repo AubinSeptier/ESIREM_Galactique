@@ -1,4 +1,28 @@
 <?php
+/**
+ * @file createShip-process.php
+ * Fichier contient le système complet de création d'un vaisseau.
+ * 
+ * @page createShip createShip-process.php
+ * 
+ * Cette fonction réalise le processus de création d'un vaisseau en utilisant les classes
+ * Research, Research_Type, Empire, Galaxy, Solar_System, Planet, Resource et Fleet.
+ * Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et crée un vaisseau avec les paramètres donnés.
+ * 
+ * La fonction effectue les étapes suivantes :
+ * - Vérifie si les paramètres requis ($_GET["ship"], $_GET["id_planet"]) sont définis.
+ * - Initialise les objets nécessaires (Research, Research_Type, Empire, Galaxy, Solar_System, Planet, Resource, Fleet).
+ * - Vérifie si le joueur a assez de ressources pour construire le vaisseau.
+ * - Crée un nouveau vaisseau avec les paramètres donnés.
+ * - Met à jour la flotte de la planète sélectionnée avec le nouveau vaisseau.
+ * - Retourne un message de succès avec les détails du vaisseau construit.
+ * 
+ * @throws Exception_1 Si les ressources nécessaires sont insuffisantes, renvoie un message d'erreur.
+ * @throws Exception_2 Si les superglobales GET ne sont pas récupérées ou vides, renvoie un message d'erreur.
+ *  
+ * @warning Problème que nous n'avons pas réussi à résoudre : La méthode updateFleet() n'actualise pas la flotte de la planète sélectionnée. La méthode SQL fonctionne pourtant si on la teste de façon brut directement dans MariaDB.
+ */
 session_start();
 include_once("../classes/fleet.php");
 include_once("../classes/ship.php");

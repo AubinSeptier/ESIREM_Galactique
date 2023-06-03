@@ -1,4 +1,29 @@
 <?php
+/**
+ * @file createUniverse-process.php
+ * Fichier contient le système complet de création d'un univers.
+ * 
+ * @page createUniverse createUniverse-process.php
+ * 
+ * Cette fonction réalise le processus de création d'un univers en utilisant les classes
+ * Universe, Galaxy, Solar_System et Planet.
+ * Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et crée un univers avec les paramètres donnés.
+ * Elle crée également les galaxies, systèmes solaires et planètes de l'univers.
+ * 
+ * La fonction effectue les étapes suivantes :
+ *  - Vérifie si les paramètres requis ($_GET["universeName"]) sont définis.
+ *  - Initialise le premier objet nécessaire (Universe).
+ *  - Vérifie si l'univers n'existe pas déjà.
+ *  - Crée un nouvel univers avec les paramètres donnés et met à jour les variables de session.
+ *  - Définit une liste de noms de galaxies et de systèmes solaires.
+ *  - Initialise les autres objets nécessaires (Galaxy, Solar_System, Planet).
+ *  - Crée les galaxies, systèmes solaires et planètes de l'univers à l'aide de boucles for imbriquées.
+ *  - Retourne un message de succès.
+ * 
+ * @throws Exception_1 Si l'univers existe déjà, renvoie un message d'erreur.
+ * @throws Exception_2 Si la superglobale GET n'est pas récupérée ou vide, renvoie un message d'erreur.
+ */
 session_start();
 include_once("../classes/universe.php");
 include_once("../classes/galaxy.php");

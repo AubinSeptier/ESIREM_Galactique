@@ -1,4 +1,35 @@
 <?php
+/**
+ * @file createEmpire-process.php
+ * Fichier contient le système complet de création d'un empire.
+ * 
+ * @page createEmpire createEmpire-process.php
+ * 
+ * Cette fonction réalise le processus de création d'un empire en utilisant les classes
+ * Research, Research_Type, Empire, Galaxy, Solar_System, Planet, Resource et Fleet.
+ * Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et crée un empire avec les paramètres donnés.
+ * Elle met également à jour certaines entités liées à l'empire nouvellement créé.
+ * 
+ * 
+ * La fonction effectue les étapes suivantes :
+ *   - Vérifie si les paramètres requis ($_GET["empireName"], $_GET["empireRace"], $_GET["empireAdjective"]) sont définis.
+ *   - Initialise les objets nécessaires (Empire, Research_Type, Galaxy, Solar_System, Planet, Resource, Fleet).
+ *   - Vérifie si le nom de l'empire n'existe pas déjà.
+ *   - Crée un nouvel empire avec les paramètres donnés et met à jour les variables de session.
+ *   - Sélectionne aléatoirement une galaxie, un système solaire et une planète pour l'empire nouvellement créé.
+ *   - Met à jour le propriétaire de la planète sélectionnée avec l'ID de l'empire.
+ *   - Crée les ressources et la flotte de départ pour la planète natale l'empire.
+ *   - Crée des recherches initiales (énergie, laser, ions, bouclier, armement, IA) pour l'empire.
+ *   - Retourne un message de succès avec les détails de la galaxie, du système solaire et de la planète attribués à l'empire.
+ * 
+ * @throws Exception_1 Si l'empire existe déjà, renvoie un message d'erreur.
+ * @throws Exception_2 Si les superglobales GET ne sont pas récupérées ou vides, renvoie un message d'erreur.
+ *
+ * @warning Problème que nous n'avons pas réussi à résoudre : la méthode getRandomPlanet() ne fonctionne pas au-delà du premier appel lors de la création du premier univers. 
+ * Les deux autres méthodes pour la galaxie et le système solaire fonctionnent correctement pourtant bien de leurs côtés malgré un code similaire.
+ * 
+ */
 session_start();
 include_once("../classes/research.php");
 include_once("../classes/research_type.php");
@@ -48,10 +79,6 @@ if(isset($_GET["empireName"]) && isset($_GET["empireRace"]) && isset($_GET["empi
         $randomSolarSystem = $solarSystem->getRandomSolar_System($randomGalaxy);
         $randomPlanet = $planet->getRandomPlanet($randomSolarSystem)[0]["id"];
         $planet->updatePlanetOwner($_SESSION["empireId"], $randomPlanet);
-
-        echo var_dump($randomGalaxy);
-        echo var_dump($randomSolarSystem);
-        echo var_dump($randomPlanet);
 
         $resource = new Resource();
         $resource->setResource(0, 0, 0, $randomPlanet);

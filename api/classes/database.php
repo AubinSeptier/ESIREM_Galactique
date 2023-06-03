@@ -10,7 +10,7 @@
  */
 class Database {
     private $dbHost = "localhost";
-    private $dbName = "esirem_galactique";
+    private $dbName = "esi_galactique";
     private $dbUser = "root";
     private $dbPassword = "";
     private $db;

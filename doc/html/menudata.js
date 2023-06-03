@@ -24,6 +24,7 @@
 */
 var menudata={children:[
 {text:"Page principale",url:"index.html"},
+{text:"Pages associées",url:"pages.html"},
 {text:"Structures de données",url:"annotated.html",children:[
 {text:"Structures de données",url:"annotated.html"},
 {text:"Index des structures de données",url:"classes.html"},
@@ -40,13 +41,4 @@ var menudata={children:[
 {text:"d",url:"functions_func.html#index_d"},
 {text:"g",url:"functions_func.html#index_g"},
 {text:"s",url:"functions_func.html#index_s"},
-{text:"u",url:"functions_func.html#index_u"}]}]}]},
-{text:"Fichiers",url:"files.html",children:[
-{text:"Liste des fichiers",url:"files.html"},
-{text:"Variables globale",url:"globals.html",children:[
-{text:"Tout",url:"globals.html",children:[
-{text:"$",url:"globals.html#index__24"},
-{text:"e",url:"globals.html#index_e"}]},
-{text:"Variables",url:"globals_vars.html",children:[
-{text:"$",url:"globals_vars.html#index__24"},
-{text:"e",url:"globals_vars.html#index_e"}]}]}]}]}
+{text:"u",url:"functions_func.html#index_u"}]}]}]}]}

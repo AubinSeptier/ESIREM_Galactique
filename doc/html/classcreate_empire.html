@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ESIREM Galactique API: Référence du fichier D:/Xampp/htdocs/ESIREM_Galactique/api/process/createEmpire-process.php</title>
+<title>ESIREM Galactique API: Référence de la classe createEmpire</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,29 +67,16 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_a6478c394184395a37b21696b8de4a06.html">Xampp</a></li><li class="navelem"><a class="el" href="dir_69527cc3e591359b3aa0ea02e3db5c28.html">htdocs</a></li><li class="navelem"><a class="el" href="dir_706d06694daf61c1b75960793d17fe26.html">ESIREM_Galactique</a></li><li class="navelem"><a class="el" href="dir_fa46833e343a57bcc07b8a70533a5dd3.html">api</a></li><li class="navelem"><a class="el" href="dir_13ebfae65891ca975c1cb1440d8b1a16.html">process</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">Référence du fichier createEmpire-process.php</div></div>
+  <div class="headertitle"><div class="title">Référence de la classe createEmpire</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Cette fonction réalise le processus de création d'un empire en utilisant les classes <a class="el" href="class_research.html" title="Classe permettant de gérer les recherches.">Research</a>, <a class="el" href="class_research___type.html" title="Classe permettant de gérer les types de recherche.">Research_Type</a>, <a class="el" href="class_empire.html" title="Classe permettant de gérer les empires.">Empire</a>, <a class="el" href="class_galaxy.html" title="Classe permettant de gérer les galaxies.">Galaxy</a>, <a class="el" href="class_solar___system.html" title="Classe permettant de gérer les systèmes solaires.">Solar_System</a>, <a class="el" href="class_planet.html" title="Classe permettant de gérer les planètes.">Planet</a>, <a class="el" href="class_resource.html" title="Classe permettant de gérer les ressources.">Resource</a> et <a class="el" href="class_fleet.html" title="Classe permettant de gérer les flottes.">Fleet</a>. Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION. Elle effectue les vérifications nécessaires et crée un empire avec les paramètres donnés. Elle met également à jour certaines entités liées à l'empire nouvellement créé.  
-<a href="#details">Plus de détails...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a723e75f29ab238909e7debd7716a148a"><td class="memItemLeft" align="right" valign="top">if(isset($_GET[&quot;empireName&quot;]) &amp;&amp;isset($_GET[&quot;empireRace&quot;]) &amp;&amp;isset($_GET[&quot;empireAdjective&quot;]))&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create_empire-process_8php.html#a723e75f29ab238909e7debd7716a148a">else</a></td></tr>
-<tr class="separator:a723e75f29ab238909e7debd7716a148a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
+ <a href="classcreate_empire.html#details">Plus de détails...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Cette fonction réalise le processus de création d'un empire en utilisant les classes <a class="el" href="class_research.html" title="Classe permettant de gérer les recherches.">Research</a>, <a class="el" href="class_research___type.html" title="Classe permettant de gérer les types de recherche.">Research_Type</a>, <a class="el" href="class_empire.html" title="Classe permettant de gérer les empires.">Empire</a>, <a class="el" href="class_galaxy.html" title="Classe permettant de gérer les galaxies.">Galaxy</a>, <a class="el" href="class_solar___system.html" title="Classe permettant de gérer les systèmes solaires.">Solar_System</a>, <a class="el" href="class_planet.html" title="Classe permettant de gérer les planètes.">Planet</a>, <a class="el" href="class_resource.html" title="Classe permettant de gérer les ressources.">Resource</a> et <a class="el" href="class_fleet.html" title="Classe permettant de gérer les flottes.">Fleet</a>. Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION. Elle effectue les vérifications nécessaires et crée un empire avec les paramètres donnés. Elle met également à jour certaines entités liées à l'empire nouvellement créé. </p>
-<p>Fichier contient le système complet de création d'un empire.</p>
 <p>La fonction effectue les étapes suivantes :</p><ul>
 <li>Vérifie si les paramètres requis ($_GET["empireName"], $_GET["empireRace"], $_GET["empireAdjective"]) sont définis.</li>
 <li>Initialise les objets nécessaires (<a class="el" href="class_empire.html" title="Classe permettant de gérer les empires.">Empire</a>, <a class="el" href="class_research___type.html" title="Classe permettant de gérer les types de recherche.">Research_Type</a>, <a class="el" href="class_galaxy.html" title="Classe permettant de gérer les galaxies.">Galaxy</a>, <a class="el" href="class_solar___system.html" title="Classe permettant de gérer les systèmes solaires.">Solar_System</a>, <a class="el" href="class_planet.html" title="Classe permettant de gérer les planètes.">Planet</a>, <a class="el" href="class_resource.html" title="Classe permettant de gérer les ressources.">Resource</a>, <a class="el" href="class_fleet.html" title="Classe permettant de gérer les flottes.">Fleet</a>).</li>
@@ -102,23 +89,9 @@ Variables</h2></td></tr>
 <li>Retourne un message de succès avec les détails de la galaxie, du système solaire et de la planète attribués à l'empire.</li>
 </ul>
 <dl class="section warning"><dt>Avertissement</dt><dd>Problème que nous n'avons pas réussi à résoudre : la méthode getRandomPlanet() ne fonctionne pas au-delà du premier appel lors de la création du premier univers. Les deux autres méthodes pour la galaxie et le système solaire fonctionnent correctement pourtant bien de leurs côtés malgré un code similaire. </dd></dl>
-</div><h2 class="groupheader">Documentation des variables</h2>
-<a id="a723e75f29ab238909e7debd7716a148a" name="a723e75f29ab238909e7debd7716a148a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a723e75f29ab238909e7debd7716a148a">&#9670;&#160;</a></span>else</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">if (isset( $_GET[&quot;empireName&quot;]) &amp;&amp;isset( $_GET[&quot;empireRace&quot;]) &amp;&amp;isset( $_GET[&quot;empireAdjective&quot;])) else</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Valeur initiale :</b><div class="fragment"><div class="line">{</div>
-<div class="line">    echo json_encode(array(<span class="stringliteral">&quot;status&quot;</span> =&gt; <span class="stringliteral">&quot;Erreur lors de la création de l&#39;empire&quot;</span>))</div>
-</div><!-- fragment -->
-</div>
-</div>
+</div><hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li><a class="el" href="create_empire-process_8php.html">createEmpire-process.php</a></li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

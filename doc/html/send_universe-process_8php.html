@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ESIREM Galactique API: Référence du fichier D:/Xampp/htdocs/ESIREM_Galactique/api/process/sendGalaxy-process.php</title>
+<title>ESIREM Galactique API: Référence du fichier D:/Xampp/htdocs/ESIREM_Galactique/api/process/sendUniverse-process.php</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,30 +75,28 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">Référence du fichier sendGalaxy-process.php</div></div>
+  <div class="headertitle"><div class="title">Référence du fichier sendUniverse-process.php</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a60d0b8abd6863b651ea073f0b2d656d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_galaxy-process_8php.html#a60d0b8abd6863b651ea073f0b2d656d9">$galaxy</a> = new <a class="el" href="class_galaxy.html">Galaxy</a>()</td></tr>
-<tr class="separator:a60d0b8abd6863b651ea073f0b2d656d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73b5525d78ad72dfc2d390e39ea2f088"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_galaxy-process_8php.html#a73b5525d78ad72dfc2d390e39ea2f088">$universeId</a> = $_SESSION['universeId']</td></tr>
-<tr class="separator:a73b5525d78ad72dfc2d390e39ea2f088"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51871a23f8b4c292eb09c87d1907b270"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_galaxy-process_8php.html#a51871a23f8b4c292eb09c87d1907b270">$allGalaxies</a> = $galaxy-&gt;getAllGalaxies($universeId)[&quot;name&quot;]</td></tr>
-<tr class="separator:a51871a23f8b4c292eb09c87d1907b270"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6efc15b5a2314dd4b5aaa556a375c6d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_galaxy-process_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a></td></tr>
+<tr class="memitem:ad26a4ca7f9c64ef8e279f8cd93c39b55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_universe-process_8php.html#ad26a4ca7f9c64ef8e279f8cd93c39b55">$universe</a> = new <a class="el" href="class_universe.html">Universe</a>()</td></tr>
+<tr class="separator:ad26a4ca7f9c64ef8e279f8cd93c39b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef28e1f225cc678f77202175e6ad9a13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_universe-process_8php.html#aef28e1f225cc678f77202175e6ad9a13">$allUniverses</a> = $universe-&gt;getAllUniverses()</td></tr>
+<tr class="separator:aef28e1f225cc678f77202175e6ad9a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6efc15b5a2314dd4b5aaa556a375c6d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="send_universe-process_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a></td></tr>
 <tr class="separator:a6efc15b5a2314dd4b5aaa556a375c6d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des variables</h2>
-<a id="a51871a23f8b4c292eb09c87d1907b270" name="a51871a23f8b4c292eb09c87d1907b270"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51871a23f8b4c292eb09c87d1907b270">&#9670;&#160;</a></span>$allGalaxies</h2>
+<a id="aef28e1f225cc678f77202175e6ad9a13" name="aef28e1f225cc678f77202175e6ad9a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef28e1f225cc678f77202175e6ad9a13">&#9670;&#160;</a></span>$allUniverses</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$allGalaxies = $galaxy-&gt;getAllGalaxies($universeId)[&quot;name&quot;]</td>
+          <td class="memname">$allUniverses = $universe-&gt;getAllUniverses()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -117,34 +115,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Valeur initiale :</b><div class="fragment"><div class="line">= array(</div>
-<div class="line">    <span class="stringliteral">&quot;allGalaxies&quot;</span> =&gt; <a class="code hl_variable" href="send_galaxy-process_8php.html#a51871a23f8b4c292eb09c87d1907b270">$allGalaxies</a></div>
+<div class="line">    <span class="stringliteral">&quot;allUniverses&quot;</span> =&gt; <a class="code hl_variable" href="send_universe-process_8php.html#aef28e1f225cc678f77202175e6ad9a13">$allUniverses</a></div>
 <div class="line">)</div>
-<div class="ttc" id="asend_galaxy-process_8php_html_a51871a23f8b4c292eb09c87d1907b270"><div class="ttname"><a href="send_galaxy-process_8php.html#a51871a23f8b4c292eb09c87d1907b270">$allGalaxies</a></div><div class="ttdeci">$allGalaxies</div><div class="ttdef"><b>Definition</b> sendGalaxy-process.php:9</div></div>
+<div class="ttc" id="asend_universe-process_8php_html_aef28e1f225cc678f77202175e6ad9a13"><div class="ttname"><a href="send_universe-process_8php.html#aef28e1f225cc678f77202175e6ad9a13">$allUniverses</a></div><div class="ttdeci">$allUniverses</div><div class="ttdef"><b>Definition</b> sendUniverse-process.php:7</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a60d0b8abd6863b651ea073f0b2d656d9" name="a60d0b8abd6863b651ea073f0b2d656d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60d0b8abd6863b651ea073f0b2d656d9">&#9670;&#160;</a></span>$galaxy</h2>
+<a id="ad26a4ca7f9c64ef8e279f8cd93c39b55" name="ad26a4ca7f9c64ef8e279f8cd93c39b55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26a4ca7f9c64ef8e279f8cd93c39b55">&#9670;&#160;</a></span>$universe</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$galaxy = new <a class="el" href="class_galaxy.html">Galaxy</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a73b5525d78ad72dfc2d390e39ea2f088" name="a73b5525d78ad72dfc2d390e39ea2f088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73b5525d78ad72dfc2d390e39ea2f088">&#9670;&#160;</a></span>$universeId</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$universeId = $_SESSION['universeId']</td>
+          <td class="memname">$universe = new <a class="el" href="class_universe.html">Universe</a>()</td>
         </tr>
       </table>
 </div><div class="memdoc">

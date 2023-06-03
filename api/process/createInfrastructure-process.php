@@ -1,4 +1,31 @@
 <?php
+/**
+ * @file createInfrastructure-process.php
+ * Fichier contenant le système complet de création d'une infrastructure.
+ * 
+ * @page createInfrastructure createInfrastructure-process.php
+ * 
+ * Cette fonction réalise le processus de création d'une infrastructure en utilisant les classes
+ * Infrastructure, Infrastructure_Type, Empire, Planet, Resource, Ship, Ship_Type, Research et Research_Type.
+ * Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et crée une infrastructure avec les paramètres donnés.
+ * 
+ * La fonction effectue les étapes suivantes :
+ *  - Vérifie si les paramètres requis ($_GET["infrastructure"], $_GET["id_planet"]) sont définis.
+ * - Initialise les objets nécessaires (Infrastructure, Infrastructure_Type, Empire, Planet, Resource, Ship, Ship_Type, Research et Research_Type).
+ * - Vérifie si l'infrastructure peut être construite sur la planète (taille de la planète, nombre d'infrastructures déjà construites).
+ * - Vérifie si les ressources nécessaires sont disponibles.
+ * - Crée l'infrastructure avec les paramètres donnés.
+ * - Met à jour les ressources de l'empire.
+ * - Retourne un message de succès.
+ * 
+ * Il existe le même processus pour chaque infrastructure (laboratoire de recherche, chantier spatialn usine de nanites, mine de métal, synthétiseur de deutérium, 
+ * centrale électrique, centrale à fusion, artillerie laser, canon à ions et bouclier).
+ * 
+ * @throws Exception_1 Si la planète n'a pas assez de place pour construire l'infrastructure, renvoie un message d'erreur.
+ * @throws Exception_2 Si les ressources nécessaires sont insuffisantes, renvoie un message d'erreur.
+ * @throws Exception_3 Si les superglobales GET ne sont pas récupérées ou vides, renvoie un message d'erreur.
+ */
 session_start();
 include_once("../classes/infrastructure.php");
 include_once("../classes/infrastructure_type.php");
