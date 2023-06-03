@@ -11,9 +11,10 @@
  * Elle effectue les vérifications nécessaires et crée une infrastructure avec les paramètres donnés.
  * 
  * La fonction effectue les étapes suivantes :
- *  - Vérifie si les paramètres requis ($_GET["infrastructure"], $_GET["id_planet"]) sont définis.
  * - Initialise les objets nécessaires (Infrastructure, Infrastructure_Type, Empire, Planet, Resource, Ship, Ship_Type, Research et Research_Type).
+ * - Vérifie si les paramètres requis ($_GET["infrastructure"], $_GET["id_planet"]) sont définis.
  * - Vérifie si l'infrastructure peut être construite sur la planète (taille de la planète, nombre d'infrastructures déjà construites).
+ * - Vérifie si les recherches requises ont été effectuées.
  * - Vérifie si les ressources nécessaires sont disponibles.
  * - Crée l'infrastructure avec les paramètres donnés.
  * - Met à jour les ressources de l'empire.

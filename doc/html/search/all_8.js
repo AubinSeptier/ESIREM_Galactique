@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['planet_0',['Planet',['../class_planet.html',1,'']]]
+  ['makeresearch_2dprocess_2ephp_0',['makeResearch-process.php',['../make_research.html',1,'']]]
 ];

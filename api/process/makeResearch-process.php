@@ -1,4 +1,31 @@
 <?php
+/**
+ * @file makeResearch-process.php
+ * Fichier contenant le système complet de recherche.
+ * 
+ * @page makeResearch makeResearch-process.php
+ * 
+ * Cette fonction réalise le processus de recherche en utilisant les classes
+ * Research, Research_Type, Empire, Infrastructure et Infrastructure_Type.
+ * Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et met à jour les recherches de l'empire avec les paramètres donnés.
+ * 
+ * La fonction effectue les étapes suivantes :
+ * - Initialise les objets nécessaires (Research, Research_Type, Empire, Infrastructure et Infrastructure_Type).
+ * - Vérifie si le paramètre requis ($_GET["research"]) est défini.
+ * - Vérifie si les ressources nécessaires sont disponibles.
+ * - Met à jour les ressources de l'empire.
+ * - Met à jour les recherches de l'empire.
+ * - Retourne un message de succès.
+ * 
+ * Il existe le même processus pour chaque recherche possible (Energie, Laser, Ions, Bouclier, Armement et IA).
+ * 
+ * @throws Exception_1 Si les ressources nécessaires ne sont pas disponibles, renvoie un message d'erreur.
+ * @throws Exception_2 Si les technologies requises ne sont pas possédées, renvoie un message d'erreur.
+ * @throws Exception_3 Si la superglobale GET n'est pas récupérée ou vide, renvoie un message d'erreur.
+ * 
+ * @remark Actuellement, les technologies peuvent être recherchées sans les bâtiments nécessaires.
+ */
 session_start();
 include_once("../classes/research.php");
 include_once("../classes/research_type.php");

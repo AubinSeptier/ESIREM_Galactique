@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ESIREM Galactique API: createUniverse-process.php</title>
+<title>ESIREM Galactique API: sendSolarSystem-process.php</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,24 +69,19 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">createUniverse-process.php</div></div>
+  <div class="headertitle"><div class="title">sendSolarSystem-process.php</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Cette fonction réalise le processus de création d'un univers en utilisant les classes <a class="el" href="class_universe.html" title="Classe permettant de gérer les univers.">Universe</a>, <a class="el" href="class_galaxy.html" title="Classe permettant de gérer les galaxies.">Galaxy</a>, <a class="el" href="class_solar___system.html" title="Classe permettant de gérer les systèmes solaires.">Solar_System</a> et <a class="el" href="class_planet.html" title="Classe permettant de gérer les planètes.">Planet</a>. Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION. Elle effectue les vérifications nécessaires et crée un univers avec les paramètres donnés. Elle crée également les galaxies, systèmes solaires et planètes de l'univers.</p>
+<div class="textblock"><p>Cette fonction réalise le processus d'envoi des données du système solaire vers le frontend en utilisant les classes <a class="el" href="class_solar___system.html" title="Classe permettant de gérer les systèmes solaires.">Solar_System</a> et <a class="el" href="class_galaxy.html" title="Classe permettant de gérer les galaxies.">Galaxy</a>. Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION. Elle effectue les vérifications nécessaires et envoie les données du système solaire vers le frontend.</p>
 <p>La fonction effectue les étapes suivantes :</p><ul>
-<li>Vérifie si le paramètres requis ($_GET["universeName"]) est défini.</li>
-<li>Initialise le premier objet nécessaire (<a class="el" href="class_universe.html" title="Classe permettant de gérer les univers.">Universe</a>).</li>
-<li>Vérifie si l'univers n'existe pas déjà.</li>
-<li>Crée un nouvel univers avec les paramètres donnés et met à jour les variables de session.</li>
-<li>Définit une liste de noms de galaxies et de systèmes solaires.</li>
-<li>Initialise les autres objets nécessaires (<a class="el" href="class_galaxy.html" title="Classe permettant de gérer les galaxies.">Galaxy</a>, <a class="el" href="class_solar___system.html" title="Classe permettant de gérer les systèmes solaires.">Solar_System</a>, <a class="el" href="class_planet.html" title="Classe permettant de gérer les planètes.">Planet</a>).</li>
-<li>Crée les galaxies, systèmes solaires et planètes de l'univers à l'aide de boucles for imbriquées.</li>
-<li>Retourne un message de succès.</li>
+<li>Vérifie si le paramètre requis ($_GET["galaxyName"]) est défini.</li>
+<li>Initialise les objets nécessaires (<a class="el" href="class_solar___system.html" title="Classe permettant de gérer les systèmes solaires.">Solar_System</a> et <a class="el" href="class_galaxy.html" title="Classe permettant de gérer les galaxies.">Galaxy</a>).</li>
+<li>Envoie les données du système solaire vers le frontend.</li>
+<li>Retourne un message de succès avec les données du système solaire.</li>
 </ul>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">Exception_1</td><td>Si l'univers existe déjà, renvoie un message d'erreur. </td></tr>
-    <tr><td class="paramname">Exception_2</td><td>Si la superglobale GET n'est pas récupérée ou vide, renvoie un message d'erreur. </td></tr>
+    <tr><td class="paramname">Exception_1</td><td>Si la superglobalse GET n'est pas récupérée ou vide, renvoie un message d'erreur. </td></tr>
   </table>
   </dd>
 </dl>

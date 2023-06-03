@@ -76,6 +76,7 @@ $(function() {
 <p>La fonction effectue les étapes suivantes :</p><ul>
 <li>Vérifie si les paramètres requis ($_GET["ship"], $_GET["id_planet"]) sont définis.</li>
 <li>Initialise les objets nécessaires (<a class="el" href="class_research.html" title="Classe permettant de gérer les recherches.">Research</a>, <a class="el" href="class_research___type.html" title="Classe permettant de gérer les types de recherche.">Research_Type</a>, <a class="el" href="class_empire.html" title="Classe permettant de gérer les empires.">Empire</a>, <a class="el" href="class_galaxy.html" title="Classe permettant de gérer les galaxies.">Galaxy</a>, <a class="el" href="class_solar___system.html" title="Classe permettant de gérer les systèmes solaires.">Solar_System</a>, <a class="el" href="class_planet.html" title="Classe permettant de gérer les planètes.">Planet</a>, <a class="el" href="class_resource.html" title="Classe permettant de gérer les ressources.">Resource</a>, <a class="el" href="class_fleet.html" title="Classe permettant de gérer les flottes.">Fleet</a>).</li>
+<li>Vérifie si le joueur a les recherches nécessaires pour construire le vaisseau.</li>
 <li>Vérifie si le joueur a assez de ressources pour construire le vaisseau.</li>
 <li>Crée un nouveau vaisseau avec les paramètres donnés.</li>
 <li>Met à jour la flotte de la planète sélectionnée avec le nouveau vaisseau.</li>
@@ -88,6 +89,7 @@ $(function() {
   </table>
   </dd>
 </dl>
+<dl class="section remark"><dt>Remarques</dt><dd>Actuellement, les vaisseaux peuvent être construits sans avoir les bâtiments nécessaires.</dd></dl>
 <dl class="section warning"><dt>Avertissement</dt><dd>Problème que nous n'avons pas réussi à résoudre : La méthode updateFleet() n'actualise pas la flotte de la planète sélectionnée. La méthode SQL fonctionne pourtant si on la teste de façon brut directement dans MariaDB. </dd></dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

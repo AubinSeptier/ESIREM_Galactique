@@ -12,7 +12,7 @@
  * Elle crée également les galaxies, systèmes solaires et planètes de l'univers.
  * 
  * La fonction effectue les étapes suivantes :
- *  - Vérifie si les paramètres requis ($_GET["universeName"]) sont définis.
+ *  - Vérifie si le paramètres requis ($_GET["universeName"]) est défini.
  *  - Initialise le premier objet nécessaire (Universe).
  *  - Vérifie si l'univers n'existe pas déjà.
  *  - Crée un nouvel univers avec les paramètres donnés et met à jour les variables de session.

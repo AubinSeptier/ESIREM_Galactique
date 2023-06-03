@@ -11,7 +11,7 @@
  * Elle effectue les vérifications nécessaires et crée un empire avec les paramètres donnés.
  * 
  * La fonction effectue les étapes suivantes :
- * - Vérifie si les paramètres requis ($_GET["universe"]) sont définis.
+ * - Vérifie si le paramètre requis ($_GET["universe"]) est défini.
  * - Initialise les objets nécessaires (Universe et Empire).
  * - Vérifie si l'univers existe.
  * - Vérifie si l'empire existe.

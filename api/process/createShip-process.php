@@ -13,6 +13,7 @@
  * La fonction effectue les étapes suivantes :
  * - Vérifie si les paramètres requis ($_GET["ship"], $_GET["id_planet"]) sont définis.
  * - Initialise les objets nécessaires (Research, Research_Type, Empire, Galaxy, Solar_System, Planet, Resource, Fleet).
+ * - Vérifie si le joueur a les recherches nécessaires pour construire le vaisseau.
  * - Vérifie si le joueur a assez de ressources pour construire le vaisseau.
  * - Crée un nouveau vaisseau avec les paramètres donnés.
  * - Met à jour la flotte de la planète sélectionnée avec le nouveau vaisseau.
@@ -20,6 +21,8 @@
  * 
  * @throws Exception_1 Si les ressources nécessaires sont insuffisantes, renvoie un message d'erreur.
  * @throws Exception_2 Si les superglobales GET ne sont pas récupérées ou vides, renvoie un message d'erreur.
+ * 
+ * @remark Actuellement, les vaisseaux peuvent être construits sans avoir les bâtiments nécessaires.
  *  
  * @warning Problème que nous n'avons pas réussi à résoudre : La méthode updateFleet() n'actualise pas la flotte de la planète sélectionnée. La méthode SQL fonctionne pourtant si on la teste de façon brut directement dans MariaDB.
  */
