@@ -52,7 +52,7 @@ if(isset($_GET["ship"]) && isset($_GET["id_planet"])){
 
         $fighter->setShip("Chasseur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, $fighterId);
         $fleet->updateFleet($id_planet, $fleetSize, $fleetAttack, $fleetDefense);
-        echo json_encode(array("status" => "success", "fleet" => $id_fleet, "Taille" => $fleetSize + 1, "Attack" => $fleetAttack + $attack, "Defense" => $fleetDefense + $defense));
+        echo json_encode(array("status" => "success", "planet" => $id_planet, "Taille" => $fleetSize + 1, "Attack" => $fleetAttack + $attack, "Defense" => $fleetDefense + $defense));
     }
     if($_GET["ship"] == "cruiser"){
         $cruiser = new Ship();

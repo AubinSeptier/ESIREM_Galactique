@@ -87,8 +87,8 @@ Variables</h2></td></tr>
 <tr class="separator:a80e944ec4312f3cb251ce89377c20c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d388ea02dee9ba904ea31afedcc3d89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a4d388ea02dee9ba904ea31afedcc3d89">$empire</a> = new <a class="el" href="class_empire.html">Empire</a>()</td></tr>
 <tr class="separator:a4d388ea02dee9ba904ea31afedcc3d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab55f884b9f78980c5879ab78f3c1afc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#aab55f884b9f78980c5879ab78f3c1afc">$infrastructures</a> = new Infrastructures()</td></tr>
-<tr class="separator:aab55f884b9f78980c5879ab78f3c1afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b60d8053e450c30c5023759a7294bf0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a0b60d8053e450c30c5023759a7294bf0">$infrastructure</a> = new <a class="el" href="class_infrastructure.html">Infrastructure</a>()</td></tr>
+<tr class="separator:a0b60d8053e450c30c5023759a7294bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab46ab17a11ba896a2f5c91e48d7e4ab8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#ab46ab17a11ba896a2f5c91e48d7e4ab8">$infrastructure_type</a> = new <a class="el" href="class_infrastructure___type.html">Infrastructure_Type</a>()</td></tr>
 <tr class="separator:ab46ab17a11ba896a2f5c91e48d7e4ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca9f38cdf7236a46fe1eaa5139b0f07f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#aca9f38cdf7236a46fe1eaa5139b0f07f">$deuteriumStock</a> = $empire-&gt;getDeuteriumStock($_SESSION[&quot;empireId&quot;])</td></tr>
@@ -99,20 +99,22 @@ Variables</h2></td></tr>
 <tr class="separator:ab6814b11661887dcc5df78b873256afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4254c26a59bf945309fe54909e961891"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a4254c26a59bf945309fe54909e961891">$metalStock</a> = $empire-&gt;getMetalStock($_SESSION[&quot;empireId&quot;])</td></tr>
 <tr class="separator:a4254c26a59bf945309fe54909e961891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c5ba7c49dd581ad08616313f10e466c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a7c5ba7c49dd581ad08616313f10e466c">$researchLabId</a> = $infrastructure_type-&gt;getInfrastructureType(&quot;research_lab&quot;)[0][&quot;id&quot;]</td></tr>
+<tr class="memitem:a7c5ba7c49dd581ad08616313f10e466c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a7c5ba7c49dd581ad08616313f10e466c">$researchLabId</a> = $infrastructure_type-&gt;getInfrastructure_Type(&quot;research_lab&quot;)[0][&quot;id&quot;]</td></tr>
 <tr class="separator:a7c5ba7c49dd581ad08616313f10e466c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdbcf9000b9e6dd7bb7cc16e743a8446"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#acdbcf9000b9e6dd7bb7cc16e743a8446">$energyTechId</a> = $research_type-&gt;getResearchType(&quot;energy&quot;)[0][&quot;id&quot;]</td></tr>
+<tr class="memitem:acdbcf9000b9e6dd7bb7cc16e743a8446"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#acdbcf9000b9e6dd7bb7cc16e743a8446">$energyTechId</a> = $research_type-&gt;getResearch_Type(&quot;energy&quot;)[0][&quot;id&quot;]</td></tr>
 <tr class="separator:acdbcf9000b9e6dd7bb7cc16e743a8446"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f18a130b269a3f6a2bcce49ccefa466"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a8f18a130b269a3f6a2bcce49ccefa466">$laserTechId</a> = $research_type-&gt;getResearchType(&quot;laser&quot;)[0][&quot;id&quot;]</td></tr>
+<tr class="memitem:a8f18a130b269a3f6a2bcce49ccefa466"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a8f18a130b269a3f6a2bcce49ccefa466">$laserTechId</a> = $research_type-&gt;getResearch_Type(&quot;laser&quot;)[0][&quot;id&quot;]</td></tr>
 <tr class="separator:a8f18a130b269a3f6a2bcce49ccefa466"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d7e820d32dabca0079bb2bd8111c43b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a8d7e820d32dabca0079bb2bd8111c43b">$ionsTechId</a> = $research_type-&gt;getResearchType(&quot;ions&quot;)[0][&quot;id&quot;]</td></tr>
+<tr class="memitem:a8d7e820d32dabca0079bb2bd8111c43b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a8d7e820d32dabca0079bb2bd8111c43b">$ionsTechId</a> = $research_type-&gt;getResearch_Type(&quot;ions&quot;)[0][&quot;id&quot;]</td></tr>
 <tr class="separator:a8d7e820d32dabca0079bb2bd8111c43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fff180abcf14690610416346f767300"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a0fff180abcf14690610416346f767300">$shieldTechId</a> = $research_type-&gt;getResearchType(&quot;shield&quot;)[0][&quot;id&quot;]</td></tr>
+<tr class="memitem:a0fff180abcf14690610416346f767300"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a0fff180abcf14690610416346f767300">$shieldTechId</a> = $research_type-&gt;getResearch_Type(&quot;shield&quot;)[0][&quot;id&quot;]</td></tr>
 <tr class="separator:a0fff180abcf14690610416346f767300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e33382125d4ef6beb4cd3e3fb8dd618"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a4e33382125d4ef6beb4cd3e3fb8dd618">$armamentTechId</a> = $research_type-&gt;getResearchType(&quot;armament&quot;)[0][&quot;id&quot;]</td></tr>
+<tr class="memitem:a4e33382125d4ef6beb4cd3e3fb8dd618"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a4e33382125d4ef6beb4cd3e3fb8dd618">$armamentTechId</a> = $research_type-&gt;getResearch_Type(&quot;armament&quot;)[0][&quot;id&quot;]</td></tr>
 <tr class="separator:a4e33382125d4ef6beb4cd3e3fb8dd618"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0b3a552c1cfe2f2680d4607315fe494"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#af0b3a552c1cfe2f2680d4607315fe494">$aiTechId</a> = $research_type-&gt;getResearchType(&quot;ai&quot;)[0][&quot;id&quot;]</td></tr>
+<tr class="memitem:af0b3a552c1cfe2f2680d4607315fe494"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#af0b3a552c1cfe2f2680d4607315fe494">$aiTechId</a> = $research_type-&gt;getResearch_Type(&quot;ai&quot;)[0][&quot;id&quot;]</td></tr>
 <tr class="separator:af0b3a552c1cfe2f2680d4607315fe494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8e343205b57d2020cb86929ed13022"><td class="memItemLeft" align="right" valign="top">if(isset($_GET[&quot;research&quot;]))&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="make_research-process_8php.html#a9f8e343205b57d2020cb86929ed13022">else</a></td></tr>
+<tr class="separator:a9f8e343205b57d2020cb86929ed13022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des variables</h2>
 <a id="af0b3a552c1cfe2f2680d4607315fe494" name="af0b3a552c1cfe2f2680d4607315fe494"></a>
@@ -122,7 +124,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$aiTechId = $research_type-&gt;getResearchType(&quot;ai&quot;)[0][&quot;id&quot;]</td>
+          <td class="memname">$aiTechId = $research_type-&gt;getResearch_Type(&quot;ai&quot;)[0][&quot;id&quot;]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -136,7 +138,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$armamentTechId = $research_type-&gt;getResearchType(&quot;armament&quot;)[0][&quot;id&quot;]</td>
+          <td class="memname">$armamentTechId = $research_type-&gt;getResearch_Type(&quot;armament&quot;)[0][&quot;id&quot;]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -206,7 +208,21 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$energyTechId = $research_type-&gt;getResearchType(&quot;energy&quot;)[0][&quot;id&quot;]</td>
+          <td class="memname">$energyTechId = $research_type-&gt;getResearch_Type(&quot;energy&quot;)[0][&quot;id&quot;]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b60d8053e450c30c5023759a7294bf0" name="a0b60d8053e450c30c5023759a7294bf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b60d8053e450c30c5023759a7294bf0">&#9670;&#160;</a></span>$infrastructure</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$infrastructure = new <a class="el" href="class_infrastructure.html">Infrastructure</a>()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -227,20 +243,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aab55f884b9f78980c5879ab78f3c1afc" name="aab55f884b9f78980c5879ab78f3c1afc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab55f884b9f78980c5879ab78f3c1afc">&#9670;&#160;</a></span>$infrastructures</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$infrastructures = new Infrastructures()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a8d7e820d32dabca0079bb2bd8111c43b" name="a8d7e820d32dabca0079bb2bd8111c43b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d7e820d32dabca0079bb2bd8111c43b">&#9670;&#160;</a></span>$ionsTechId</h2>
 
@@ -248,7 +250,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$ionsTechId = $research_type-&gt;getResearchType(&quot;ions&quot;)[0][&quot;id&quot;]</td>
+          <td class="memname">$ionsTechId = $research_type-&gt;getResearch_Type(&quot;ions&quot;)[0][&quot;id&quot;]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -262,7 +264,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$laserTechId = $research_type-&gt;getResearchType(&quot;laser&quot;)[0][&quot;id&quot;]</td>
+          <td class="memname">$laserTechId = $research_type-&gt;getResearch_Type(&quot;laser&quot;)[0][&quot;id&quot;]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -318,7 +320,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$researchLabId = $infrastructure_type-&gt;getInfrastructureType(&quot;research_lab&quot;)[0][&quot;id&quot;]</td>
+          <td class="memname">$researchLabId = $infrastructure_type-&gt;getInfrastructure_Type(&quot;research_lab&quot;)[0][&quot;id&quot;]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -332,11 +334,27 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$shieldTechId = $research_type-&gt;getResearchType(&quot;shield&quot;)[0][&quot;id&quot;]</td>
+          <td class="memname">$shieldTechId = $research_type-&gt;getResearch_Type(&quot;shield&quot;)[0][&quot;id&quot;]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a id="a9f8e343205b57d2020cb86929ed13022" name="a9f8e343205b57d2020cb86929ed13022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f8e343205b57d2020cb86929ed13022">&#9670;&#160;</a></span>else</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">if (isset( $_GET[&quot;research&quot;])) else</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">{</div>
+<div class="line">    echo json_encode(array(<span class="stringliteral">&quot;status&quot;</span> =&gt; <span class="stringliteral">&quot;Erreur lors de la recherche&quot;</span>))</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
