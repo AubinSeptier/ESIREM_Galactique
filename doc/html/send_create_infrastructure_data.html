@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ESIREM Galactique API: makeResearch-process.php</title>
+<title>ESIREM Galactique API: sendCreateInfrastructureData-process.php</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,29 +69,24 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">makeResearch-process.php</div></div>
+  <div class="headertitle"><div class="title">sendCreateInfrastructureData-process.php</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Cette fonction réalise le processus de recherche en utilisant les classes <a class="el" href="class_research.html" title="Classe permettant de gérer les recherches.">Research</a>, <a class="el" href="class_research___type.html" title="Classe permettant de gérer les types de recherche.">Research_Type</a>, <a class="el" href="class_empire.html" title="Classe permettant de gérer les empires.">Empire</a>, <a class="el" href="class_infrastructure.html" title="Classe permettant de gérer les infrastructures.">Infrastructure</a> et <a class="el" href="class_infrastructure___type.html" title="Classe permettant de gérer les types d&#39;infrastructures.">Infrastructure_Type</a>. Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION. Elle effectue les vérifications nécessaires et met à jour les recherches de l'empire avec les paramètres donnés.</p>
+<div class="textblock"><p>Cette fonction réalise le processus d'envoi des données de création d'infrastructure vers le frontend en utilisant la classe <a class="el" href="class_infrastructure___type.html" title="Classe permettant de gérer les types d&#39;infrastructures.">Infrastructure_Type</a>.</p>
+<p>Elle récupère les données nécessaires depuis la superglobale $_SESSION. Elle effectue les vérifications nécessaires et envoie les données de création d'infrastructure vers le frontend.</p>
 <p>La fonction effectue les étapes suivantes :</p><ul>
-<li>Initialise les objets nécessaires (<a class="el" href="class_research.html" title="Classe permettant de gérer les recherches.">Research</a>, <a class="el" href="class_research___type.html" title="Classe permettant de gérer les types de recherche.">Research_Type</a>, <a class="el" href="class_empire.html" title="Classe permettant de gérer les empires.">Empire</a>, <a class="el" href="class_infrastructure.html" title="Classe permettant de gérer les infrastructures.">Infrastructure</a> et <a class="el" href="class_infrastructure___type.html" title="Classe permettant de gérer les types d&#39;infrastructures.">Infrastructure_Type</a>).</li>
-<li>Vérifie si le paramètre requis ($_GET["research"]) est défini.</li>
-<li>Vérifie si les ressources nécessaires sont disponibles.</li>
-<li>Met à jour les ressources de l'empire.</li>
-<li>Met à jour les recherches de l'empire.</li>
-<li>Retourne un message de succès.</li>
+<li>Vérifie si le paramètre requis ($_SESSION["empireId"]) est défini.</li>
+<li>Initialise l'objet nécessaire (<a class="el" href="class_infrastructure___type.html" title="Classe permettant de gérer les types d&#39;infrastructures.">Infrastructure_Type</a>).</li>
+<li>Envoie les données de création d'infrastructure vers le frontend.</li>
+<li>Retourne un message de succès avec les données de création d'infrastructure.</li>
 </ul>
-<p>Il existe le même processus pour chaque recherche possible (Energie, Laser, Ions, Bouclier, Armement et IA).</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">Exception_1</td><td>Si les ressources nécessaires ne sont pas disponibles, renvoie un message d'erreur. </td></tr>
-    <tr><td class="paramname">Exception_2</td><td>Si les technologies requises ne sont pas possédées, renvoie un message d'erreur. </td></tr>
-    <tr><td class="paramname">Exception_3</td><td>Si la superglobale GET n'est pas récupérée ou vide, renvoie un message d'erreur.</td></tr>
+    <tr><td class="paramname">Exception_1</td><td>Si la superglobalse GET n'est pas récupérée ou vide, renvoie un message d'erreur.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarques</dt><dd>Actuellement, les technologies peuvent être recherchées sans les bâtiments nécessaires.</dd></dl>
-<dl class="section warning"><dt>Avertissement</dt><dd>Actuellement, les technologies n'octroient aucun bonus au joueur. Il est prévu de les implémenter dans une version future. </dd></dl>
+<dl class="section remark"><dt>Remarques</dt><dd>Actuellement, ce process n'est pas utilisé dans le frontend car les données sont codées en dur dans l'HTML. Il est présent pour une utilisation future afin de pouvoir permettre une évolutivité si un équilibrage du jeu est nécessaire. </dd></dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

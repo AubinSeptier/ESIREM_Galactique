@@ -12,5 +12,6 @@ var searchData=
   ['updateresearch_9',['updateResearch',['../class_research.html#a79e6032833b7c49c175d3f4a2ae97aba',1,'Research']]],
   ['updateresource_10',['updateResource',['../class_resource.html#a32b1e0370bfba9a065d4b6fa20e81392',1,'Resource']]],
   ['updateship_11',['updateShip',['../class_ship.html#a5bf75a3477447fef76fe3c608de6f03b',1,'Ship']]],
-  ['user_12',['User',['../class_user.html',1,'']]]
+  ['upgradeinfrastructure_2dprocess_2ephp_12',['upgradeInfrastructure-process.php',['../upgrade_infrastructure.html',1,'']]],
+  ['user_13',['User',['../class_user.html',1,'']]]
 ];
