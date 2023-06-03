@@ -33,7 +33,7 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     $passwordRepeat = $_POST["password-repeat"];
     
     if($password !== $passwordRepeat){
-        echo "Les mots de passe ne correspondent pas";
+        echo "<script>alert('Les mots de passe ne correspondent pas');</script>";
         exit();
     }
     
@@ -41,7 +41,7 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     $result = $user->getUser($username);
     
     if($result){
-        echo "Ce nom d\'utilisateur existe déjà";
+        echo "<script>alert('Le nom d\'utilisateur existe déjà');</script>";
         exit();
     }
     
@@ -49,6 +49,6 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     header("Location: ../../front/login.php");
 } 
 else {
-    echo "Erreur de connexion";
+    echo <script>alert('Erreur lors de la récupération des données');</script>;
     exit();
 }

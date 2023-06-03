@@ -36,9 +36,11 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
         header("Location: ../../front/player.php");
     } 
     else {
-        echo "Nom d\'utilisateur ou mot de passe incorrect";
+        echo "<script>alert('Utilisateur ou mot de passe incorrect');</script>"; // N'est pas affiché
+        header("Location: ../../front/login.php");
     }
 } 
 else {
-    echo "Erreur de connexion";
+    echo "<script>alert('Erreur lors de la récupération des données');</script>"; // N'est pas affiché
+    header("Location: ../../front/login.php");
 }

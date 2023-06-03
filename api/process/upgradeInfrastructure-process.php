@@ -1,4 +1,29 @@
 <?php
+/**
+ * @file upgradeInfrastructure-process.php
+ * Fichier contient le système complet d'amélioration d'une infrastructure.
+ * 
+ * @page upgradeInfrastructure upgradeInfrastructure-process.php
+ * 
+ * Cette fonction réalise le processus d'amélioration d'une infrastructure en utilisant les classes
+ * Infrastructure, Infrastructure_Type, Empire et Planet.
+ * Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et améliore l'infrastructure avec les paramètres donnés.
+ * 
+ * La fonction effectue les étapes suivantes :
+ * - Vérifie si les paramètres requis ($_GET["infrastructureId"], $_GET["id_planet"]) sont définis.
+ * - Initialise les objets nécessaires (Infrastructure, Infrastructure_Type, Empire et Planet).
+ * - Vérifie si le joueur a assez de ressources pour améliorer l'infrastructure.
+ * - Vérifie si le joueur a assez de place sur la planète pour améliorer l'infrastructure.
+ * - Améliore l'infrastructure avec les paramètres donnés.
+ * - Retourne un message de succès avec les détails de l'infrastructure améliorée.
+ * 
+ * @throws Exception_1 Si les ressources nécessaires sont insuffisantes, renvoie un message d'erreur.
+ * @throws Exception_2 Si la taille de la planète est insuffisante, renvoie un message d'erreur.
+ * @throws Exception_3 Si les superglobales GET ne sont pas récupérées ou vides, renvoie un message d'erreur.
+ * 
+ * @warning Actuellement, les amélioration des infrastructures n'on pas d'effet sur le jeu. Il est prévu d'ajouter cela dans une prochaine version.
+ */
 session_start();
 include_once("../classes/infrastructure.php");
 include_once("../classes/infrastructure_type.php");
@@ -16,8 +41,6 @@ $resource = new Resource();
 $infrastructure_type = new Infrastructure_Type();
 $empire = new Empire();
 $planet = new Planet();
-$ship = new Ship();
-$ship_type = new Ship_Type();
 
 // Répupération des données utiles
 $deuteriumStock = $empire->getEmpireById($_SESSION["empireId"])[0]["deuterium_stock"];
@@ -54,7 +77,7 @@ if(isset($_GET["infrastructureId"]) && isset($_GET["id_planet"])){
         $attack = $infrastructureData[0]["attack"];
         $defense = $infrastructureData[0]["defense"];
         if(($deuteriumCost > $deuteriumStock) || ($energyCost + $energyStockUsed > $energyStock) || ($metalCost > $metalStock)){
-            echo "Vous n'avez pas assez de ressources";
+            echo json_encode(array("status" => "Vous n'avez pas assez de ressources pour améliorer cette infrastructure"));
         }
         else {
             $level += 1;
@@ -91,9 +114,13 @@ if(isset($_GET["infrastructureId"]) && isset($_GET["id_planet"])){
             if($infrastructureTypeId == $shieldId){
                 $infrastructure->upgradeInfrastructure($infrastructureId, $id_planet, $level, $upgrade_time, $deuteriumCost, $energyCost, $metalCost, $deuteriumProduction, $energyProduction, $metalProduction, $attack, $defense);
             }
-        }       
+        }
+        echo json_encode(array("status" => "success"));       
     }
     else {
-        echo "Vous ne pouvez pas améliorer plus d'infrastructures sur cette planète";
+        echo json_encode(array("status" => "Vous n'avez pas assez de place sur cette planète pour améliorer cette infrastructure"));
     }
+}
+else {
+    echo json_encode(array("status" => "Erreur lors de la récupération des données"));
 }

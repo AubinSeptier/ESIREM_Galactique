@@ -34,5 +34,5 @@ if(isset($_GET["id_planet"])){
     $resource->updateResource($totalDeuterium, $totalEnergy, $totalMetal, $id_planet);
 }
 else {
-    echo "Erreur lors de la récupération des ressources";
+    echo json_encode(array("status" => "Erreur lors de la récupération des ressources."));
 }

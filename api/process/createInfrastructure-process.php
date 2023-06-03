@@ -26,6 +26,8 @@
  * @throws Exception_1 Si la planète n'a pas assez de place pour construire l'infrastructure, renvoie un message d'erreur.
  * @throws Exception_2 Si les ressources nécessaires sont insuffisantes, renvoie un message d'erreur.
  * @throws Exception_3 Si les superglobales GET ne sont pas récupérées ou vides, renvoie un message d'erreur.
+ * 
+ * @warning, Actuellement, les infrastructures n'octroient pas de bonus aux ressources, aux vaisseaux et aux recherches. Il est prévu de les ajouter dans une version future.
  */
 session_start();
 include_once("../classes/infrastructure.php");

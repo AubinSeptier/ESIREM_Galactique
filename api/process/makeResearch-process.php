@@ -25,6 +25,8 @@
  * @throws Exception_3 Si la superglobale GET n'est pas récupérée ou vide, renvoie un message d'erreur.
  * 
  * @remark Actuellement, les technologies peuvent être recherchées sans les bâtiments nécessaires.
+ * 
+ * @warning Actuellement, les technologies n'octroient aucun bonus au joueur. Il est prévu de les implémenter dans une version future.
  */
 session_start();
 include_once("../classes/research.php");

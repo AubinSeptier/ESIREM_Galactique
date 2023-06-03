@@ -1,4 +1,27 @@
 <?php
+/**
+ * @file sendCreateInfrastructureData-process.php
+ * Fichier contenant le système complet d'envoi des données de création d'infrastructure vers le frontend.
+ * 
+ * @page sendCreateInfrastructureData sendCreateInfrastructureData-process.php
+ * 
+ * Cette fonction réalise le processus d'envoi des données de création d'infrastructure vers le frontend en utilisant la classe
+ * Infrastructure_Type.
+ * 
+ * Elle récupère les données nécessaires depuis la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et envoie les données de création d'infrastructure vers le frontend.
+ * 
+ * La fonction effectue les étapes suivantes :
+ * - Vérifie si le paramètre requis ($_SESSION["empireId"]) est défini.
+ * - Initialise l'objet nécessaire (Infrastructure_Type).
+ * - Envoie les données de création d'infrastructure vers le frontend.
+ * - Retourne un message de succès avec les données de création d'infrastructure.
+ * 
+ * @throws Exception_1 Si la superglobalse GET n'est pas récupérée ou vide, renvoie un message d'erreur.
+ * 
+ * @remark Actuellement, ce process n'est pas utilisé dans le frontend car les données sont codées en dur dans l'HTML. Il est présent pour une utilisation future afin
+ * de pouvoir permettre une évolutivité si un équilibrage du jeu est nécessaire.
+ */
 session_start();
 include_once("../classes/infrastucture_type.php");
 
