@@ -1,12 +1,12 @@
 <?php
-include_once("planet.php");
+include_once("../classes/planet.php");
 
-if(isset($_POST["planetName"]) && isset($_POST["planetId"])){
+if(isset($_GET["planetName"]) && isset($_GET["id_planet"])){
     $planet = new Planet();
-    $planetName = $_POST["planetName"];
-    $planetId = $_POST["planetId"];
+    $planetName = $_GET["planetName"];
+    $id_planet = $_GET["id_planet"];
 
-    $planet->updatePlanetName($planetName, $planetId);
+    $planet->updatePlanetName($planetName, $id_planet);
     echo json_encode(array("status" => "success"));
 }
 else {

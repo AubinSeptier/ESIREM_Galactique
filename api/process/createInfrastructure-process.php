@@ -257,7 +257,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
         if($planetSize > $totalInfrastructureLevels){
             $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("fusion_plant")[0]["id"];
 
-            $researchLevel = $research->getResearchLevel($energyTechId, $_SESSION["empireId"]);
+            $researchLevel = $research->getResearchById($energyTechId, $_SESSION["empireId"])[0]["level"];
             if($researchLevel < 10){
                 echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 10 de la technologie Energie"));
                 exit();
@@ -298,7 +298,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
     if($_GET["infrastructure"] == "laser_artillery"){
         $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("laser_artillery")[0]["id"];
 
-        $researchLevel = $research->getResearchLevel($laserTechId, $_SESSION["empireId"]);
+        $researchLevel = $research->getResearchById($laserTechId, $_SESSION["empireId"])[0]["level"];
         if($researchLevel < 1){
             echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 1 de la technologie Laser"));
             exit();
@@ -330,7 +330,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
     if($_GET["infrastructure"] == "ion_gun"){
         $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("ion_gun")[0]["id"];
 
-        $researchLevel = $research->getResearchLevel($ionsTechId, $_SESSION["empireId"]);
+        $researchLevel = $research->getResearchById($ionsTechId, $_SESSION["empireId"])[0]["level"];
         if($researchLevel < 1){
             echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 1 de la technologie Ions"));
             exit();
@@ -362,7 +362,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
     if($_GET["infrastructure"] == "shield"){
         $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("shield")[0]["id"];
 
-        $researchLevel = $research->getResearchLevel($shieldTechId, $_SESSION["empireId"]);
+        $researchLevel = $research->getResearchById($shieldTechId, $_SESSION["empireId"])[0]["level"];
         if($researchLevel < 1){
             echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 1 de la technologie Bouclier"));
             exit();

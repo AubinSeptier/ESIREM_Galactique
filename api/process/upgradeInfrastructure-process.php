@@ -34,9 +34,9 @@ $solarPlantId = $infrastructure_type->getInfrastructure_Type("solar_plant")[0]["
 $fusionPlantId = $infrastructure_type->getInfrastructure_Type("fusion_plant")[0]["id"];
 $shieldId = $infrastructure_type->getInfrastructure_Type("shield")[0]["id"];
 
-if(isset($_POST["infrastructureId"]) && isset($_POST["id_planet"])){
-    $infrastructureId = $_POST["infrastructureId"];
-    $id_planet = $_POST["id_planet"];
+if(isset($_GET["infrastructureId"]) && isset($_GET["id_planet"])){
+    $infrastructureId = $_GET["infrastructureId"];
+    $id_planet = $_GET["id_planet"];
     $infrastructureData = $infrastructure->getInfrastructureByPlanetId($infrastructureId, $id_planet);
     $infrastructureTypeId = $infrastructureData[0]["id_infrastructure_type"];
     $planetSize = $planet->getPlanetSize($id_planet)[0]["size"];
