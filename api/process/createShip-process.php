@@ -4,10 +4,15 @@ include_once("../classes/fleet.php");
 include_once("../classes/ship.php");
 include_once("../classes/ship_type.php");
 include_once("../classes/empire.php");
+include_once("../classes/research.php");
+include_once("../classes/research_type.php");
 
-if(isset($_POST["fighter"]) && isset($_POST["id_fleet"])){
+$research = new Research();
+$researchType = new ResearchType();
+
+if(isset($_GET["fighter"]) && isset($_GET["id_fleet"])){
     $fighter = new Ship();
-    $id_fleet = $_POST["id_fleet"];
+    $id_fleet = $_GET["id_fleet"];
     $shipCount = $fighter->getShipCountByType("fighter");
     $shipNumber = $shipCount + 1;
     $metal = $fighter->getShipType("fighter")[0]["metal_number"];
@@ -19,9 +24,9 @@ if(isset($_POST["fighter"]) && isset($_POST["id_fleet"])){
 
     $fighter->setShip("Chasseur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, "fighter");
 }
-else if(isset($_POST["cruiser"]) && isset($_POST["id_fleet"])){
+else if(isset($_GET["cruiser"]) && isset($_GET["id_fleet"])){
     $cruiser = new Ship();
-    $id_fleet = $_POST["id_fleet"];
+    $id_fleet = $_GET["id_fleet"];
     $shipCount = $cruiser->getShipCountByType("cruiser");
     $shipNumber = $shipCount + 1;
     $metal = $cruiser->getShipType("cruiser")[0]["metal_number"];
@@ -33,9 +38,9 @@ else if(isset($_POST["cruiser"]) && isset($_POST["id_fleet"])){
     
     $cruiser->setShip("Croiseur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, "cruiser");
 }
-else if(isset($_POST["transporter"]) && isset($_POST["id_fleet"])){
+else if(isset($_GET["transporter"]) && isset($_GET["id_fleet"])){
     $transporter = new Ship();
-    $id_fleet = $_POST["id_fleet"];
+    $id_fleet = $_GET["id_fleet"];
     $shipCount = $transporter->getShipCountByType("transporter");
     $shipNumber = $shipCount + 1;
     $metal = $transporter->getShipType("transporter")[0]["metal_number"];
@@ -47,9 +52,9 @@ else if(isset($_POST["transporter"]) && isset($_POST["id_fleet"])){
 
     $transporter->setShip("Transporteur #".$shipNumber, $attack, $defense, $capacity, $id_fleet, "transporter");
 }
-else if(isset($_POST["settler"]) && isset($_POST["id_fleet"])){
+else if(isset($_GET["settler"]) && isset($_GET["id_fleet"])){
     $settler = new Ship();
-    $id_fleet = $_POST["id_fleet"];
+    $id_fleet = $_GET["id_fleet"];
     $shipCount = $settler->getShipCountByType("settler");
     $shipNumber = $shipCount + 1;
     $metal = $settler->getShipType("settler")[0]["metal_number"];

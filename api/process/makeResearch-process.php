@@ -18,13 +18,13 @@ $energyStock = $empire->getEnergyStock($_SESSION["empireId"]);
 $energyStockUsed = $empire->getEnergyStockUsed($_SESSION["empireId"]);  
 $metalStock = $empire->getMetalStock($_SESSION["empireId"]);
 
-$researchLabId = $infrastructure_type->getInfrastructureType("research_lab")[0]["id"];
-$energyTechId = $research_type->getResearchType("energy")[0]["id"];
-$laserTechId = $research_type->getResearchType("laser")[0]["id"];
-$ionsTechId = $research_type->getResearchType("ions")[0]["id"];
-$shieldTechId = $research_type->getResearchType("shield")[0]["id"];
-$armamentTechId = $research_type->getResearchType("armament")[0]["id"];
-$aiTechId = $research_type->getResearchType("ai")[0]["id"];
+$researchLabId = $infrastructure_type->getInfrastructure_Type("research_lab")[0]["id"];
+$energyTechId = $research_type->getResearch_Type("energy")[0]["id"];
+$laserTechId = $research_type->getResearch_Type("laser")[0]["id"];
+$ionsTechId = $research_type->getResearch_Type("ions")[0]["id"];
+$shieldTechId = $research_type->getResearch_Type("shield")[0]["id"];
+$armamentTechId = $research_type->getResearch_Type("armament")[0]["id"];
+$aiTechId = $research_type->getResearch_Type("ai")[0]["id"];
 
 if(isset($_GET["energy"])){
     $deuteriumCost = $research->getResearchById($energyTechId, $_SESSION["empireId"])[0]["deuterium_cost"];
@@ -48,6 +48,12 @@ if(isset($_GET["laser"])){
     $metalCost = $research->getResearchById($laserTechId, $_SESSION["empireId"])[0]["metal_cost"];
     $researchLevel = $research->getResearchById($laserTechId, $_SESSION["empireId"])[0]["level"];
     $researchTime = $research->getResearchById($laserTechId, $_SESSION["empireId"])[0]["research_time"];
+    $energyTechLevel = $research->getResearchById($energyTechId, $_SESSION["empireId"])[0]["level"];
+
+    if($energyTechLevel < 5){
+        echo json_encode(array("status" => "Vous devez avoir atteint le niveau 5 de la technologie Energie"));
+        exit();
+    }
 
     if(($deuteriumCost > $deuteriumStock) || ($metalCost > $metalStock)){
         echo json_encode(array("status" => "Vous n'avez pas assez de ressources"));
@@ -65,6 +71,12 @@ if(isset($_GET["ions"])){
     $metalCost = $research->getResearchById($ionsTechId, $_SESSION["empireId"])[0]["metal_cost"];
     $researchLevel = $research->getResearchById($ionsTechId, $_SESSION["empireId"])[0]["level"];
     $researchTime = $research->getResearchById($ionsTechId, $_SESSION["empireId"])[0]["research_time"];
+    $laserTechLevel = $research->getResearchById($laserTechId, $_SESSION["empireId"])[0]["laser"];
+
+    if($laserTechLevel < 5){
+        echo json_encode(array("status" => "Vous devez avoir atteint le niveau 5 de la technologie Laser"));
+        exit();
+    }
 
     if(($deuteriumCost > $deuteriumStock) || ($metalCost > $metalStock)){
         echo json_encode(array("status" => "Vous n'avez pas assez de ressources"));
@@ -82,6 +94,13 @@ if(isset($_GET["shield"])){
     $metalCost = $research->getResearchById($shieldTechId, $_SESSION["empireId"])[0]["metal_cost"];
     $researchLevel = $research->getResearchById($shieldTechId, $_SESSION["empireId"])[0]["level"];
     $researchTime = $research->getResearchById($shieldTechId, $_SESSION["empireId"])[0]["research_time"];
+    $energyTechLevel = $research->getResearchById($energyTechId, $_SESSION["empireId"])[0]["level"];
+    $ionsTechLevel = $research->getResearchById($ionsTechId, $_SESSION["empireId"])[0]["level"];
+
+    if(($energyTechLevel < 8) && ($ionsTechLevel < 2)){
+        echo json_encode(array("status" => "Vous devez avoir atteint le niveau 8 de la technologie Energie et le niveau 2 de la technologie Ions"));
+        exit();
+    }
 
     if(($deuteriumCost > $deuteriumStock) || ($metalCost > $metalStock)){
         echo json_encode(array("status" => "Vous n'avez pas assez de ressources"));

@@ -21,12 +21,12 @@ if(isset($_GET["empireName"]) && isset($_GET["empireRace"]) && isset($_GET["empi
     $empireUniverseId = $_SESSION["universeId"];
 
     $research_type = new Research_Type();
-    $energyTech = $research_type->getResearchType("energy");
-    $laserTech = $research_type->getResearchType("laser");
-    $ionsTech = $research_type->getResearchType("ions");
-    $shieldTech = $research_type->getResearchType("shield");
-    $armamentTech = $research_type->getResearchType("armament");
-    $aiTech = $research_type->getResearchType("ai");
+    $energyTech = $research_type->getResearch_Type("energy");
+    $laserTech = $research_type->getResearch_Type("laser");
+    $ionsTech = $research_type->getResearch_Type("ions");
+    $shieldTech = $research_type->getResearch_Type("shield");
+    $armamentTech = $research_type->getResearch_Type("armament");
+    $aiTech = $research_type->getResearch_Type("ai");
 
 
     // Vérification de l'existence de l'empire

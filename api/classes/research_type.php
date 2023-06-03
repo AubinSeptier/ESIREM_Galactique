@@ -7,12 +7,12 @@ include_once("database.php");
 
 class Research_Type extends Database {
     /**
-    * @fn getResearchType($name)
+    * @fn getResearch_Type($name)
     * @brief Obtenir les données sur un type de recherche.
     * @param $name Le nom du type de recherche à récupérer.
     * @return $result Un tableau d'informations sur le type ou false si le type n'a pas été trouvé
     */
-    public function getResearchType($name){
+    public function getResearch_Type($name){
         $sql = "SELECT * FROM research_types WHERE name = ?";
         $query = $this->connect()->prepare($sql);
         $query->execute([$name]);

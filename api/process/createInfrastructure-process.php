@@ -29,11 +29,11 @@ $energyStock = $empire->getEnergyStock($_SESSION["empireId"]);
 $energyStockUsed = $empire->getEnergyStockUsed($_SESSION["empireId"]);  
 $metalStock = $empire->getMetalStock($_SESSION["empireId"]);
 
-$aiTechId = $research_type->getResearchType("ai")[0]["id"];
-$energyTechId = $research_type->getResearchType("energy")[0]["id"];
-$laserTechId = $research_type->getResearchType("laser")[0]["id"];
-$ionsTechId = $research_type->getResearchType("ions")[0]["id"];
-$shieldTechId = $research_type->getResearchType("shield")[0]["id"];
+$aiTechId = $research_type->getResearch_Type("ai")[0]["id"];
+$energyTechId = $research_type->getResearch_Type("energy")[0]["id"];
+$laserTechId = $research_type->getResearch_Type("laser")[0]["id"];
+$ionsTechId = $research_type->getResearch_Type("ions")[0]["id"];
+$shieldTechId = $research_type->getResearch_Type("shield")[0]["id"];
 
 if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
     $id_planet = $_GET["id_planet"];
@@ -113,7 +113,7 @@ if(isset($_GET["infrastructure"]) && isset($_GET["id_planet"])){
         if($planetSize > $totalInfrastructureLevels){
             $id_infrastructure_type = $infrastructure_type->getInfrastructure_Type("nanites_factory")[0]["id"];
 
-            $researchLevel = $research->getResearchLevel($aiTechId, $_SESSION["empireId"]);
+            $researchLevel = $research->getResearchById($aiTechId, $_SESSION["empireId"])[0]["level"];
             if($researchLevel < 5){
                 echo json_encode(array("status" => "Vous n'avez pas atteint le niveau 5 de la technologie IA"));
                 exit();
