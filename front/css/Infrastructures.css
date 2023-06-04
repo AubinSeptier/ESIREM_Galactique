@@ -145,7 +145,7 @@ footer {
     transition: transform 0.2s ease; /* Ajoutez une transition pour une animation fluide */
     cursor: pointer;
 }
-.logoutUser-button:hover {
+.logoutUniverse-button:hover {
     transform: scale(1.1); /* Applique une échelle de 1.1 (10% plus grand) au survol */
 }
 
@@ -162,4 +162,17 @@ footer {
 
 .upgrade-button:hover {
     background-color: #0288d1;
+}
+
+
+.empire-data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: auto;
+  }
+
+  .empire-data p {
+    text-align: left;
+    margin-left: 0;
 }

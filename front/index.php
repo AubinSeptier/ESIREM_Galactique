@@ -17,6 +17,13 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 <body>
 	<header>
 		<h1>ESI Galactique</h1>
+		<div class="empire-data">
+            <p>Empire : <span id="empireName"></span></p>
+            <p>Deutérium : <span id="empireDeuterium"></span></p>
+            <p>Énergie : <span id="empireEnergy"></span></p>
+            <p>Énergie utilisée : <span id="empireEnergyUsed"></span></p>
+            <p>Métal : <span id="empireMetal"></span></p>
+        </div>
         <a class="logoutUniverse-button">Déconnexion</a>
 	</header>
 	<nav>
@@ -76,5 +83,7 @@ if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
             <p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
         </footer>
 		<script src="./js/logoutUniverse.js"></script>
+    	<script src="./js/getRessources.js"></script>
+
     </body>
     </html>
