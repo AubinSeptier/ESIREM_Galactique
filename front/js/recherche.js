@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const upgradeIons = document.querySelector('.research-ions');
     const upgradeShield = document.querySelector('.research-shield');
     const updateArmament = document.querySelector('.research-armament');
+    const updateAI = document.querySelector('.research-armament');
 
     let url = "http://localhost/ESIREM_Galactique/api/process/makeResearch-process.php";
 
@@ -70,6 +71,20 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(data.status);
         if(data.status==="success"){
             alert("tech ARMEMENT améliorée")
+        }    
+        else {
+            alert(data.status);
+        }
+
+    });
+
+    upgradeAI.addEventListener('click', async function(event) {
+        let response = await fetch(url + "?research=ai", {
+            });
+        let data = await response.json();
+        console.log(data.status);
+        if(data.status==="success"){
+            alert("tech IA améliorée")
         }    
         else {
             alert(data.status);
