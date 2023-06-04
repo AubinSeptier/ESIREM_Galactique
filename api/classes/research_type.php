@@ -22,7 +22,7 @@ class Research_Type extends Database {
 
     /**
     * @fn setResearch_Type($name, $research_type, $deuterium_cost, $metal_cost)
-    * @brief Définir le type de recherche pour un utilisateur. 
+    * @brief Définir les types de recherches dans le jeu. 
     * @param $name Le nom du type de recherche.
     * @param $research_type Le type de recherche.
     * @param $deuterium_cost Le coût en deutérium de la recherche.

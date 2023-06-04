@@ -49,6 +49,6 @@ if(isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password
     header("Location: ../../front/login.php");
 } 
 else {
-    echo <script>alert('Erreur lors de la récupération des données');</script>;
+    echo "<script>alert('Erreur lors de la récupération des données');</script>";
     exit();
 }

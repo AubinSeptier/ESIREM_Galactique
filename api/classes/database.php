@@ -12,7 +12,7 @@ class Database {
     private $dbHost = "localhost";
     private $dbName = "esi_galactique";
     private $dbUser = "root";
-    private $dbPassword = "";
+    private $dbPassword = "root";
     private $db;
 
     /**
