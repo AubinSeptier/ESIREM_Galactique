@@ -14,7 +14,7 @@ Le projet a été réalisé par:
 Le projet est organisé de la manière suivante :
 
 - **/api** : ce répertoire contient le code source de notre api en PHP permettant de récupérer et de modifier les données de notre base de données SQL.
-- **/doc** : ce répertoire contient l'intégralité de la documentation de notre API générée à l'aide de Doxygen
+- **/doc** : ce répertoire contient l'intégralité de la documentation de notre API générée à l'aide de Doxygen, le script SQL et les modèles de la base de données.
 - **/front** : ce répertoire contient le code source en HTML, CSS et JavaScript de notre interface web et de nos scripts interagissant entre le frontend et le backend.
 
 ## Modèles de la Base de données
