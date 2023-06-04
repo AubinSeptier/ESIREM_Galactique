@@ -96,3 +96,12 @@ footer {
     transform: scale(1.1); /* Applique une échelle de 1.1 (10% plus grand) au survol */
 }
 
+.empire-data {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.empire-data p {
+    margin: 0;
+}
+
