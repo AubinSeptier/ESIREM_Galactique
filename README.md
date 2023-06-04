@@ -36,6 +36,8 @@ Notre modèle relationnel pour notre base de données est actuellement le suivan
 - universes(**id**, name)  
 - users(**id**, email, username, password)  
 
+Notre script SQL permettant la création de la base de données est disponible dans le dossier *doc* de notre projet.  
+
 ## Architecture du code
 
 L'architecture du code suit le modèle suivant:  
