@@ -1,0 +1,44 @@
+<?php
+session_start();
+if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
+	header('Location: ./player.php');
+	exit();
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flotte - ESI Galactique</title>
+    <link rel="stylesheet" href="./css/flotte.css">
+</head>
+<body>
+	<header>
+		<h1>ESI Galactique</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="./index.php">Accueil</a></li>
+			<li><a href="./galaxie.php">Galaxie</a></li>
+			<li class="active"><a href="./flotte.php">Flotte</a></li>
+			<li><a href="./infrastructures.php">Infrastructures</a></li>
+			<li><a href="./recherche.php">Recherche</a></li>
+			<li><a href="./chantierSpatial.php">Chantier Spatial</a></li>
+		</ul>
+		<form action="#" method="get">
+			<input type="text" name="search" placeholder="Recherche...">
+			<button type="submit">Ok</button>
+		</form>
+	</nav>
+	<section>
+		<div>
+			<h2>Flotte</h2>
+			<p>Vous possédez 10 Chasseurs légers, 5 Croiseurs, 2 Bombardiers et 1 Vaisseau de colonisation.</p>
+			<p><a class="lien" href="#">Voir la flotte</a></p>
+		</div>
+	</section>
+	<footer>
+		<p>&copy; ESI Galactique 2023 - Tous droits réservés</p>
+	</footer>
+</body>
+</html>

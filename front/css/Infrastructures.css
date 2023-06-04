@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #111;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav {
+    background-color: #222;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover,
+nav .active a {
+    background-color: #444;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Modifier align-items */
+    padding: 20px;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px; /* Modifier margin-left en margin-right */
+}
+
+.dropdown {
+    margin-bottom: 20px;
+}
+
+.dropdown select {
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.right-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Modifier display en flex et justify-content */
+    align-items: flex-start;
+}
+
+.infrastructure {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.infrastructure:hover {
+    transform: scale(1.05);
+}
+
+.infrastructure h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.infrastructure p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.create-button {
+    display: inline-block;
+    background-color: #03a9f4;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.create-button:hover {
+    background-color: #0288d1;
+}
+
+footer {
+    background-color: #111;
+    padding: 10px;
+    text-align: center;
+}
+
+.logoutUniverse-button {
+	color: #fff;
+	background-color: red;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+    transition: transform 0.2s ease; /* Ajoutez une transition pour une animation fluide */
+    cursor: pointer;
+}
+.logoutUniverse-button:hover {
+    transform: scale(1.1); /* Applique une échelle de 1.1 (10% plus grand) au survol */
+}
+
+.upgrade-button {
+    background-color: #03a9f4;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    outline: none;
+    marker: none;
+}
+
+.upgrade-button:hover {
+    background-color: #0288d1;
+}
+
+
+.empire-data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: auto;
+  }
+
+  .empire-data p {
+    text-align: left;
+    margin-left: 0;
+}
