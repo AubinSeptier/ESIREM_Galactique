@@ -17,6 +17,25 @@ Le projet est organisé de la manière suivante :
 - **/doc** : ce répertoire contient l'intégralité de la documentation de notre API générée à l'aide de Doxygen
 - **/front** : ce répertoire contient le code source en HTML, CSS et JavaScript de notre interface web et de nos scripts interagissant entre le frontend et le backend.
 
+## Modèles de la Base de données
+
+Notre modèle entités-relations est disponible au format PNG et au format drawio dans le dossier *doc* de notre projet.  
+Notre modèle relationnel pour notre base de données est actuellement le suivant (clé primaire en **gras** et clé étrangère en *italique*) :    
+- empires(**id**, name, race, adjective, deuterium_stock, energy_stock, energy_stock_used, metal_stock, *id_universe*, *id_user*)  
+- fleets(**id**, name, ships_number, attack, defense, *id_empire*, *id_planet*)  
+- galaxies(**id**, name, *id_universe*)  
+- infrastructures(**id**, name, level, upgrade_time, deuterium_cost, energy_cost, metal_cost, deuterium_production, energy_production, metal_production, attack, defense, *id_planet*, *id_infrastructure_type*)  
+- infrastructure_types(**id**, name, building_time, deuterium_cost, energy_cost, metal_cost, deuterium_production, energy_production, metal_production, attack, defense)  
+- planets(**id**, name, position, size, *id_solar_system*, *id_empire*)  
+- researches(**id**, name, level, research_time, deuterium_cost, metal_cost, *id_research_type*, *id_empire*)  
+- research_types(**id**, name, research_time, deuterium_cost, metal_cost)  
+- resources(**id**, deuterium, energy, metal, *id_planet*)  
+- ships(**id**, name, attack, defense, capacity, *id_fleet*, *id_ship_type*)  
+- ship_types(**id**, name, deuterium_number, metal_number, building_time, attack, defense, capacity)  
+- solar_systems(**id**, name, planets_number, *id_galaxy*)
+- universes(**id**, name)  
+- users(**id**, email, username, password)  
+
 ## Architecture du code
 
 L'architecture du code suit le modèle suivant:  
@@ -46,6 +65,7 @@ Actuellement les choses suivantes sont faisables depuis l'interface utilisateur:
 - Créer un empire
 - Voir les ressources possédées par son empire
 - Construire des infrastructures (sur une planète par défaut défini dans le JS)
+- Effectuer les différentes recherches technologiques
 - Rechercher des technologies
 - Se déconnecter d'un univers
 - Se déconnecter du jeu complet
@@ -56,19 +76,5 @@ A partir du php et de l'exécution brut des process, il est possible de faire ce
 - Améliorer des infrastructures (sans bonus, ni changement hors coûts en ressources et niveaux)
 
 
-Notre modèle relationnel pour notre base de données est actuellement le suivant (clé primaire en **gras** et clé étrangère en *italique*) :    
-- empires(**id**, name, race, adjective, deuterium_stock, energy_stock, energy_stock_used, metal_stock, *id_universe*, *id_user*)  
-- fleets(**id**, name, ships_number, attack, defense, *id_empire*, *id_planet*)  
-- galaxies(**id**, name, *id_universe*)  
-- infrastructures(**id**, name, level, upgrade_time, deuterium_cost, energy_cost, metal_cost, deuterium_production, energy_production, metal_production, attack, defense, *id_planet*, *id_infrastructure_type*)  
-- infrastructure_types(**id**, name, building_time, deuterium_cost, energy_cost, metal_cost, deuterium_production, energy_production, metal_production, attack, defense)  
-- planets(**id**, name, position, size, *id_solar_system*, *id_empire*)  
-- researches(**id**, name, level, research_time, deuterium_cost, metal_cost, *id_research_type*, *id_empire*)  
-- research_types(**id**, name, research_time, deuterium_cost, metal_cost)  
-- resources(**id**, deuterium, energy, metal, *id_planet*)  
-- ships(**id**, name, attack, defense, capacity, *id_fleet*, *id_ship_type*)  
-- ship_types(**id**, name, deuterium_number, metal_number, building_time, attack, defense, capacity)  
-- solar_systems(**id**, name, planets_number, *id_galaxy*)
-- universes(**id**, name)  
-- users(**id**, email, username, password)  
+
 
