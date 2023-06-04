@@ -55,3 +55,20 @@ A partir du php et de l'exécution brut des process, il est possible de faire ce
 - Renommer une planète
 - Améliorer des infrastructures (sans bonus, ni changement hors coûts en ressources et niveaux)
 
+
+Notre modèle relationnel pour notre base de données est actuellement le suivant (clé primaire en **gras** et clé étrangère en *italique*) :    
+- empires(**id**, name, race, adjective, deuterium_stock, energy_stock, energy_stock_used, metal_stock, *id_universe*, *id_user*)  
+- fleets(**id**, name, ships_number, attack, defense, *id_empire*, *id_planet*)  
+- galaxies(**id**, name, *id_universe*)  
+- infrastructures(**id**, name, level, upgrade_time, deuterium_cost, energy_cost, metal_cost, deuterium_production, energy_production, metal_production, attack, defense, *id_planet*, *id_infrastructure_type*)  
+- infrastructure_types(**id**, name, building_time, deuterium_cost, energy_cost, metal_cost, deuterium_production, energy_production, metal_production, attack, defense)  
+- planets(**id**, name, position, size, *id_solar_system*, *id_empire*)  
+- researches(**id**, name, level, research_time, deuterium_cost, metal_cost, *id_research_type*, *id_empire*)  
+- research_types(**id**, name, research_time, deuterium_cost, metal_cost)  
+- resources(**id**, deuterium, energy, metal, *id_planet*)  
+- ships(**id**, name, attack, defense, capacity, *id_fleet*, *id_ship_type*)  
+- ship_types(**id**, name, deuterium_number, metal_number, building_time, attack, defense, capacity)  
+- solar_systems(**id**, name, planets_number, *id_galaxy*)
+- universes(**id**, name)  
+- users(**id**, email, username, password)  
+
