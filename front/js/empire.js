@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         let data = await response.json();
             console.log(data.status);
+            console.log(data.Galaxy);
+            console.log(data.SolarSystem);
+            console.log(data.Planet);
 
             if(data.status === "success"){
                 window.location.href = "http://localhost/ESIREM_Galactique/front/index.php";

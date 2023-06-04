@@ -1,4 +1,21 @@
 <?php
+/**
+ * @file sendGalaxy-process.php
+ * Fichier contenant le système complet d'envoi des données de la galaxie vers le frontend.
+ * 
+ * @page sendGalaxy sendGalaxy-process.php
+ * 
+ * Cette fonction réalise le processus d'envoi des données de la galaxie vers le frontend en utilisant la classe
+ * Galaxy.
+ * Elle récupère les données nécessaires depuis la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et envoie les données de la galaxies vers le frontend.
+ * 
+ * La fonction effectue les étapes suivantes :
+ * - Vérifie si le paramètre requis ($_SESSION["universeId"]) est défini.
+ * - Initialise l'objet nécessaire (Galaxy).
+ * - Envoie les données de la galaxie vers le frontend.
+ * - Retourne un message de succès avec les données de la galaxie.
+ */
 session_start();
 include_once("../classes/galaxy.php");
 
@@ -6,18 +23,11 @@ $galaxy = new Galaxy();
 
 $universeId = $_SESSION['universeId'];
 
-$galaxy1 = $galaxy->getAllGalaxies($universeId)[0]["name"]; 
-$galaxy2 = $galaxy->getAllGalaxies($universeId)[1]["name"];
-$galaxy3 = $galaxy->getAllGalaxies($universeId)[2]["name"];
-$galaxy4 = $galaxy->getAllGalaxies($universeId)[3]["name"];
-$galaxy5 = $galaxy->getAllGalaxies($universeId)[4]["name"];
+$allGalaxies = $galaxy->getAllGalaxies($universeId)["name"]; 
+
 
 $data = array(
-    "galaxy1" => $galaxy1,
-    "galaxy2" => $galaxy2,
-    "galaxy3" => $galaxy3,
-    "galaxy4" => $galaxy4,
-    "galaxy5" => $galaxy5
+    "allGalaxies" => $allGalaxies
 );
 
 echo json_encode($data);

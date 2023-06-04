@@ -81,7 +81,7 @@ section {
     margin-bottom: 10px;
 }
 
-.button {
+.button, .buttonJoin {
     display: inline-block;
     background-color: #03a9f4;
     color: #fff;

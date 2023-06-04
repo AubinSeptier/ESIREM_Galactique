@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ESIREM Galactique API<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">ESIREM Galactique API<span id="projectnumber">&#160;0.8</span>
    </div>
   </td>
  </tr>
@@ -89,10 +89,16 @@ Graphe d'héritage de Research:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a2150d9d93b7b6246e0cfcd947448716a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_research.html#a2150d9d93b7b6246e0cfcd947448716a">getResearch</a> ($name)</td></tr>
-<tr class="separator:a2150d9d93b7b6246e0cfcd947448716a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cf0e1fcbc9fd223cf37c01a77b64bbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_research.html#a7cf0e1fcbc9fd223cf37c01a77b64bbb">setResearch</a> ($name, $empire)</td></tr>
-<tr class="separator:a7cf0e1fcbc9fd223cf37c01a77b64bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5f7a8941880c21cac9e8880f1e02f5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_research.html#ac5f7a8941880c21cac9e8880f1e02f5a">getResearchByName</a> ($name)</td></tr>
+<tr class="separator:ac5f7a8941880c21cac9e8880f1e02f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4235bc1b11e29a15c72b60a5c0f71b02"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_research.html#a4235bc1b11e29a15c72b60a5c0f71b02">getResearchById</a> ($id_research_type, $id_empire)</td></tr>
+<tr class="memdesc:a4235bc1b11e29a15c72b60a5c0f71b02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupérer les informations d'une recherche spécifique à partir de ses clés étrangères.  <br /></td></tr>
+<tr class="separator:a4235bc1b11e29a15c72b60a5c0f71b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a79e4bc499bb5208d4419edd3064d3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_research.html#a0a79e4bc499bb5208d4419edd3064d3c">setResearch</a> ($name, $level, $research_time, $deuterium_cost, $metal_cost, $id_research_type, $id_empire)</td></tr>
+<tr class="memdesc:a0a79e4bc499bb5208d4419edd3064d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définir une recherche pour un utilisateur.  <br /></td></tr>
+<tr class="separator:a0a79e4bc499bb5208d4419edd3064d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79e6032833b7c49c175d3f4a2ae97aba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_research.html#a79e6032833b7c49c175d3f4a2ae97aba">updateResearch</a> ($level, $research_time, $deuterium_cost, $metal_cost, $id_research_type, $id_empire)</td></tr>
+<tr class="separator:a79e6032833b7c49c175d3f4a2ae97aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_database"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_database')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_database.html">Database</a></td></tr>
 <tr class="memitem:a50f33583458a5bc097add8fa91674845 inherit pub_methods_class_database"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_database.html#a50f33583458a5bc097add8fa91674845">disconnect</a> ()</td></tr>
 <tr class="memdesc:a50f33583458a5bc097add8fa91674845 inherit pub_methods_class_database"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se déconnecte de la base de données.  <br /></td></tr>
@@ -108,14 +114,52 @@ Membres hérités additionnels</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe permettant de gérer les recherches. </p>
 </div><h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="a2150d9d93b7b6246e0cfcd947448716a" name="a2150d9d93b7b6246e0cfcd947448716a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2150d9d93b7b6246e0cfcd947448716a">&#9670;&#160;</a></span>getResearch()</h2>
+<a id="a4235bc1b11e29a15c72b60a5c0f71b02" name="a4235bc1b11e29a15c72b60a5c0f71b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4235bc1b11e29a15c72b60a5c0f71b02">&#9670;&#160;</a></span>getResearchById()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">getResearch </td>
+          <td class="memname">getResearchById </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_research_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_empire</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupérer les informations d'une recherche spécifique à partir de ses clés étrangères. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$id_research_type</td><td>L'id du type de recherche à récupérer. </td></tr>
+    <tr><td class="paramname">$id_empire</td><td>L'id de l'empire auquel la recherche appartient. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>$result Un tableau de données de la recherche ou false si aucun n'a été trouvé. </dd></dl>
+
+</div>
+</div>
+<a id="ac5f7a8941880c21cac9e8880f1e02f5a" name="ac5f7a8941880c21cac9e8880f1e02f5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5f7a8941880c21cac9e8880f1e02f5a">&#9670;&#160;</a></span>getResearchByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getResearchByName </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$name</em></td><td>)</td>
@@ -126,8 +170,8 @@ Membres hérités additionnels</h2></td></tr>
 
 </div>
 </div>
-<a id="a7cf0e1fcbc9fd223cf37c01a77b64bbb" name="a7cf0e1fcbc9fd223cf37c01a77b64bbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cf0e1fcbc9fd223cf37c01a77b64bbb">&#9670;&#160;</a></span>setResearch()</h2>
+<a id="a0a79e4bc499bb5208d4419edd3064d3c" name="a0a79e4bc499bb5208d4419edd3064d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a79e4bc499bb5208d4419edd3064d3c">&#9670;&#160;</a></span>setResearch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +186,102 @@ Membres hérités additionnels</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$empire</em>&#160;</td>
+          <td class="paramname"><em>$level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$research_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$deuterium_cost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$metal_cost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_research_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_empire</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définir une recherche pour un utilisateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$name</td><td>Le nom de la recherche. </td></tr>
+    <tr><td class="paramname">$level</td><td>Le niveau de la recherche. </td></tr>
+    <tr><td class="paramname">$research_time</td><td>Le temps de recherche. </td></tr>
+    <tr><td class="paramname">$deuterium_cost</td><td>Le coût en deutérium de la recherche. </td></tr>
+    <tr><td class="paramname">$metal_cost</td><td>Le coût en métal de la recherche. </td></tr>
+    <tr><td class="paramname">$id_empire</td><td>L'empire auquel la recherche appartient. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a79e6032833b7c49c175d3f4a2ae97aba" name="a79e6032833b7c49c175d3f4a2ae97aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79e6032833b7c49c175d3f4a2ae97aba">&#9670;&#160;</a></span>updateResearch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">updateResearch </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$research_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$deuterium_cost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$metal_cost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_research_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_empire</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -154,9 +293,6 @@ Membres hérités additionnels</h2></td></tr>
 
 </div>
 </div>
-<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>D:/Xampp/htdocs/ESIREM_Galactique/api/classes/<a class="el" href="research_8php.html">research.php</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

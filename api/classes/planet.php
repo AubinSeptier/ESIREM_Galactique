@@ -46,10 +46,10 @@ class Planet extends Database {
     * @param $id_empire L'identifiant de l'empire.
     * @param $id_planet L'identifiant de la planète.
     */
-    public function updatePlanetOwner($id_empire, $id_planet){
+    public function updatePlanetOwner($id_empire, $id){
         $sql = "UPDATE planets SET id_empire = ? WHERE id = ?";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id_empire, $id_planet]);
+        $query->execute([$id_empire, $id]);
     }
 
     /**
@@ -76,7 +76,15 @@ class Planet extends Database {
         $sql = "SELECT id FROM planets WHERE id_solar_system = ? ORDER BY RAND() LIMIT 1";
         $query = $this->connect()->prepare($sql);
         $query->execute([$id_solar_system]);
-        $result = $query->fetchColumn();
+        $result = $query->fetchAll();
+        return $result;
+    }
+
+    public function getPlanetForced($id_solar_system){
+        $sql = "SELECT id FROM planets WHERE id_solar_system = ? ORDER BY position ASC LIMIT 1";
+        $query = $this->connect()->prepare($sql);
+        $query->execute([$id_solar_system]);
+        $result = $query->fetchAll();
         return $result;
     }
 
@@ -119,6 +127,12 @@ class Planet extends Database {
         return $result;
     }
 
+    /**
+     * @fn getPlanetsCount($id_solar_system)
+     * @brief Obtenir le nombre de planètes dans un système solaire.
+     * @param $id L'identifiant du système solaire.
+     * @return $result Le nombre de planètes dans le système solaire ou false si non trouvé.
+     */
     public function getPlanetsCount($id_solar_system){
         $sql = "SELECT COUNT(*) FROM planets WHERE id_solar_system = ?";
         $query = $this->connect()->prepare($sql);
@@ -127,10 +141,17 @@ class Planet extends Database {
         return $result;
     }
 
-    public function getAllPlanets($id_solar_system){
-        $sql = "SELECT * FROM planets WHERE id_solar_system = ? ORDER BY position ASC";
+    /**
+     * @fn getAllPlanets($id_solar_system, $id_empire)
+     * @brief Obtenir toutes les planètes de l'empire dans système solaire.
+     * @param $id_solar_system L'identifiant du système solaire.
+     * @param $id_empire L'identifiant de l'empire.
+     * @return $result Un tableau des planètes de l'empire dans le système solaire ou false si aucune planète n'a été trouvée.
+     */
+    public function getAllPlanets($id_solar_system, $id_empire){
+        $sql = "SELECT * FROM planets WHERE id_solar_system = ? AND id_empire = ? ORDER BY position ASC";
         $query = $this->connect()->prepare($sql);
-        $query->execute([$id_solar_system]);
+        $query->execute([$id_solar_system, $id_empire]);
         $result = $query->fetchAll();
         return $result;
     }

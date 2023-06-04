@@ -8,22 +8,16 @@ document.addEventListener('DOMContentLoaded', async function() {
     const empireMetalElement = document.querySelector('#empireMetal');
 
 
-    fetch("http://localhost/ESIREM_Galactique/api/process/sendEmpireData-process.php")
-    .then(response => response.json())
-    .then(data => {
+    let response = await fetch("http://localhost/ESIREM_Galactique/api/process/sendEmpireData-process.php", {
+    });
+    let data = await response.json();
       empireNameElement.textContent = data.empireName;
-      empireRaceElement.textContent = data.empireRace;
-      empireAdjectiveElement.textContent = data.empireAdjective;
       empireDeuteriumElement.textContent = data.empireDeuterium;
       empireEnergyElement.textContent = data.empireEnergy;
       empireEnergyUsedElement.textContent = data.empireEnergyUsed;
       empireMetalElement.textContent = data.empireMetal;
-    })
-    
-    .catch(error => {
+      if(data == null){
+        alert("Erreur lors du chargement des données");
+      }
     });
     
-
-
-
-});

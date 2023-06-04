@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESIREM Galactique API: createInfrastructure-process.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESIREM Galactique API<span id="projectnumber">&#160;0.8</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">createInfrastructure-process.php</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Cette fonction réalise le processus de création d'une infrastructure en utilisant les classes <a class="el" href="class_infrastructure.html" title="Classe permettant de gérer les infrastructures.">Infrastructure</a>, <a class="el" href="class_infrastructure___type.html" title="Classe permettant de gérer les types d&#39;infrastructures.">Infrastructure_Type</a>, <a class="el" href="class_empire.html" title="Classe permettant de gérer les empires.">Empire</a>, <a class="el" href="class_planet.html" title="Classe permettant de gérer les planètes.">Planet</a>, <a class="el" href="class_resource.html" title="Classe permettant de gérer les ressources.">Resource</a>, <a class="el" href="class_ship.html" title="Classe permettant de gérer les vaisseaux.">Ship</a>, <a class="el" href="class_ship___type.html" title="Classe permettant de gérer les types de vaisseaux.">Ship_Type</a>, <a class="el" href="class_research.html" title="Classe permettant de gérer les recherches.">Research</a> et <a class="el" href="class_research___type.html" title="Classe permettant de gérer les types de recherche.">Research_Type</a>. Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION. Elle effectue les vérifications nécessaires et crée une infrastructure avec les paramètres donnés.</p>
+<p>La fonction effectue les étapes suivantes :</p><ul>
+<li>Initialise les objets nécessaires (<a class="el" href="class_infrastructure.html" title="Classe permettant de gérer les infrastructures.">Infrastructure</a>, <a class="el" href="class_infrastructure___type.html" title="Classe permettant de gérer les types d&#39;infrastructures.">Infrastructure_Type</a>, <a class="el" href="class_empire.html" title="Classe permettant de gérer les empires.">Empire</a>, <a class="el" href="class_planet.html" title="Classe permettant de gérer les planètes.">Planet</a>, <a class="el" href="class_resource.html" title="Classe permettant de gérer les ressources.">Resource</a>, <a class="el" href="class_ship.html" title="Classe permettant de gérer les vaisseaux.">Ship</a>, <a class="el" href="class_ship___type.html" title="Classe permettant de gérer les types de vaisseaux.">Ship_Type</a>, <a class="el" href="class_research.html" title="Classe permettant de gérer les recherches.">Research</a> et <a class="el" href="class_research___type.html" title="Classe permettant de gérer les types de recherche.">Research_Type</a>).</li>
+<li>Vérifie si les paramètres requis ($_GET["infrastructure"], $_GET["id_planet"]) sont définis.</li>
+<li>Vérifie si l'infrastructure peut être construite sur la planète (taille de la planète, nombre d'infrastructures déjà construites).</li>
+<li>Vérifie si les recherches requises ont été effectuées.</li>
+<li>Vérifie si les ressources nécessaires sont disponibles.</li>
+<li>Crée l'infrastructure avec les paramètres donnés.</li>
+<li>Met à jour les ressources de l'empire.</li>
+<li>Retourne un message de succès.</li>
+</ul>
+<p>Il existe le même processus pour chaque infrastructure (laboratoire de recherche, chantier spatialn usine de nanites, mine de métal, synthétiseur de deutérium, centrale électrique, centrale à fusion, artillerie laser, canon à ions et bouclier).</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception_1</td><td>Si la planète n'a pas assez de place pour construire l'infrastructure, renvoie un message d'erreur. </td></tr>
+    <tr><td class="paramname">Exception_2</td><td>Si les ressources nécessaires sont insuffisantes, renvoie un message d'erreur. </td></tr>
+    <tr><td class="paramname">Exception_3</td><td>Si les superglobales GET ne sont pas récupérées ou vides, renvoie un message d'erreur.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Avertissement</dt><dd>, Actuellement, les infrastructures n'octroient pas de bonus aux ressources, aux vaisseaux et aux recherches. Il est prévu de les ajouter dans une version future. </dd></dl>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

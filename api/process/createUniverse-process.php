@@ -1,4 +1,29 @@
 <?php
+/**
+ * @file createUniverse-process.php
+ * Fichier contient le système complet de création d'un univers.
+ * 
+ * @page createUniverse createUniverse-process.php
+ * 
+ * Cette fonction réalise le processus de création d'un univers en utilisant les classes
+ * Universe, Galaxy, Solar_System et Planet.
+ * Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et crée un univers avec les paramètres donnés.
+ * Elle crée également les galaxies, systèmes solaires et planètes de l'univers.
+ * 
+ * La fonction effectue les étapes suivantes :
+ *  - Vérifie si le paramètres requis ($_GET["universeName"]) est défini.
+ *  - Initialise le premier objet nécessaire (Universe).
+ *  - Vérifie si l'univers n'existe pas déjà.
+ *  - Crée un nouvel univers avec les paramètres donnés et met à jour les variables de session.
+ *  - Définit une liste de noms de galaxies et de systèmes solaires.
+ *  - Initialise les autres objets nécessaires (Galaxy, Solar_System, Planet).
+ *  - Crée les galaxies, systèmes solaires et planètes de l'univers à l'aide de boucles for imbriquées.
+ *  - Retourne un message de succès.
+ * 
+ * @throws Exception_1 Si l'univers existe déjà, renvoie un message d'erreur.
+ * @throws Exception_2 Si la superglobale GET n'est pas récupérée ou vide, renvoie un message d'erreur.
+ */
 session_start();
 include_once("../classes/universe.php");
 include_once("../classes/galaxy.php");
@@ -29,12 +54,15 @@ if(isset($_GET["universeName"])){
     $solarSystem = new Solar_System();
     $planet = new Planet();
 
+
     for($i = 0; $i<5; $i++){
         $galaxy->setGalaxy($galaxyNames[$i], $universe->getUniverseByName($universeName)[0]["id"]);
         for($j = 0; $j<10; $j++){
-            $planets_number = rand(4, 10);
-            $solarSystem->setSolar_System($solarSystemNames[$j], $planets_number, $galaxy->getGalaxy($galaxyNames[$i])[0]["id"]);
+            $positions = NULL;
             $positions = range(1, 10);
+            $planets_number = rand(4, 10);
+            $solarSystemName = array_shift($solarSystemNames);
+            $solarSystem->setSolar_System($solarSystemName, $planets_number, $galaxy->getGalaxy($galaxyNames[$i])[0]["id"]);
             shuffle($positions);
             for($k = 0; $k<$planets_number; $k++){
                 $position = array_shift($positions);
@@ -70,7 +98,7 @@ if(isset($_GET["universeName"])){
                         $size = 90;
                         break;
                 }
-                $planet->setPlanet($solarSystemNames[$j]." ".$position, $position, $size, $solarSystem->getSolar_System($solarSystemNames[$j])[0]["id"], null);
+                $planet->setPlanet($solarSystemName." ".$position, $position, $size, $solarSystem->getSolar_System($solarSystemName)[0]["id"], null);
             }
         }
     }

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ESIREM Galactique API<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">ESIREM Galactique API<span id="projectnumber">&#160;0.8</span>
    </div>
   </td>
  </tr>
@@ -89,10 +89,12 @@ Graphe d'héritage de Infrastructure_Type:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a5f21ceb0a20ec70356c029595f84d03b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infrastructure___type.html#a5f21ceb0a20ec70356c029595f84d03b">getInfrastructure_Type</a> ($name)</td></tr>
-<tr class="separator:a5f21ceb0a20ec70356c029595f84d03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf1cea42f3bf9a66180c63d3d72dfd08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infrastructure___type.html#aaf1cea42f3bf9a66180c63d3d72dfd08">setInfrastructure_Type</a> ($name, $building_time, $deuterium_cost, $energy_cost, $metal_cost, $deuterium_production, $energy_production, $metal_production, $attack, $defense)</td></tr>
-<tr class="separator:aaf1cea42f3bf9a66180c63d3d72dfd08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2f8bfc1810f2ff769698997061c0451"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infrastructure___type.html#ae2f8bfc1810f2ff769698997061c0451">getInfrastructure_Type</a> ($name)</td></tr>
+<tr class="memdesc:ae2f8bfc1810f2ff769698997061c0451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir les données sur un type d'infrastucture.  <br /></td></tr>
+<tr class="separator:ae2f8bfc1810f2ff769698997061c0451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec119cdc943452a5f07fdff8662d9baa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infrastructure___type.html#aec119cdc943452a5f07fdff8662d9baa">setInfrastructure_Type</a> ($name, $building_time, $deuterium_cost, $energy_cost, $metal_cost, $deuterium_production, $energy_production, $metal_production, $attack, $defense)</td></tr>
+<tr class="memdesc:aec119cdc943452a5f07fdff8662d9baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définir les types d'infrastructures dans le jeu.  <br /></td></tr>
+<tr class="separator:aec119cdc943452a5f07fdff8662d9baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_database"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_database')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_database.html">Database</a></td></tr>
 <tr class="memitem:a50f33583458a5bc097add8fa91674845 inherit pub_methods_class_database"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_database.html#a50f33583458a5bc097add8fa91674845">disconnect</a> ()</td></tr>
 <tr class="memdesc:a50f33583458a5bc097add8fa91674845 inherit pub_methods_class_database"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se déconnecte de la base de données.  <br /></td></tr>
@@ -108,14 +110,14 @@ Membres hérités additionnels</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe permettant de gérer les types d'infrastructures. </p>
 </div><h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="a5f21ceb0a20ec70356c029595f84d03b" name="a5f21ceb0a20ec70356c029595f84d03b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f21ceb0a20ec70356c029595f84d03b">&#9670;&#160;</a></span>getInfrastructure_Type()</h2>
+<a id="ae2f8bfc1810f2ff769698997061c0451" name="ae2f8bfc1810f2ff769698997061c0451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2f8bfc1810f2ff769698997061c0451">&#9670;&#160;</a></span>getInfrastructure_Type()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">getInfrastructure_Type </td>
+          <td class="memname">public function getInfrastructure_Type </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$name</em></td><td>)</td>
@@ -124,16 +126,25 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Obtenir les données sur un type d'infrastucture. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$name</td><td>Le nom du type d'infrastructure à récupérer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>$result Un tableau d'informations sur le type ou false si le type n'a pas été trouvé. </dd></dl>
+
 </div>
 </div>
-<a id="aaf1cea42f3bf9a66180c63d3d72dfd08" name="aaf1cea42f3bf9a66180c63d3d72dfd08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf1cea42f3bf9a66180c63d3d72dfd08">&#9670;&#160;</a></span>setInfrastructure_Type()</h2>
+<a id="aec119cdc943452a5f07fdff8662d9baa" name="aec119cdc943452a5f07fdff8662d9baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec119cdc943452a5f07fdff8662d9baa">&#9670;&#160;</a></span>setInfrastructure_Type()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">setInfrastructure_Type </td>
+          <td class="memname">public function setInfrastructure_Type </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$name</em>, </td>
@@ -200,11 +211,25 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Définir les types d'infrastructures dans le jeu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$name</td><td>Le nom du type d'infrastructure. </td></tr>
+    <tr><td class="paramname">$building_time</td><td>Le temps de construction de l'infrastructure. </td></tr>
+    <tr><td class="paramname">$deuterium_cost</td><td>Le coût en deutérium de l'infrastructure. </td></tr>
+    <tr><td class="paramname">$energy_cost</td><td>Le coût en énergie de l'infrastructure. </td></tr>
+    <tr><td class="paramname">$metal_cost</td><td>Le coût en métal de l'infrastructure. </td></tr>
+    <tr><td class="paramname">$deuterium_production</td><td>La production de deutérium de l'infrastructure. </td></tr>
+    <tr><td class="paramname">$energy_production</td><td>La production d'énergie de l'infrastructure. </td></tr>
+    <tr><td class="paramname">$metal_production</td><td>La production de métal de l'infrastructure. </td></tr>
+    <tr><td class="paramname">$attack</td><td>L'attaque de l'infrastructure. </td></tr>
+    <tr><td class="paramname">$defense</td><td>La défense de l'infrastructure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>D:/Xampp/htdocs/ESIREM_Galactique/api/classes/<a class="el" href="infrastructure__type_8php.html">infrastructure_type.php</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

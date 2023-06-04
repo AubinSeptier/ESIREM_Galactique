@@ -48,4 +48,17 @@ class Universe extends Database {
         $result = $query->fetchAll();
         return $result;
     }
+
+    /**
+    * @fn getAllUniverses()
+    * @brief Obtenir tous les univers.
+    * @return $result Un tableau d'objets univers.
+    */
+    public function getAllUniverses(){
+        $sql = "SELECT * FROM universes";
+        $query = $this->connect()->prepare($sql);
+        $query->execute();
+        $result = $query->fetchAll();
+        return $result;
+    }
 }

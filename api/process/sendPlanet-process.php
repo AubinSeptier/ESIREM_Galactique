@@ -1,64 +1,39 @@
 <?php
+/**
+ * @file sendPlanet-process.php
+ * Fichier contenant le système complet d'envoi des données de la planète vers le frontend.
+ * 
+ * @page sendPlanet sendPlanet-process.php
+ * 
+ * Cette fonction réalise le processus d'envoi des données de la planète vers le frontend en utilisant les classes
+ * Solar_System et Planet.
+ * Elle récupère les données nécessaires depuis la superglobale $_GET et la superglobale $_SESSION.
+ * Elle effectue les vérifications nécessaires et envoie les données de la planète vers le frontend.
+ * 
+ * La fonction effectue les étapes suivantes :
+ * - Vérifie si le paramètre requis ($_GET["solarSystemName"]) est défini.
+ * - Initialise les objets nécessaires (Solar_System et Planet).
+ * - Envoie les données de la planète vers le frontend.
+ * - Retourne un message de succès avec les données de la planète.
+ * 
+ * @throws Exception_1 Si la superglobalse GET n'est pas récupérée ou vide, renvoie un message d'erreur.
+ */
+session_start();
 include_once("../classes/solar_system.php");
 include_once("../classes/planet.php");
 
-$solarSystem = new SolarSystem();
+$solarSystem = new Solar_System();
 $planet = new Planet();
+$empireId = $_SESSION['empireId'];
 
 if(isset($_GET["solarSystemName"])){
     $solarSystemName = $_GET["solarSystemName"];
-    $solarSystemId = $solarSystem->getSolarSystem($solarSystemName)[0]["id"];
-    $planetsCount = $planet->getPlanetsCount($solarSystemId);
+    $solarSystemId = $solarSystem->getSolar_System($solarSystemName)[0]["id"];
     
-    $planetData = $planet->getAllPlanets($solarSystemId);
-
-    for($i = 0; $i < $planetsCount; $i++){
-        switch($i){
-            case 0:
-                $planet1 = $planetData[$i]["name"];
-                break;
-            case 1:
-                $planet2 = $planetData[$i]["name"];
-                break;
-            case 2:
-                $planet3 = $planetData[$i]["name"];
-                break;
-            case 3:
-                $planet4 = $planetData[$i]["name"];
-                break;
-            case 4:
-                $planet5 = $planetData[$i]["name"];
-                break;
-            case 5:
-                $planet6 = $planetData[$i]["name"];
-                break;
-            case 6:
-                $planet7 = $planetData[$i]["name"];
-                break;
-            case 7:
-                $planet8 = $planetData[$i]["name"];
-                break;
-            case 8:
-                $planet9 = $planetData[$i]["name"];
-                break;
-            case 9:
-                $planet10 = $planetData[$i]["name"];
-                break;
-        }
-    }
-    
+    $allPlanetsData = $planet->getAllPlanets($solarSystemId, $empireId);    
 
     $data = array(
-        "planet1" => $planet1,
-        "planet2" => $planet2,
-        "planet3" => $planet3,
-        "planet4" => $planet4,
-        "planet5" => $planet5,
-        "planet6" => $planet6,
-        "planet7" => $planet7,
-        "planet8" => $planet8,
-        "planet9" => $planet9,
-        "planet10" => $planet10
+        "allPlanetsData" => $allPlanetsData
     );
 
     echo json_encode($data);
