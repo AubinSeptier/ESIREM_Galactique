@@ -1,9 +1,9 @@
 <?php
-session_start();
+/*session_start();
 if (!isset($_SESSION['empireId']) && !isset($_SESSION['universeId'])) {
 	header('Location: ./player.php');
 	exit();
-}
+}*/
 ?>
 
 <!DOCTYPE html>

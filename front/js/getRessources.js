@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       empireEnergyUsedElement.textContent = data.empireEnergyUsed;
       empireMetalElement.textContent = data.empireMetal;
     })
+    
     .catch(error => {
     });
     
