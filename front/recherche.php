@@ -77,6 +77,15 @@
                 <p>Requiert l'infrastructure "Laboratoire de recherche". Chaque niveau de la technologie augmente l'attaque des systèmes de défense et des vaisseaux de 3%.</p>
                 <a href="#" class="research-armament">Rechercher</a>
             </div>
+			<div class="technology">
+                <h3>Technologie IA</h3>
+                <p>Coût en métal: 500</p>
+                <p>Coût en énergie: 0</p>
+                <p>Coût en deutérium: 200</p>
+                <p>Temps de recherche: 6s</p>
+                <p>Requiert l'infrastructure "Laboratoire de recherche". Chaque niveau de la technologie augmente l'attaque des systèmes de défense et des vaisseaux de 3%.</p>
+                <a href="#" class="research-armament">Rechercher</a>
+            </div>
         </div>
     </section>
     <footer>
