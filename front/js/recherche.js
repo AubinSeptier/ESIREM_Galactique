@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let data = await response.json();
         console.log(data.status);
         if(data.status==="success"){
-            alert("tech ENERGIE améliorée")
+            alert("tech ENERGIE améliorée");
         }    
         else {
             alert(data.status);
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let data = await response.json();
         console.log(data.status);
         if(data.status==="success"){
-            alert("tech LASER améliorée")
+            alert("tech LASER améliorée");
         }    
         else {
             alert(data.status);
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let data = await response.json();
         console.log(data.status);
         if(data.status==="success"){
-            alert("tech IONS améliorée")
+            alert("tech IONS améliorée");
         }    
         else {
             alert(data.status);
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let data = await response.json();
         console.log(data.status);
         if(data.status==="success"){
-            alert("tech BOUCLIER améliorée")
+            alert("tech BOUCLIER améliorée");
         }    
         else {
             alert(data.status);
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let data = await response.json();
         console.log(data.status);
         if(data.status==="success"){
-            alert("tech ARMEMENT améliorée")
+            alert("tech ARMEMENT améliorée");
         }    
         else {
             alert(data.status);
